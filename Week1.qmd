@@ -1,0 +1,53 @@
+# Week 1
+
+## Summary
+
+Passive data: Energy usually in eletcromagnetic form e.g., human eyes
+
+Active data: Energy in addition in illumination . e.g., radar.
+
+How EM waves interact with Earth's surface and atmosphere: Reflection, scattering, absorption
+
+single
+
+dual
+
+quad
+
+### remotely-sensed data usually comes in
+
+Raster: file
+
+types: BIL, BSQM BIP, GeoTIFF
+
+### Four resolutions:
+
+Spatial: ranging from10 cm to several kilos
+
+Spectral: How many different spectral bands are there? (Every feature on earth has a unique spectral signature)
+
+(Atmospheric windows: )
+
+(Vegetation: red edge \-- infra bands. APP: look at the infra band s of city to identify who has access to vegetation)
+
+Radiometric resolution: resolution of cell's value
+
+Temporal resolution: ussualy inversly relate3 to pixel size (spatial)
+
+MODIS
+
+## Application
+
+One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see @fig-vege, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.
+
+![Spectral Feature Space, Vegetation On Bands B04 and B08](images/spectral_feature_space_vege_B04_B08.png "Spectral Feature Space, Vegetation On Bands B04 and B08"){#fig-vege}{fig-align="center"}
+
+Spatial signatures can also be used to monitor the health of vegetation by identifying patterns of quavariation in spectral reflectance that are indicative of stress or disease. For example, vegetation that is stressed or diseased may have a different spectral reflectance signature than healthy vegetation, which can be identified using spatial signatures.
+
+In addition, spatial signatures can be used to monitor the growth and distribution of vegetation over time by comparing satellite imagery from different dates. This can be useful for understanding the impacts of land use changes, climate change, and other factors on vegetation.
+
+Overall, spatial signatures are a powerful tool for vegetation monitoring, as they can be used to identify and classify different types of vegetation, monitor vegetation health, and track vegetation changes over time.
+
+## Reflection
+
+One of the challenges I encountered is to navigate the complexties of the interface of SNAP and QGIS. It becomes clear to me that yes code can be difficult, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, dfinding which function under falling which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation.

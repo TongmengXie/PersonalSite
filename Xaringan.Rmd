@@ -1,0 +1,225 @@
+
+---
+title: "CASA0023 Week 2 slides"
+subtitle: "⚔<br/>with xaringan"
+author: "Tongmeng Xie"
+institute: "CASA, UCL"
+date: "January 19th, 2023 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+---
+
+class: inverse, center, middle
+
+# Get Started
+
+------------------------------------------------------------------------
+
+# Hello Ninja
+
+Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+
+```{r eval=FALSE, tidy=FALSE}
+remotes::install_github("yihui/xaringan")
+```
+
+--
+
+You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
+
+-   Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
+
+--
+
+-   Click the `Knit` button to compile it;
+
+--
+
+-   or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
+
+.footnote\[ \[1\] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
+
+\[2\] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio. \]
+
+---
+
+# Using Xaringan
+.pull-right
+
+---
+# Data loading
+```{r eval=FALSE, tidy=FALSE}
+library(sf)
+library(terra)
+library(raster)
+library(dplyer)
+library(magrittr)
+
+bare_earth <- st_read("prac_1/Data/Bare_earth_Polygon.shp")
+grass <- st_read("prac_1/Data/Grass_Polygon.shp")
+forest <- st_read("prac_1/Data/Forest_Polygon.shp")
+urban <- st_read("prac_1/Data/Low_urban_Polygon.shp")
+high_urban <- st_read("prac_1/Data/High_urban_Polygon.shp")
+
+#Landsat equivalent
+bands <- c("1","2", "3", "4", "5", "6", "7")
+
+sentinel <- rast("prac_1/Data/S2A_LSAT_msk.tif")
+
+names(sentinel) <- bands
+  
+landsat<-rast("prac_1/Data/LSAT_msk.tif")
+
+names(landsat) <- bands
+
+# make a SpatVector
+urban <- terra::vect(urban)
+
+# landsat to Raster
+landsat <- as(landsat, "Raster")
+```
+
+# do this straight from loading the data with the pipe
+```{r}
+bare_earth <- st_read("prac_1/Data/Bare_earth_Polygon.shp") %>%
+  vect()
+grass <- st_read("prac_1/Data/Grass_Polygon.shp")%>%
+    vect()
+forest <- st_read("prac_1/Data/Forest_Polygon.shp")%>%
+    vect()
+urban <- st_read("prac_1/Data/Low_urban_Polygon.shp")%>%
+    vect()
+high_urban <- st_read("prac_1/Data/High_urban_Polygon.shp")%>%
+    vect()
+```
+
+---
+# Data wrangling
+## messing with crs and projection
+```{r}
+crs(landsat)
+crs(sentinel)
+
+# reproject landsat
+landsat <- project(landsat, sentinel)
+```
+## get the mean and standard deviation
+```{r}
+band_fun <- function(sensor, landcover) { # sensor e.g. sentinel; landcover e.g. urban
+  col_sensor <- deparse(substitute(sensor))
+  col_land <- deparse(substitute(landcover))
+
+  sen_urban<- terra::extract(sensor, landcover, progress = F)%>%
+    as_tibble()%>%
+    pivot_longer(cols = 2:7, 
+               names_to="bands", 
+               values_to="band_values")%>%
+    add_column(sensor=col_sensor)%>%
+    add_column(land=col_land)
+                 
+}
+
+band_fun_all_values <- function(sensor, landcover) {
+  col_sensor <- deparse(substitute(sensor))
+  col_land <- deparse(substitute(landcover))
+
+  sen_urban<- terra::extract(sensor, landcover, progress = F)%>%
+    as_tibble()%>%
+    pivot_longer(cols = 2:7, 
+               names_to="bands", 
+               values_to="band_values")
+                 
+}
+
+# extract bands
+sen_bare <- band_fun(sentinel, bare_earth)
+sen_grass<- band_fun(sentinel, grass) 
+sen_forest<- band_fun(sentinel, forest) 
+sen_high_urban <- band_fun(sentinel, high_urban) 
+
+lsat_urban<- band_fun(landsat, urban)
+lsat_bare<- band_fun(landsat, bare_earth)
+lsat_grass<- band_fun(landsat, grass)
+lsat_forest<- band_fun(landsat, forest)
+lsat_high_urban <- band_fun(sentinel, high_urban) 
+
+# put into a tibble
+sen_lsat <- bind_rows(sen_urban, sen_bare, sen_grass,
+                      sen_forest, sen_high_urban,
+                      lsat_urban, lsat_bare, lsat_grass,
+                      lsat_forest, lsat_high_urban)
+# get the mean (and standard deviation) values for each band per sensor and land cover type
+means<- sen_lsat%>%
+  group_by(bands, sensor, land)%>%
+  summarise(Mean=mean(band_values), Std=sd(band_values))
+```
+---
+# Ploting
+```{r}
+# spectral profiles, first for Sentinel
+p1 <- means %>%
+  filter(sensor=="sentinel") %>%
+  ggplot(., aes(x = bands, y = Mean,
+                col=land))+
+  geom_point()+
+  geom_line(aes(group = land)) +
+  geom_errorbar(aes(ymin = (Mean-Std), ymax = (Mean+Std), width = 0.2))
+p1
+
+# We can also look at a density plot (historgram for each land cover)
+p2 <- sen_lsat %>%
+  filter(sensor=="sentinel") %>%
+ggplot(., aes(x=band_values, group=land, fill=land)) + 
+  geom_density(alpha = 0.6)+
+#Add a mean vertical line
+  geom_vline(data = . %>% group_by(land) %>% summarise(group_mean = mean(band_values)),
+             aes(xintercept=group_mean, color = land), linetype="dashed", size=1)
+
+p2
+
+# save
+ggsave("spectral_reflectance.pdf", width = 20, height = 20, units = "cm")
+
+# t-test
+t1<- sen_lsat %>%
+           filter(sensor=="sentinel" & land =="urban")%>%
+           select(band_values)%>%
+           pull()
+
+t2<- sen_lsat %>%
+           filter(sensor=="landsat" & land =="urban")%>%
+           select(band_values)%>%
+           pull()
+
+t.test(t1, t2)
+```
+
+
+---
+# Spatial signature on vegetation classification
+
+
+---
+# Spatial signature on 
+
+---
+# R
+
+---
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
