@@ -3,3 +3,7 @@
 .Rproj.user
 .RData
 .Rhistory
+# don’t need to check _site or _book directory into version control 
+# (because it makes for very messy diffs).
+/.quarto/
+/_site/
