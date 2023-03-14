@@ -64,8 +64,9 @@ You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rs
 library(sf)
 library(terra)
 library(raster)
-library(dplyer)
+#library(dplyer)
 library(magrittr)
+library(tidyverse)
 
 bare_earth <- st_read("prac_1/Data/Bare_earth_Polygon.shp")
 grass <- st_read("prac_1/Data/Grass_Polygon.shp")
@@ -92,7 +93,7 @@ landsat <- as(landsat, "Raster")
 ```
 
 # do this straight from loading the data with the pipe
-```{r}
+```{r eval=FALSE}
 bare_earth <- st_read("prac_1/Data/Bare_earth_Polygon.shp") %>%
   vect()
 grass <- st_read("prac_1/Data/Grass_Polygon.shp")%>%
@@ -108,7 +109,7 @@ high_urban <- st_read("prac_1/Data/High_urban_Polygon.shp")%>%
 ---
 # Data wrangling
 ## messing with crs and projection
-```{r}
+```{r eval=FALSE}
 crs(landsat)
 crs(sentinel)
 
@@ -116,7 +117,7 @@ crs(sentinel)
 landsat <- project(landsat, sentinel)
 ```
 ## get the mean and standard deviation
-```{r}
+```{r eval=FALSE}
 band_fun <- function(sensor, landcover) { # sensor e.g. sentinel; landcover e.g. urban
   col_sensor <- deparse(substitute(sensor))
   col_land <- deparse(substitute(landcover))
@@ -167,7 +168,7 @@ means<- sen_lsat%>%
 ```
 ---
 # Ploting
-```{r}
+```{r eval=FALSE}
 # spectral profiles, first for Sentinel
 p1 <- means %>%
   filter(sensor=="sentinel") %>%

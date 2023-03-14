@@ -1,6 +1,7 @@
 # Week 1
 
 ## Summary
+This section summarises the lecture content and a graph of feature space derived from practical in SNAP operations.
 
 Passive data: Energy usually in eletcromagnetic form e.g., human eyes
 
@@ -14,6 +15,8 @@ dual
 
 quad
 
+
+
 ### remotely-sensed data usually comes in
 
 Raster: file
@@ -22,7 +25,7 @@ types: BIL, BSQM BIP, GeoTIFF
 
 ### Four resolutions:
 
-Spatial: ranging from10 cm to several kilos
+Spatial: ranging from 10 cm to several kilos
 
 Spectral: How many different spectral bands are there? (Every feature on earth has a unique spectral signature)
 
@@ -36,11 +39,16 @@ Temporal resolution: ussualy inversly relate3 to pixel size (spatial)
 
 MODIS
 
-## Application
+### Practical 
+![Spectral Feature Space, Vegetation On Bands B04 and B08](images/spectral_feature_space_vege_B04_B08.png){#fig-vege}
+
+## Application:
+
+"Spectral Feature Space, Vegetation On Bands B04 and B08"
 
 One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see @fig-vege, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.
 
-![Spectral Feature Space, Vegetation On Bands B04 and B08](images/spectral_feature_space_vege_B04_B08.png "Spectral Feature Space, Vegetation On Bands B04 and B08"){#fig-vege}{fig-align="center"}
+
 
 Spatial signatures can also be used to monitor the health of vegetation by identifying patterns of quavariation in spectral reflectance that are indicative of stress or disease. For example, vegetation that is stressed or diseased may have a different spectral reflectance signature than healthy vegetation, which can be identified using spatial signatures.
 
@@ -50,4 +58,8 @@ Overall, spatial signatures are a powerful tool for vegetation monitoring, as th
 
 ## Reflection
 
-One of the challenges I encountered is to navigate the complexties of the interface of SNAP and QGIS. It becomes clear to me that yes code can be difficult, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, dfinding which function under falling which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation.
+just state what interest you and why, as well as the application. Application: Context matters. Why useful? What had it assisted achieving. Mind map of concepts, to show understanding of data and workflow
+
+One of the challenges I encountered is to navigate the complexities of the interface of SNAP and QGIS. It becomes clear to me that yes implementing several functions in code can be challenging, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, finding which function falling under which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation.
+
+When doing the operation in R on a script level, it becomes confusing where I put the data

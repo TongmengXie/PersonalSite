@@ -1,0 +1,120 @@
+# Week 5 - An introduction to Google Earth Engine
+
+This week introduces **Google Earth Engine (GEE)**, a geospatial processing service that allows for planetary scale analysis of massive datasets in seconds.
+
+Basics:
+
+-   The set up of GEE, its terms and jargon, and client vs server side operations, see Table 1
+-   How GEE uses Javascript and how mapping functions are used instead of loops
+-   The concept of scale in GEE, which refers to both the volume of analysis and pixel resolution
+-   How GEE aggregates the image to fit a 256x256 grid.
+
+Objects and methods in GEE are introduced:
+
+-   E.g. geometries, features, feature collections, and
+-   Various data reduction techniques (e.g., reducing images, reducing images by region(s), reducing images by neighborhood).
+
+Also, the types of analyses that can be performed in GEE are briefly covered.
+
+## Summary
+
+### GEE Basics
+
+JavaScript, where objects are dictionaries:
+
+-   We have ee (EarthEngine), a powerful package. Anything starting with ee (proxy objects) are stored on the server.
+-   Problems:
+    -   We don't iterate the data on the server; instead, we map (using a mapping function) them into objects (variables) so we only load them once.
+    -   There are also some sort of server-wide functions.
+    -   Avoid using loops in GEE on the server-side, as mapping can automatically detect the number of loops needed.
+
+Scale:
+
+-   Pixel resolution, set by the output.
+-   GEE does resampling, aggregating your input to a 256\*256, mainly down-sampling.
+
+Table 1: Terms and Jargon Related to Google Earth Engine
+
+| Term                | Definition                                                                |
+|------------------------------------|------------------------------------|
+| Google Earth Engine | A geospatial processing service that allows geospatial analysis at scale. |
+| Image               | Refers to raster data in GEE and has bands.                               |
+| Feature             | Refers to vector data in GEE and has geometry and attributes.             |
+| ImageCollection     | A stack of images in GEE.                                                 |
+| FeatureCollection   | A stack of features (lots of polygons) in GEE.                            |
+| Proxy objects       | GEE objects that are stored on the server and have no data in the script. |
+
+Table 2: Differences between Client and Server Side in Google Earth Engine
+
+| Aspect               | Definition                                                                                                                                                       |
+|------------------------------------|------------------------------------|
+| Client Side          | Refers to the browser side of GEE.                                                                                                                               |
+| Server Side          | Refers to the side of GEE where data is stored.                                                                                                                  |
+| Earth Engine Objects | Objects in GEE starting with "ee".                                                                                                                               |
+| Looping              | Looping is not recommended for objects on the server side.                                                                                                       |
+| Mapping              | Instead of loops, mapping is used in GEE to apply a function to everything on the server.                                                                        |
+| Scale                | Scale refers to pixel resolution in GEE. The scale is set by the output, not the input, and Earth Engine selects the pyramid with the closest scale to analysis. |
+
+### GEE Objects
+
+Objects:
+
+-   Images (Rasters), geometry, ImageCol, features, featureCol, joins, arrays, chart.
+
+Table 3: Geometry Types and Features
+
+| Type of Geometry | Description                                                                                                      |
+|------------------------------------|------------------------------------|
+| Point            | A single location represented by its longitude and latitude                                                      |
+| Line             | A series of connected points representing a linear feature                                                       |
+| Polygon          | A closed shape with three or more sides, represented by a series of connected lines forming a closed loop        |
+| MultiPolygon     | A collection of polygons, where each polygon is represented as a list of coordinate tuples defining its vertices |
+| MultiGeometry    | A collection of different types of geometries                                                                    |
+
+### GEE Processes and Applications/Outputs
+
+GEE applications:
+
+-   Reducing types.
+-   Different to filterBounds() that filters the area of interest, to do zonal statistics, we have reduceRegion(), where regions are subcategories of the area of interest.
+-   Also, we have reduceNeighborhood(), which is a bit like a kind of image enhancement.
+
+Linear Regressions:
+
+-   In a scenario of visualising precipitation, we can do a multivariate multiple linear regression where both independent variables (time) and dependent (precip, temp) variables are multiple.
+-   Something about constant bound.
+
+Joins:
+
+-   In GEE, everything, e.g. within a buffer, intersect, etc. needs the mediation of Join (apply()).
+-   To perform joins, we need to put data into Filter().
+
+Classifiers:
+
+-   Per-pixel
+-   sub-pixel
+
+Table 4: GEE Processes and Applications/Outputs
+
+| Process             | Description                                                                                                                                     |
+|------------------------------------|------------------------------------|
+| Geometry operations | Spatial operations such as union, intersection, buffer, and distance analysis                                                                   |
+| Joins               | Combining two feature collections based on a shared attribute value                                                                             |
+| Zonal statistics    | Computing statistics for a region or set of regions such as mean, median, and mode of pixel values within a feature or a collection of features |
+| Filtering           | Filtering of images or specific values based on criteria such as date range, location, and attribute value                                      |
+| Machine learning    | Using statistical and machine learning algorithms for classification, clustering, and prediction tasks                                          |
+| Deep learning       | A subset of machine, using Deep Neural Networks                                                                                                 |
+
+### Limitations
+
+No support for phase data, needs SNAP.
+
+## Application
+
+## Reflection
+
+GEE-using skills can be a valuable asset for a spatial data scientist, as it allows for complex spatial analysis at scale. Traditional GIS software is eclipsed when it comes to both efficiency and scale.
+
+GEE's unique and efficient way of conducting analysis flows is interesting, such as the introduction of concepts like client vs server-side operations and data reduction techniques. These was required by GEE's feature of carrying out analyses on massive datasets [@gorelick_google_2017]. For those interested in BigData technology, the strategies (server/client split, no looping on server, etc.) applied by Google here is a very resourceful one and worth learning. The user end also has to learn to adopt good practices for reducing data range, which has been simplified to a series of reduction and filtering functions, e.g. `ImageCollection.filterDate(), image.reduceNeighborhood()`[@google_reducer_2023].
+
+GEE's combination with machine learning is also promising in regard of automating complex analysis tasks, as Machine Learning APIs offered by GEE support Supervised and Unsupervised Classification, and Regression [@google_machine_2023]. According to @saad_el_imanni_multispectral_2023, as a subtask of intelligent agriculture, weeds detection task sees an impressive performance (overall accuracy reached 96.87%) when GEE and Machine learning are combined.

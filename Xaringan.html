@@ -25,13 +25,12 @@ class: center, middle, inverse, title-slide
 ### CASA, UCL
 ]
 .date[
-### January 19th, 2023 (updated: 2023-01-19)
+### January 19th, 2023 (updated: 2023-01-25)
 ]
 
 ---
 
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
 
 
@@ -75,9 +74,164 @@ You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rs
 # Using Xaringan
 .pull-right
 
+---
+# Data loading
+
+```r
+library(sf)
+library(terra)
+library(raster)
+#library(dplyer)
+library(magrittr)
+library(tidyverse)
+
+bare_earth &lt;- st_read("prac_1/Data/Bare_earth_Polygon.shp")
+grass &lt;- st_read("prac_1/Data/Grass_Polygon.shp")
+forest &lt;- st_read("prac_1/Data/Forest_Polygon.shp")
+urban &lt;- st_read("prac_1/Data/Low_urban_Polygon.shp")
+high_urban &lt;- st_read("prac_1/Data/High_urban_Polygon.shp")
+
+#Landsat equivalent
+bands &lt;- c("1","2", "3", "4", "5", "6", "7")
+
+sentinel &lt;- rast("prac_1/Data/S2A_LSAT_msk.tif")
+
+names(sentinel) &lt;- bands
+  
+landsat&lt;-rast("prac_1/Data/LSAT_msk.tif")
+
+names(landsat) &lt;- bands
+
+# make a SpatVector
+urban &lt;- terra::vect(urban)
+
+# landsat to Raster
+landsat &lt;- as(landsat, "Raster")
+```
+
+# do this straight from loading the data with the pipe
+
+```r
+bare_earth &lt;- st_read("prac_1/Data/Bare_earth_Polygon.shp") %&gt;%
+  vect()
+grass &lt;- st_read("prac_1/Data/Grass_Polygon.shp")%&gt;%
+    vect()
+forest &lt;- st_read("prac_1/Data/Forest_Polygon.shp")%&gt;%
+    vect()
+urban &lt;- st_read("prac_1/Data/Low_urban_Polygon.shp")%&gt;%
+    vect()
+high_urban &lt;- st_read("prac_1/Data/High_urban_Polygon.shp")%&gt;%
+    vect()
+```
+
+---
+# Data wrangling
+## messing with crs and projection
+
+```r
+crs(landsat)
+crs(sentinel)
+
+# reproject landsat
+landsat &lt;- project(landsat, sentinel)
+```
+## get the mean and standard deviation
+
+```r
+band_fun &lt;- function(sensor, landcover) { # sensor e.g. sentinel; landcover e.g. urban
+  col_sensor &lt;- deparse(substitute(sensor))
+  col_land &lt;- deparse(substitute(landcover))
+
+  sen_urban&lt;- terra::extract(sensor, landcover, progress = F)%&gt;%
+    as_tibble()%&gt;%
+    pivot_longer(cols = 2:7, 
+               names_to="bands", 
+               values_to="band_values")%&gt;%
+    add_column(sensor=col_sensor)%&gt;%
+    add_column(land=col_land)
+                 
+}
+
+band_fun_all_values &lt;- function(sensor, landcover) {
+  col_sensor &lt;- deparse(substitute(sensor))
+  col_land &lt;- deparse(substitute(landcover))
+
+  sen_urban&lt;- terra::extract(sensor, landcover, progress = F)%&gt;%
+    as_tibble()%&gt;%
+    pivot_longer(cols = 2:7, 
+               names_to="bands", 
+               values_to="band_values")
+                 
+}
+
+# extract bands
+sen_bare &lt;- band_fun(sentinel, bare_earth)
+sen_grass&lt;- band_fun(sentinel, grass) 
+sen_forest&lt;- band_fun(sentinel, forest) 
+sen_high_urban &lt;- band_fun(sentinel, high_urban) 
+
+lsat_urban&lt;- band_fun(landsat, urban)
+lsat_bare&lt;- band_fun(landsat, bare_earth)
+lsat_grass&lt;- band_fun(landsat, grass)
+lsat_forest&lt;- band_fun(landsat, forest)
+lsat_high_urban &lt;- band_fun(sentinel, high_urban) 
+
+# put into a tibble
+sen_lsat &lt;- bind_rows(sen_urban, sen_bare, sen_grass,
+                      sen_forest, sen_high_urban,
+                      lsat_urban, lsat_bare, lsat_grass,
+                      lsat_forest, lsat_high_urban)
+# get the mean (and standard deviation) values for each band per sensor and land cover type
+means&lt;- sen_lsat%&gt;%
+  group_by(bands, sensor, land)%&gt;%
+  summarise(Mean=mean(band_values), Std=sd(band_values))
+```
+---
+# Ploting
+
+```r
+# spectral profiles, first for Sentinel
+p1 &lt;- means %&gt;%
+  filter(sensor=="sentinel") %&gt;%
+  ggplot(., aes(x = bands, y = Mean,
+                col=land))+
+  geom_point()+
+  geom_line(aes(group = land)) +
+  geom_errorbar(aes(ymin = (Mean-Std), ymax = (Mean+Std), width = 0.2))
+p1
+
+# We can also look at a density plot (historgram for each land cover)
+p2 &lt;- sen_lsat %&gt;%
+  filter(sensor=="sentinel") %&gt;%
+ggplot(., aes(x=band_values, group=land, fill=land)) + 
+  geom_density(alpha = 0.6)+
+#Add a mean vertical line
+  geom_vline(data = . %&gt;% group_by(land) %&gt;% summarise(group_mean = mean(band_values)),
+             aes(xintercept=group_mean, color = land), linetype="dashed", size=1)
+
+p2
+
+# save
+ggsave("spectral_reflectance.pdf", width = 20, height = 20, units = "cm")
+
+# t-test
+t1&lt;- sen_lsat %&gt;%
+           filter(sensor=="sentinel" &amp; land =="urban")%&gt;%
+           select(band_values)%&gt;%
+           pull()
+
+t2&lt;- sen_lsat %&gt;%
+           filter(sensor=="landsat" &amp; land =="urban")%&gt;%
+           select(band_values)%&gt;%
+           pull()
+
+t.test(t1, t2)
+```
+
 
 ---
 # Spatial signature on vegetation classification
+
 
 ---
 # Spatial signature on 

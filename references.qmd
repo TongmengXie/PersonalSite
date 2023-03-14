@@ -1,3 +1,8 @@
+---
+bibliography: references.bib
+csl: harvard-cite-them-right.csl
+---
+
 # References {.unnumbered}
 
 ::: {#refs}

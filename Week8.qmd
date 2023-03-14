@@ -1,0 +1,154 @@
+# Week8 - T**emperature and Policy**
+
+The "policy" section occupies two weeks, mainly trying to introduce how to fit EO data workflow into current policies. To do this, you have to identify the gaps, e.g., that between the overarching global policies, metropolitan plans and local plans. Or, the gap within policies like missing locations in the Singapore one.
+
+## Summary
+
+### Urban Heating Islands (UHI) problem and plans
+
+#### Causes
+
+Urban areas have comparatively higher atmospheric and surface temperatures than surrounding rural areas, mainly due to
+
+1.  More dark surfaces that retain heat
+2.  Less vegetation that cools the environment
+
+Also, there are other contributors to the heat:
+
+| Contributor            | Correlation with UHI phenomenon |
+|------------------------|---------------------------------|
+| Sky View Factor (SVF)  | Positive                        |
+| Air speed              | Negative                        |
+| Heavy cloud cover      | Positive                        |
+| Cyclic solar radiation | Positive                        |
+| Building material type | Varies                          |
+| Anthropogenic energy   | Positive                        |
+
+#### Cost
+
+The cost of the Urban Heat Island can be divided into social, environmental, and economic costs.
+
+| Type of Cost        | Examples                                                        |
+|---------------------|-----------------------------------------------------------------|
+| Social Costs        | Population-adjusted excess mortality rates, heat-related deaths |
+| Environmental Costs | Increase in fossil fuel usage                                   |
+| Economic Costs      | Loss of Gross Domestic Product (GDP)                            |
+
+For instance, under a low greenhouse gas scenario, the percent GDP lost from UHI is estimated to be 0.71% in 2050.
+
+#### Plans
+
+##### Global
+
+##### Local
+
+| City      | Initiatives                                 | Technology                                                               |
+|-----------|---------------------------------------------|--------------------------------------------------------------------------|
+| Singapore | Green buildings                             | Urban greenery                                                           |
+| Medellin  | Green Corridors                             | Urban greenery                                                           |
+| Sydney    | Turn Down the Heat Strategy and Action Plan | Reflective roofs/pavements/sidewalks, Cool roads trial in Western Sydney |
+
+## Application
+
+@maclachlan_sustainable_2021 The document outlines a sub-city urban planning modeling approach using open-source tools to measure and monitor localised urban heat island (UHI) mitigation targets. The methodology involves comparing temperature dynamics of low- and high-density census areas using Earth observation data and determining optimal placement of greening elements in proposed plans using a data-driven model. The document concludes that this approach can be universally integrated into urban planning regulation frameworks to mitigate the localized UHI effect and ensure long-term city sustainability. Also it discusses the impact of low population density on housing in Perth, Australia, and the resulting need for strategic land zonation and sustainability targets. \#### Why Data-driven approach
+
+### Policy limitations
+
+-   lacking **specificities** for combating adverse temperature effects at the local level (**sub-city**), therefore not planning practicality
+-   no **consistency** in planning implementation **methodologies** or steps for **assessing** progress toward UHI reduction targets
+-   lackage of empirical **evidence for optimizing** UHI mitigation strategies
+
+### Data to drive the new approach
+
+-   Earth Observation (**EO**) data can be processed to identify (un)sustainable urban development through aerial assessments of **land cover change**
+-   temperature
+-   elevation
+
+### Advantages for the Data-driven approach
+
+-   EO data can produce **consistent information** necessary for restricting unsustainable development
+-   **monitor** UHI effects based on associated land-temperature dynamics
+-   Assessment at finer spatial scales (e.g., block subdivisions)
+
+## Methodology
+
+------------------------------------------------------------------------
+
+### Temperature Modeling
+
+------------------------------------------------------------------------
+
+-   Modeled temperature every 3 hours using SOLWEIG model between 2008 and 2010
+
+------------------------------------------------------------------------
+
+-   Inputs generated from meteorological data, land cover, building DSM, ground DTM, and vegetation canopy REM in QGIS
+
+------------------------------------------------------------------------
+
+-   SVF computed from vegetation canopy REM, building DSM, and ground DTM using UMEP plugin
+
+------------------------------------------------------------------------
+
+-   Building wall heights and aspect generated from DSM and DTM using UMEP plugin
+
+------------------------------------------------------------------------
+
+### Data-Driven Tree Placement
+
+------------------------------------------------------------------------
+
+-   Site selected for modeling temperature in the City of Fremantle
+
+------------------------------------------------------------------------
+
+-   Three scenarios processed: current urban footprint, proposed changes, and proposed redevelopment with no trees
+
+------------------------------------------------------------------------
+
+-   Highest temperatures identified and used to redesign tree placement
+
+------------------------------------------------------------------------
+
+-   15 trees distributed according to original design aspects
+
+------------------------------------------------------------------------
+
+-   Updated vegetation canopy REM reflected new tree locations
+
+------------------------------------------------------------------------
+
+-   Analysis re-run to compare temperature across redevelopment site
+
+------------------------------------------------------------------------
+
+-   Modeled all scenarios accounting for influence of neighboring landscape features
+
+------------------------------------------------------------------------
+
+## Result
+
+Table 1: Results of assessments of urban design factors on UHI effect in Perth.
+
+| Factors assessed | Effect on UHI effect                 |
+|------------------|--------------------------------------|
+| Vegetation cover | Negative correlation with UHI effect |
+| Canopy cover     | Negative correlation with UHI effect |
+| Building density | Positive correlation with UHI effect |
+| Building height  | Positive correlation with UHI effect |
+| Albedo           | Negative correlation with UHI effect |
+| Land use         | Negative correlation with UHI effect |
+| Urban sprawl     | Positive correlation with UHI effect |
+
+Table 2: Total population and population density per 0.1 km2 between 2011 and 2016 for Subiaco and Currambine SA1s as defined by the ABS.
+
+| **SA1**    | **Total Population (2011)** | **Total Population (2016)** | **Population Density per 0.1 km2 (2011)** | **Population Density per 0.1 km2 (2016)** |
+|------------|-----------------------------|-----------------------------|-------------------------------------------|-------------------------------------------|
+| Subiaco    | N/A                         | N/A                         | 325                                       | 712                                       |
+| Currambine | N/A                         | N/A                         | 310                                       | 324                                       |
+
+## Reflection
+
+-   Case study: Superblocks, Barcelona
+
+Basically about pedestrian economy. Though there have been many retail modes like KFC and other American fast food, the experience from Europe tells that economy vitality can have a boost with pedestrian-dominated areas. See Barcelona

@@ -1,0 +1,107 @@
+# Week7 - Classification and Accuracy
+
+This week's learning diary continues that from Week 6 in addressing the big problem in Remote Sensingm, i.e. classification within Earth Observation data. Also, accuracy metrics are discussed.
+
+## Summary
+
+The summary of lecture content as well as practical outcomes. See @fig-mindmap for an overview. If certain words are intelligible due to resolution issues, hopefully you can right click and "open in new page" to get a better view since this is a .SVG file. ![Classification in Remote Sensing](images/MindMap.png){#fig-mindmap}
+
+### Data
+
+-   Surface Reflectance (SR)
+
+-   Top of Atmosphere (TOA)
+
+A mixed way of doing urban recognition
+
+### OBIA (object-based image analysis)
+
+Instead of a per-pixel approach, we adopt an object-based image analysis (OBIA), where you have to manually create objects.
+
+SLIC (***Simple Linear Iterative Clustering***) (2012): No ground truth
+
+Descent, similarity (Homogeneity)
+
+### Sub-pixel analysis
+
+SMA (Spectral maximum analysis), SPC, LSU
+
+Through a series of manipulation of material, we acquire a list describing the broken-down land cover of that pixel
+
+#### Pixel purity
+
+**Endmember**: an important concept in spectral mixture analysis
+
+In remote sensing, an end member refers to a pure or nearly pure material or component that is present within a mixed pixel.
+
+In spectral mixture analysis, the spectral signature of a mixed pixel is modelled as a linear combination of the spectral signatures of the constituent endmembers, with each end member being assigned a proportion or fraction that represents its contribution to the overall reflectance or radiance of the mixed pixel.
+
+### Accuracy assessment
+
+-   Producer accuracy: Recall
+
+-   User's accuracy: Precision
+
+-   Overall accuracy: not equivalent to F1
+
+-   Kappa coefficient: \[0, 1\], measures how good the classification is compared to random distribution e.g. Poisson. Different interpretations of this metric, problematic
+
+Make a tradeoff between Producer accuracy and User accuracy, by shifting the decision boundary.
+
+-   F1: issue: TN not considered; Recall and precision are not equally important yet equally weighted in F1
+
+-   Receiver Operating Characteristic Curve: True positive rate and false positive rate are all good. We want to maximise the area under the curve in a True positive rate vs false positive rate plot.
+
+### Workflow
+
+-   (Potentially use unsupervised classification to understand your data
+
+-   Class definition (Potentially use unsupervised classification)
+
+-   Preprocessing
+
+-   Training
+
+-   Pixel Assignment
+
+-   Accuracy assessment
+
+Pseudo-invariant features to be trained on to make your model robust to time-space changes
+
+Pseudo-invariant features are often used as reference targets or calibration sites in remote sensing to account for changes in sensor or atmospheric conditions and to reduce the effects of noise and calibration drift on image data. These features have relatively constant spectral properties over time and space, and can therefore serve as a stable reference for monitoring changes in other features or materials within an image or scene.
+
+A flow chart can be seen in @fig-flowchart :
+
+![Classification Workflow, courtesy: myself](images/FlowChart.png){#fig-flowchart}
+
+### A "Sneak preview" (Analogous to Data Leakage in ML)
+
+Waldo Tobler's first law of geography indicates that if training and testing are spatially close, the training can cause the problem of a sneak preview.
+
+#### Spatial Cross Validation
+
+Similar to cross-validation but adds clustering to folds.
+
+In spatial cross-validation, the data are split into spatially contiguous blocks or subsets, rather than randomly shuffled subsets as in traditional cross-validation. This is done to ensure that the model is tested on data that are spatially distinct from the data used to train the model and to account for spatial autocorrelation and other spatial dependencies in the data.
+
+### Approaches to deal with Spatial Autocorrelation
+
+Object-based image classification
+
+Moran's I (Spatial Cross Validation)
+
+## Application - to be completed
+
+In remote sensing, it is often challenging to accurately classify mixed pixels, which contain a combination of different materials or components. Endmembers refer to pure or nearly pure materials that are present within a mixed pixel. By modelling the spectral signature of a mixed pixel as a linear combination of the spectral signatures of the constituent endmembers, we can determine the contribution of each endmember to the overall reflectance or radiance of the mixed pixel.
+
+This approach can be very useful in urban recognition, where it is essential to accurately classify the different land covers present within a pixel. Furthermore, it can also help us to understand the composition of the land cover in a given area, which can have important implications for environmental monitoring and management. This approach has been applied in various studies to estimate urban land cover, such as the work by Zhang et al. (2018) that utilised endmember extraction to detect urban impervious surfaces.
+
+## Reflection
+
+The workflow of Classification of Surface Reflectance and Top of Atmosphere data intrigues me, as it differs from, yet shares certain features with traditional computer vision tasks like image classification and object detection (in regards of treating pixels as objects/units). Alternatively, Surface Reflectance Classification can be treated as a downstream task for both aforementioned ML tasks, due to its uniqueness in dealing with high-precision satellite data and unseparability (worth debating) from EO processing workflow (calibration etc.). Also, uncertainty of classification genres derived from unsupervised labelling can also be an issue.
+
+Optionally, in supplementation to manual labelling, automated labelling workflow (e.g. roboflow) can be introduced to curtail repeatitive works in image labelling[@nair2018automated]. However, manual labelling is not replaceable at current time [@robison2018future] and the pinning down of ground truth seems to always need human intervention in addition to machine automation.
+
+The introduction of production accuracy and user accuracy is also interesting, as these terminologies are designed presupposing a customer/producer split, dwarfing precision-recall in readability. The treadeoff to be made between the two is crucial, and this is problematically handled by introducing F1 score with two competitive components, and improved by introducing Receiver Operating Characteristic Curve (ROCC) with two "good" indicators, true positive rate and false positive rate.
+
+# 
