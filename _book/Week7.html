@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Initial - 5&nbsp; Week7 - Classification and Accuracy</title>
+<title>Learning Diary - CASA0023 - 7&nbsp; Week7 - Classification and Accuracy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,22 +50,24 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./Week8.html" rel="next">
-<link href="./Week3.html" rel="prev">
+<link href="./Week6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -81,15 +83,49 @@ div.csl-indent {
 }</script>
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./general_img/satellite-clipart-icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Learning Diary - CASA0023</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -97,14 +133,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Initial</a> 
-    </div>
-      </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -114,37 +145,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">— #jupyter: python3 #—</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./Week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1</span></a>
+  <a href="./Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2. Week 2 - Portfolio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3 - Correction</span></a>
+  <a href="./Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></a>
+  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy applications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></a>
+  <a href="./Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5 - An introduction to Google Earth Engine</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week6.html</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week7.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -161,28 +207,28 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">5.1</span>  Summary</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">7.1</span>  Summary</a>
   <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="toc-section-number">5.1.1</span>  Data</a></li>
-  <li><a href="#obia-object-based-image-analysis" id="toc-obia-object-based-image-analysis" class="nav-link" data-scroll-target="#obia-object-based-image-analysis"><span class="toc-section-number">5.1.2</span>  OBIA (object-based image analysis)</a></li>
-  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="toc-section-number">5.1.3</span>  Sub-pixel analysis</a></li>
-  <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="toc-section-number">5.1.4</span>  Accuracy assessment</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">5.1.5</span>  Workflow</a></li>
-  <li><a href="#a-sneak-preview-analogous-to-data-leakage-in-ml" id="toc-a-sneak-preview-analogous-to-data-leakage-in-ml" class="nav-link" data-scroll-target="#a-sneak-preview-analogous-to-data-leakage-in-ml"><span class="toc-section-number">5.1.6</span>  A “Sneak preview” (Analogous to Data Leakage in ML)</a></li>
-  <li><a href="#approaches-to-deal-with-spatial-autocorrelation" id="toc-approaches-to-deal-with-spatial-autocorrelation" class="nav-link" data-scroll-target="#approaches-to-deal-with-spatial-autocorrelation"><span class="toc-section-number">5.1.7</span>  Approaches to deal with Spatial Autocorrelation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="toc-section-number">7.1.1</span>  Data</a></li>
+  <li><a href="#obia-object-based-image-analysis" id="toc-obia-object-based-image-analysis" class="nav-link" data-scroll-target="#obia-object-based-image-analysis"><span class="toc-section-number">7.1.2</span>  OBIA (object-based image analysis)</a></li>
+  <li><a href="#sub-pixel-analysis" id="toc-sub-pixel-analysis" class="nav-link" data-scroll-target="#sub-pixel-analysis"><span class="toc-section-number">7.1.3</span>  Sub-pixel analysis</a></li>
+  <li><a href="#accuracy-assessment" id="toc-accuracy-assessment" class="nav-link" data-scroll-target="#accuracy-assessment"><span class="toc-section-number">7.1.4</span>  Accuracy assessment</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="toc-section-number">7.1.5</span>  Workflow</a></li>
+  <li><a href="#a-sneak-preview-analogous-to-data-leakage-in-ml" id="toc-a-sneak-preview-analogous-to-data-leakage-in-ml" class="nav-link" data-scroll-target="#a-sneak-preview-analogous-to-data-leakage-in-ml"><span class="toc-section-number">7.1.6</span>  A “Sneak preview” (Analogous to Data Leakage in ML)</a></li>
+  <li><a href="#approaches-to-deal-with-spatial-autocorrelation" id="toc-approaches-to-deal-with-spatial-autocorrelation" class="nav-link" data-scroll-target="#approaches-to-deal-with-spatial-autocorrelation"><span class="toc-section-number">7.1.7</span>  Approaches to deal with Spatial Autocorrelation</a></li>
   </ul></li>
-  <li><a href="#application---to-be-completed" id="toc-application---to-be-completed" class="nav-link" data-scroll-target="#application---to-be-completed"><span class="toc-section-number">5.2</span>  Application - to be completed</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">5.3</span>  Reflection</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">6</span>  </a></li>
+  <li><a href="#application---to-be-completed" id="toc-application---to-be-completed" class="nav-link" data-scroll-target="#application---to-be-completed"><span class="toc-section-number">7.2</span>  Application - to be completed</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">7.3</span>  Reflection</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">8</span>  </a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/Week7.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></h1>
 </div>
 
 
@@ -197,36 +243,36 @@ div.csl-indent {
 </header>
 
 <p>This week’s learning diary continues that from Week 6 in addressing the big problem in Remote Sensingm, i.e.&nbsp;classification within Earth Observation data. Also, accuracy metrics are discussed.</p>
-<section id="summary" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
+<section id="summary" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
 <p>The summary of lecture content as well as practical outcomes. See <span class="quarto-unresolved-ref">?fig-mindmap</span> for an overview. If certain words are intelligible due to resolution issues, hopefully you can right click and “open in new page” to get a better view since this is a .SVG file. <img src="images/MindMap.png" id="fig-mindmap" class="img-fluid" alt="Classification in Remote Sensing"></p>
-<section id="data" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="data"><span class="header-section-number">5.1.1</span> Data</h3>
+<section id="data" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="data"><span class="header-section-number">7.1.1</span> Data</h3>
 <ul>
 <li><p>Surface Reflectance (SR)</p></li>
 <li><p>Top of Atmosphere (TOA)</p></li>
 </ul>
 <p>A mixed way of doing urban recognition</p>
 </section>
-<section id="obia-object-based-image-analysis" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="obia-object-based-image-analysis"><span class="header-section-number">5.1.2</span> OBIA (object-based image analysis)</h3>
+<section id="obia-object-based-image-analysis" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="obia-object-based-image-analysis"><span class="header-section-number">7.1.2</span> OBIA (object-based image analysis)</h3>
 <p>Instead of a per-pixel approach, we adopt an object-based image analysis (OBIA), where you have to manually create objects.</p>
 <p>SLIC (<strong><em>Simple&nbsp;Linear&nbsp;Iterative&nbsp;Clustering</em></strong>) (2012): No ground truth</p>
 <p>Descent, similarity (Homogeneity)</p>
 </section>
-<section id="sub-pixel-analysis" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">5.1.3</span> Sub-pixel analysis</h3>
+<section id="sub-pixel-analysis" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="sub-pixel-analysis"><span class="header-section-number">7.1.3</span> Sub-pixel analysis</h3>
 <p>SMA (Spectral maximum analysis), SPC, LSU</p>
 <p>Through a series of manipulation of material, we acquire a list describing the broken-down land cover of that pixel</p>
-<section id="pixel-purity" class="level4" data-number="5.1.3.1">
-<h4 data-number="5.1.3.1" class="anchored" data-anchor-id="pixel-purity"><span class="header-section-number">5.1.3.1</span> Pixel purity</h4>
+<section id="pixel-purity" class="level4" data-number="7.1.3.1">
+<h4 data-number="7.1.3.1" class="anchored" data-anchor-id="pixel-purity"><span class="header-section-number">7.1.3.1</span> Pixel purity</h4>
 <p><strong>Endmember</strong>: an important concept in spectral mixture analysis</p>
 <p>In remote sensing, an end member refers to a pure or nearly pure material or component that is present within a mixed pixel.</p>
 <p>In spectral mixture analysis, the spectral signature of a mixed pixel is modelled as a linear combination of the spectral signatures of the constituent endmembers, with each end member being assigned a proportion or fraction that represents its contribution to the overall reflectance or radiance of the mixed pixel.</p>
 </section>
 </section>
-<section id="accuracy-assessment" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">5.1.4</span> Accuracy assessment</h3>
+<section id="accuracy-assessment" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="accuracy-assessment"><span class="header-section-number">7.1.4</span> Accuracy assessment</h3>
 <ul>
 <li><p>Producer accuracy: Recall</p></li>
 <li><p>User’s accuracy: Precision</p></li>
@@ -239,8 +285,8 @@ div.csl-indent {
 <li><p>Receiver Operating Characteristic Curve: True positive rate and false positive rate are all good. We want to maximise the area under the curve in a True positive rate vs false positive rate plot.</p></li>
 </ul>
 </section>
-<section id="workflow" class="level3" data-number="5.1.5">
-<h3 data-number="5.1.5" class="anchored" data-anchor-id="workflow"><span class="header-section-number">5.1.5</span> Workflow</h3>
+<section id="workflow" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="workflow"><span class="header-section-number">7.1.5</span> Workflow</h3>
 <ul>
 <li><p>(Potentially use unsupervised classification to understand your data</p></li>
 <li><p>Class definition (Potentially use unsupervised classification)</p></li>
@@ -251,42 +297,42 @@ div.csl-indent {
 </ul>
 <p>Pseudo-invariant features to be trained on to make your model robust to time-space changes</p>
 <p>Pseudo-invariant features are often used as reference targets or calibration sites in remote sensing to account for changes in sensor or atmospheric conditions and to reduce the effects of noise and calibration drift on image data. These features have relatively constant spectral properties over time and space, and can therefore serve as a stable reference for monitoring changes in other features or materials within an image or scene.</p>
-<p>A flow chart can be seen in <a href="#fig-flowchart">Figure&nbsp;<span>5.1</span></a> :</p>
+<p>A flow chart can be seen in <a href="#fig-flowchart">Figure&nbsp;<span>7.1</span></a> :</p>
 <div id="fig-flowchart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/FlowChart.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5.1: Classification Workflow, courtesy: myself</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7.1: Classification Workflow, courtesy: myself</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="a-sneak-preview-analogous-to-data-leakage-in-ml" class="level3" data-number="5.1.6">
-<h3 data-number="5.1.6" class="anchored" data-anchor-id="a-sneak-preview-analogous-to-data-leakage-in-ml"><span class="header-section-number">5.1.6</span> A “Sneak preview” (Analogous to Data Leakage in ML)</h3>
+<section id="a-sneak-preview-analogous-to-data-leakage-in-ml" class="level3" data-number="7.1.6">
+<h3 data-number="7.1.6" class="anchored" data-anchor-id="a-sneak-preview-analogous-to-data-leakage-in-ml"><span class="header-section-number">7.1.6</span> A “Sneak preview” (Analogous to Data Leakage in ML)</h3>
 <p>Waldo Tobler’s first law of geography indicates that if training and testing are spatially close, the training can cause the problem of a sneak preview.</p>
-<section id="spatial-cross-validation" class="level4" data-number="5.1.6.1">
-<h4 data-number="5.1.6.1" class="anchored" data-anchor-id="spatial-cross-validation"><span class="header-section-number">5.1.6.1</span> Spatial Cross Validation</h4>
+<section id="spatial-cross-validation" class="level4" data-number="7.1.6.1">
+<h4 data-number="7.1.6.1" class="anchored" data-anchor-id="spatial-cross-validation"><span class="header-section-number">7.1.6.1</span> Spatial Cross Validation</h4>
 <p>Similar to cross-validation but adds clustering to folds.</p>
 <p>In spatial cross-validation, the data are split into spatially contiguous blocks or subsets, rather than randomly shuffled subsets as in traditional cross-validation. This is done to ensure that the model is tested on data that are spatially distinct from the data used to train the model and to account for spatial autocorrelation and other spatial dependencies in the data.</p>
 </section>
 </section>
-<section id="approaches-to-deal-with-spatial-autocorrelation" class="level3" data-number="5.1.7">
-<h3 data-number="5.1.7" class="anchored" data-anchor-id="approaches-to-deal-with-spatial-autocorrelation"><span class="header-section-number">5.1.7</span> Approaches to deal with Spatial Autocorrelation</h3>
+<section id="approaches-to-deal-with-spatial-autocorrelation" class="level3" data-number="7.1.7">
+<h3 data-number="7.1.7" class="anchored" data-anchor-id="approaches-to-deal-with-spatial-autocorrelation"><span class="header-section-number">7.1.7</span> Approaches to deal with Spatial Autocorrelation</h3>
 <p>Object-based image classification</p>
 <p>Moran’s I (Spatial Cross Validation)</p>
 </section>
 </section>
-<section id="application---to-be-completed" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="application---to-be-completed"><span class="header-section-number">5.2</span> Application - to be completed</h2>
+<section id="application---to-be-completed" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="application---to-be-completed"><span class="header-section-number">7.2</span> Application - to be completed</h2>
 <p>In remote sensing, it is often challenging to accurately classify mixed pixels, which contain a combination of different materials or components. Endmembers refer to pure or nearly pure materials that are present within a mixed pixel. By modelling the spectral signature of a mixed pixel as a linear combination of the spectral signatures of the constituent endmembers, we can determine the contribution of each endmember to the overall reflectance or radiance of the mixed pixel.</p>
 <p>This approach can be very useful in urban recognition, where it is essential to accurately classify the different land covers present within a pixel. Furthermore, it can also help us to understand the composition of the land cover in a given area, which can have important implications for environmental monitoring and management. This approach has been applied in various studies to estimate urban land cover, such as the work by Zhang et al.&nbsp;(2018) that utilised endmember extraction to detect urban impervious surfaces.</p>
 </section>
-<section id="reflection" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
+<section id="reflection" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
 <p>The workflow of Classification of Surface Reflectance and Top of Atmosphere data intrigues me, as it differs from, yet shares certain features with traditional computer vision tasks like image classification and object detection (in regards of treating pixels as objects/units). Alternatively, Surface Reflectance Classification can be treated as a downstream task for both aforementioned ML tasks, due to its uniqueness in dealing with high-precision satellite data and unseparability (worth debating) from EO processing workflow (calibration etc.). Also, uncertainty of classification genres derived from unsupervised labelling can also be an issue.</p>
 <p>Optionally, in supplementation to manual labelling, automated labelling workflow (e.g.&nbsp;roboflow) can be introduced to curtail repeatitive works in image labelling<span class="citation" data-cites="nair2018automated">(<a href="references.html#ref-nair2018automated" role="doc-biblioref">Nair, Paul, and Jacob 2018</a>)</span>. However, manual labelling is not replaceable at current time <span class="citation" data-cites="robison2018future">(<a href="references.html#ref-robison2018future" role="doc-biblioref">Robison 2018</a>)</span> and the pinning down of ground truth seems to always need human intervention in addition to machine automation.</p>
 <p>The introduction of production accuracy and user accuracy is also interesting, as these terminologies are designed presupposing a customer/producer split, dwarfing precision-recall in readability. The treadeoff to be made between the two is crucial, and this is problematically handled by introducing F1 score with two competitive components, and improved by introducing Receiver Operating Characteristic Curve (ROCC) with two “good” indicators, true positive rate and false positive rate.</p>
 </section>
-<section id="section" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> </h1>
+<section id="section" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> </h1>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -320,6 +366,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -400,17 +559,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Week3.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week 3 - Correction</span></span>
+      <a href="./Week6.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week6.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Week8.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Learning Outcome at <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis"><img src="./general_img/casa_logo.jpg" class="img-fluid" width="30"></a></div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://andrewmaclachlan.github.io/CASA0023/intro.html">Module</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/andrewmaclachlan">Lecturer</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE">
+      <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml">
+      <i class="bi bi-kaggle" role="img" aria-label="Quarto Blog RSS">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

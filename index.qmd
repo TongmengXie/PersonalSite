@@ -1,11 +1,7 @@
-#--- #jupyter: python3 #---
-
 # Preface {.unnumbered}
 
-This is a Quarto book.
+# Introduction
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Welcome to my learning diary page of Remote Sensing Cities and Environment (CASA0023)! This diary is made for the content taught at 2022-2023.
 
-```{python}
-1 + 1
-```
+I'm a current Master of Science student at Bartlett Centre for Advanced Spatial Analysis

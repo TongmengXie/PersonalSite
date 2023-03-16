@@ -60,7 +60,7 @@ Image stretch, Band ratioing, Normalised Burn Ratio, Edge enhancement, Filtering
 
 ![](images/image-620878088.png){#fig-mindmap01}
 
-From literature we delve in the nuances of levels on which we perform image fusion to acquire better results. The integration methods vary as the levels vary. \@Better together: Integrating and fusing multispectral and radar satellite imagery to inform biodiversity monitoring, ecological research and conservation science.
+From literature we delve in the nuances of levels on which we perform image fusion to acquire better results. The integration methods vary as the levels vary [@schulte_to_buhne_better_2018].
 
 Satellite remote sensing (SRS) can be derived from Multispectral sensors and radar sensors. 
 
@@ -78,11 +78,13 @@ Satellite remote sensing (SRS) can be derived from Multispectral sensors and rad
 
 (2. and 3. derive entirely new predictors.)
 
-![](images/fusion%20techniques.png){#fig-fusiontech}
+![Credit: @schulte_to_buhne_better_2018](images/fusion%20techniques.png){#fig-fusiontech}
 
 Schematic overview of multispectral-radar SRS data fusion techniques. The parameter of interest can be a categorical variable, like land cover, or a continuous variable, like species richness. In pixel-level fusion, the original pixel values of radar and multispectral imagery are combined to yield new, derived pixel values. Object-based fusion refers to (1) using radar and multispectral imagery is input into an object-based image segmentation algorithm, or (2) segmenting each type of imagery separately before combining them. Finally, decision-level fusion corresponds to the process of quantitatively combining multispectral and radar imagery to derive the parameter of interest (by e.g. combining them in a regression model, or classification algorithm)
 
-### Implementation approach ![](images/Implementation%20approach.png){#fig-impleApproach}
+### Implementation Approaches
+
+![Credit: @schulte_to_buhne_better_2018](images/Implementation%20approach.png){#fig-impleApproach}
 
 ***pixel-level***
 

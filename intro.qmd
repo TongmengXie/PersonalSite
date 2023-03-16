@@ -1,14 +1,5 @@
----
-#---
-#jupyter: python3
----
-
 # Introduction
 
-This is a book created from markdown and executable code.
+Welcome to my learning diary page of Remote Sensing Cities and Environment (CASA0023)! This diary is made for the content taught at 2022-2023.
 
-See @knuth84 for additional discussion of literate programming.
-
-```{python}
-1 + 1
-```
+I'm a current Master of Science student at Bartlett Centre for Advanced Spatial Analysis

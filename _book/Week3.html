@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Initial - 5&nbsp; Week 3 - Remote sensing data</title>
+<title>Learning Diary - CASA0023 - 3&nbsp; Week 3 - Remote sensing data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -56,16 +56,18 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -81,15 +83,49 @@ div.csl-indent {
 }</script>
 
 
+<link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./general_img/satellite-clipart-icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Learning Diary - CASA0023</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -97,14 +133,9 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Initial</a> 
-    </div>
-      </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -114,57 +145,52 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">— #jupyter: python3 #—</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./Week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 1</span></a>
+  <a href="./Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2. Week 2 - Portfolio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week2.html</span></a>
+  <a href="./Week3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week3.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></a>
+  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy applications</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week4 - Policy applications</span></a>
+  <a href="./Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5 - An introduction to Google Earth Engine</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week 5 - An introduction to Google Earth Engine</span></a>
+  <a href="./Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week6.html</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week6.html</span></a>
+  <a href="./Week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></a>
+  <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Week8 - T<strong>emperature and Policy</strong></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,31 +207,31 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">5.1</span>  Summary:</a>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">3.1</span>  Summary:</a>
   <ul class="collapse">
-  <li><a href="#different-sensors" id="toc-different-sensors" class="nav-link" data-scroll-target="#different-sensors"><span class="toc-section-number">5.1.1</span>  Different Sensors</a></li>
-  <li><a href="#geometric-correction" id="toc-geometric-correction" class="nav-link" data-scroll-target="#geometric-correction"><span class="toc-section-number">5.1.2</span>  Geometric Correction</a></li>
-  <li><a href="#atmosphric-correction" id="toc-atmosphric-correction" class="nav-link" data-scroll-target="#atmosphric-correction"><span class="toc-section-number">5.1.3</span>  Atmosphric Correction</a></li>
-  <li><a href="#orthorectification-correction" id="toc-orthorectification-correction" class="nav-link" data-scroll-target="#orthorectification-correction"><span class="toc-section-number">5.1.4</span>  Orthorectification Correction</a></li>
-  <li><a href="#rdiometric-correction" id="toc-rdiometric-correction" class="nav-link" data-scroll-target="#rdiometric-correction"><span class="toc-section-number">5.1.5</span>  Rdiometric Correction</a></li>
-  <li><a href="#joining-data-sets" id="toc-joining-data-sets" class="nav-link" data-scroll-target="#joining-data-sets"><span class="toc-section-number">5.1.6</span>  Joining data sets</a></li>
-  <li><a href="#image-enhancements" id="toc-image-enhancements" class="nav-link" data-scroll-target="#image-enhancements"><span class="toc-section-number">5.1.7</span>  Image Enhancements</a></li>
+  <li><a href="#different-sensors" id="toc-different-sensors" class="nav-link" data-scroll-target="#different-sensors"><span class="toc-section-number">3.1.1</span>  Different Sensors</a></li>
+  <li><a href="#geometric-correction" id="toc-geometric-correction" class="nav-link" data-scroll-target="#geometric-correction"><span class="toc-section-number">3.1.2</span>  Geometric Correction</a></li>
+  <li><a href="#atmosphric-correction" id="toc-atmosphric-correction" class="nav-link" data-scroll-target="#atmosphric-correction"><span class="toc-section-number">3.1.3</span>  Atmosphric Correction</a></li>
+  <li><a href="#orthorectification-correction" id="toc-orthorectification-correction" class="nav-link" data-scroll-target="#orthorectification-correction"><span class="toc-section-number">3.1.4</span>  Orthorectification Correction</a></li>
+  <li><a href="#rdiometric-correction" id="toc-rdiometric-correction" class="nav-link" data-scroll-target="#rdiometric-correction"><span class="toc-section-number">3.1.5</span>  Rdiometric Correction</a></li>
+  <li><a href="#joining-data-sets" id="toc-joining-data-sets" class="nav-link" data-scroll-target="#joining-data-sets"><span class="toc-section-number">3.1.6</span>  Joining data sets</a></li>
+  <li><a href="#image-enhancements" id="toc-image-enhancements" class="nav-link" data-scroll-target="#image-enhancements"><span class="toc-section-number">3.1.7</span>  Image Enhancements</a></li>
   </ul></li>
-  <li><a href="#application---discussing-image-fusion-in-one-literature" id="toc-application---discussing-image-fusion-in-one-literature" class="nav-link" data-scroll-target="#application---discussing-image-fusion-in-one-literature"><span class="toc-section-number">5.2</span>  Application - Discussing image fusion in one literature</a>
+  <li><a href="#application---discussing-image-fusion-in-one-literature" id="toc-application---discussing-image-fusion-in-one-literature" class="nav-link" data-scroll-target="#application---discussing-image-fusion-in-one-literature"><span class="toc-section-number">3.2</span>  Application - Discussing image fusion in one literature</a>
   <ul class="collapse">
-  <li><a href="#image-fusion" id="toc-image-fusion" class="nav-link" data-scroll-target="#image-fusion"><span class="toc-section-number">5.2.1</span>  Image fusion:</a></li>
-  <li><a href="#implementation-approach" id="toc-implementation-approach" class="nav-link" data-scroll-target="#implementation-approach"><span class="toc-section-number">5.2.2</span>  Implementation approach <img src="images/Implementation%20approach.png" id="fig-impleApproach" class="img-fluid"></a></li>
+  <li><a href="#image-fusion" id="toc-image-fusion" class="nav-link" data-scroll-target="#image-fusion"><span class="toc-section-number">3.2.1</span>  Image fusion:</a></li>
+  <li><a href="#implementation-approaches" id="toc-implementation-approaches" class="nav-link" data-scroll-target="#implementation-approaches"><span class="toc-section-number">3.2.2</span>  Implementation Approaches</a></li>
   </ul></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">5.3</span>  Reflection</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">3.3</span>  Reflection</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/Week3.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></h1>
 </div>
 
 
@@ -220,22 +246,22 @@ div.csl-indent {
 </header>
 
 <p>In this week’s learning diary, we try to handle</p>
-<section id="summary" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary:</h2>
-<section id="different-sensors" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="different-sensors"><span class="header-section-number">5.1.1</span> Different Sensors</h3>
+<section id="summary" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">3.1</span> Summary:</h2>
+<section id="different-sensors" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="different-sensors"><span class="header-section-number">3.1.1</span> Different Sensors</h3>
 <p>Across track scanners: Mirror reflects light onto 1 detector. For example, <u>Landsat</u> dataset are captured by this sort</p>
 <p>Along track scanners: Basically several detectors pushed along. E.g., Quickbird, SPOT</p>
 </section>
-<section id="geometric-correction" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">5.1.2</span> Geometric Correction</h3>
+<section id="geometric-correction" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="geometric-correction"><span class="header-section-number">3.1.2</span> Geometric Correction</h3>
 <p>RS data could include image distortions introduced by: View angle, topography, wind and rotation of the earth</p>
 <p>We identify Ground Control Points (GCP) in distorted data to match them with local map, correct image, or GPS data from handheld device, but these reference images could also contain distortions and imprecisions.</p>
 <p>RMSE is adopted here to measure fitness between images. Use GCPs to minimise RMSE.</p>
 <p>Doing geometric correction can shift the original image, so we want to re-sample the final raster by using Nearest Neighbour, Linear, Cubic, Cubic spline re-samplers</p>
 </section>
-<section id="atmosphric-correction" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="atmosphric-correction"><span class="header-section-number">5.1.3</span> Atmosphric Correction</h3>
+<section id="atmosphric-correction" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="atmosphric-correction"><span class="header-section-number">3.1.3</span> Atmosphric Correction</h3>
 <p>According to <span class="citation" data-cites="Jensen1986IntroductoryDI">Jensen (<a href="references.html#ref-Jensen1986IntroductoryDI" role="doc-biblioref">1986</a>)</span>, two factors contribute to environmental attenuation: Atmospheric scattering, topographic attenuation.</p>
 <p>There are unnecessary and necessary atmospheric corrections:</p>
 <p>necessary ones are:</p>
@@ -247,42 +273,53 @@ div.csl-indent {
 <p>Absorption and scattering can create the haze, i.e.&nbsp;reduces contrast of image.</p>
 <p>Scattering can create the “adjacency effect”, radiance from pixels nearby mixed into pixel of interest.</p>
 </section>
-<section id="orthorectification-correction" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="orthorectification-correction"><span class="header-section-number">5.1.4</span> Orthorectification Correction</h3>
+<section id="orthorectification-correction" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="orthorectification-correction"><span class="header-section-number">3.1.4</span> Orthorectification Correction</h3>
 <p>This is a subset of georectification, i.e.&nbsp;giving coords to an image. Particularly Orthorectification means removing distortion so pixels can appear being viewed at <u>nadir</u> (straight down). This requires the support of an Elevation Model to calculate the nadir view for each pixel on a sensor geometry.</p>
 <p>To do this: cosine correction, Minnaert correction, Statistical Empirical correction, C Correction (advancing the Cosine). Need radiance (DN to TOA) from sloped terrain, Sun’s zenith angle, Sun’s incidence angle - cosine of the angle between the solar zenith and the normal line of the slope. Latter two found in angle coefficient files (e.g.&nbsp;Landsat data ANG.txt).</p>
 </section>
-<section id="rdiometric-correction" class="level3" data-number="5.1.5">
-<h3 data-number="5.1.5" class="anchored" data-anchor-id="rdiometric-correction"><span class="header-section-number">5.1.5</span> Rdiometric Correction</h3>
+<section id="rdiometric-correction" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="rdiometric-correction"><span class="header-section-number">3.1.5</span> Rdiometric Correction</h3>
 <p>Corrections to raw satellite imagery can be performed using a method called Dark Object Subtraction (DOS). The logic is that the darkest pixel in the image should be 0 and any value it has is due to the atmosphere. To remove the atmospheric effect, the value from the darkest pixel is subtracted from the rest of the pixels in the image. The calculation involves converting the Digital Number (DN) to radiance, computing the haze value for each band (but not beyond NIR), and subtracting the 1% reflectance value from the radiance. The calculation requires values such as mean exoatmospheric irradiance, solar azimuth, Earth-sun distance, and others, which can be found in sources such as Landsat user manuals.</p>
 </section>
-<section id="joining-data-sets" class="level3" data-number="5.1.6">
-<h3 data-number="5.1.6" class="anchored" data-anchor-id="joining-data-sets"><span class="header-section-number">5.1.6</span> Joining data sets</h3>
+<section id="joining-data-sets" class="level3" data-number="3.1.6">
+<h3 data-number="3.1.6" class="anchored" data-anchor-id="joining-data-sets"><span class="header-section-number">3.1.6</span> Joining data sets</h3>
 <p>Also known as <u>Mosaicking</u>: We feather two images, creating a <u>seamless</u> mosaic, where the diving lien is called <u>seamline</u>.</p>
 </section>
-<section id="image-enhancements" class="level3" data-number="5.1.7">
-<h3 data-number="5.1.7" class="anchored" data-anchor-id="image-enhancements"><span class="header-section-number">5.1.7</span> Image Enhancements</h3>
+<section id="image-enhancements" class="level3" data-number="3.1.7">
+<h3 data-number="3.1.7" class="anchored" data-anchor-id="image-enhancements"><span class="header-section-number">3.1.7</span> Image Enhancements</h3>
 <p>Image stretch, Band ratioing, Normalised Burn Ratio, Edge enhancement, Filtering, PCA, Image fusion (see application) etc.</p>
 </section>
 </section>
-<section id="application---discussing-image-fusion-in-one-literature" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="application---discussing-image-fusion-in-one-literature"><span class="header-section-number">5.2</span> Application - Discussing image fusion in one literature</h2>
+<section id="application---discussing-image-fusion-in-one-literature" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="application---discussing-image-fusion-in-one-literature"><span class="header-section-number">3.2</span> Application - Discussing image fusion in one literature</h2>
 <p><img src="images/image-620878088.png" id="fig-mindmap01" class="img-fluid"></p>
-<p>From literature we delve in the nuances of levels on which we perform image fusion to acquire better results. The integration methods vary as the levels vary. @Better together: Integrating and fusing multispectral and radar satellite imagery to inform biodiversity monitoring, ecological research and conservation science.</p>
+<p>From literature we delve in the nuances of levels on which we perform image fusion to acquire better results. The integration methods vary as the levels vary <span class="citation" data-cites="schulte_to_buhne_better_2018">(<a href="references.html#ref-schulte_to_buhne_better_2018" role="doc-biblioref">Schulte to Bühne and Pettorelli 2018</a>)</span>.</p>
 <p>Satellite remote sensing (SRS) can be derived from Multispectral sensors and radar sensors.&nbsp;</p>
 <p>&nbsp;Multispectral sensors are passive, merely receiving electromagnetic waves reflected from surface, usually used to reflect chemical properties (such as nitrogen or carbon content and moisture). Usually produces data with comparatively low spatial resolution</p>
 <p>&nbsp;Radar ones emit electromagnetic radiation and measure the returning signal, responding to the three-dimensional structure of objects, being sensitive to their orientation, volume and surface roughness. Usually produces data with comparatively high spatial resolution</p>
-<section id="image-fusion" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="image-fusion"><span class="header-section-number">5.2.1</span> Image fusion:</h3>
+<section id="image-fusion" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="image-fusion"><span class="header-section-number">3.2.1</span> Image fusion:</h3>
 <p>1.&nbsp;<strong>decision-level</strong>&nbsp;(SRS integration), where separate predictors are used to estimate a parameter of interest.&nbsp;</p>
 <p>2.&nbsp;<strong>object-level (feature-level).</strong>&nbsp;unit: multi-pixel objects. (1) using radar and multispectral imagery is input into an object-based image segmentation algorithm, or (2) segmenting each type of imagery separately before combining them. multi-pixel objects</p>
 <p>3.&nbsp;<strong>pixel-level (Observation-level)</strong>, where pixel values are combined to derive a fused image with new pixel values, either in the spatial or the temporal domain.</p>
 <p>(2. and 3. derive entirely new predictors.)</p>
-<p><img src="images/fusion%20techniques.png" id="fig-fusiontech" class="img-fluid"></p>
+<div id="fig-fusiontech" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/fusion%20techniques.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Credit: <span class="citation" data-cites="schulte_to_buhne_better_2018">Schulte to Bühne and Pettorelli (<a href="references.html#ref-schulte_to_buhne_better_2018" role="doc-biblioref">2018</a>)</span></figcaption><p></p>
+</figure>
+</div>
 <p>Schematic overview of multispectral-radar SRS data fusion techniques. The parameter of interest can be a categorical variable, like land cover, or a continuous variable, like species richness. In pixel-level fusion, the original pixel values of radar and multispectral imagery are combined to yield new, derived pixel values. Object-based fusion refers to (1) using radar and multispectral imagery is input into an object-based image segmentation algorithm, or (2) segmenting each type of imagery separately before combining them. Finally, decision-level fusion corresponds to the process of quantitatively combining multispectral and radar imagery to derive the parameter of interest (by e.g.&nbsp;combining them in a regression model, or classification algorithm)</p>
 </section>
-<section id="implementation-approach" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="implementation-approach"><span class="header-section-number">5.2.2</span> Implementation approach <img src="images/Implementation%20approach.png" id="fig-impleApproach" class="img-fluid"></h3>
+<section id="implementation-approaches" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="implementation-approaches"><span class="header-section-number">3.2.2</span> Implementation Approaches</h3>
+<div id="fig-impleApproach" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/Implementation%20approach.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3.2: Credit: <span class="citation" data-cites="schulte_to_buhne_better_2018">Schulte to Bühne and Pettorelli (<a href="references.html#ref-schulte_to_buhne_better_2018" role="doc-biblioref">2018</a>)</span></figcaption><p></p>
+</figure>
+</div>
 <p><strong><em>pixel-level</em></strong></p>
 <ol type="1">
 <li>Component substitution techniques: such as principal component analysis (PCA), Intensity-hue-saturation (IHS).&nbsp;<br>
@@ -302,8 +339,8 @@ div.csl-indent {
 <p><strong><em>Decision-level fusion</em></strong>: Quantitative decision-making frameworks—such as a regression, a quantitative model or a classification algorithm.</p>
 </section>
 </section>
-<section id="reflection" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
+<section id="reflection" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.3</span> Reflection</h2>
 <p>Data correction, Data fusion and Image enhancement SRS data fusion can increase the quality of SRS (Satellite Remote sensing)-derived parameters for application in terrain detection, urban analysis, ecology and conservation <span class="citation" data-cites="schulte_to_buhne_better_2018">(<a href="references.html#ref-schulte_to_buhne_better_2018" role="doc-biblioref">Schulte to Bühne and Pettorelli 2018</a>)</span>. It is thus important to explore how best to capitalise on recent technological developments and changes in SRS data availability. It is exctiing to apply solid machine learning methods to this area and it is marvelous to see the progress reflected by the increasing number of software supporting this application. The improvement of image quality enables new research designs in ecology and conservation areas and reignite previously greyed-out options.</p>
 <p>The application of data correction, data fusion, and image enhancement techniques to SRS data can greatly improve the accuracy and reliability of SRS-derived parameters, which can then be used in various fields, including terrain detection, urban analysis, ecology, and conservation. With the rapid advancements in technology and the increasing availability of SRS data, there is a growing opportunity to leverage the latest machine learning techniques in this area. The development of new software tools to support these applications is a testament to the progress being made in this field. By enhancing the quality of the SRS data, researchers are able to design more robust and informative studies, unlocking new insights and avenues for exploration in ecology and conservation. This, in turn, has the potential to lead to breakthroughs and innovations in these fields, making a significant impact on the world around us.</p>
 
@@ -339,6 +376,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -420,16 +570,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./Week2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week2.html</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2. Week 2 - Portfolio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./Week4.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week4 - Policy applications</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy applications</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Learning Outcome at <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis"><img src="./general_img/casa_logo.jpg" class="img-fluid" width="30"></a></div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://andrewmaclachlan.github.io/CASA0023/intro.html">Module</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/andrewmaclachlan">Lecturer</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE">
+      <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml">
+      <i class="bi bi-kaggle" role="img" aria-label="Quarto Blog RSS">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
