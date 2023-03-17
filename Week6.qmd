@@ -1,1 +1,71 @@
+# Wk6 Classification
+## Summary
 
+| Information | Summary |
+| --- | --- |
+| Purpose of classification | To subset data into classes or values, such as landcover or estimating values like GCSE scores or pollution. |
+| Different classification methods | Essentially slice the data in different ways. |
+| Complexity of classification methods | They can often be made to appear more complicated than they are. |
+| Controlling classifiers | Can be done using hyperparameters. |
+| Desired outcome of classifiers | Can range from a single tree to a decision hyperplane boundary in multiple dimensions. |
+
+### ML methods in EO data classification
+
+Table 1: Supervised Classification Methods
+
+| Method | Description |
+| --- | --- |
+| Maximum Likelihood | A statistical method used to estimate the parameters of a probability distribution based on observed data. |
+| Support Vector Machines (SVM) | A supervised learning algorithm that finds the best hyperplane to separate data into different classes. |
+
+Table 2: Unsupervised Classification Methods
+
+| Method | Description |
+| --- | --- |
+| Density Slicing | Divides the range of pixel values into equal intervals and assigns each interval a unique class value. |
+| Parallelpiped | Uses a set of user-defined ranges for each band to define class boundaries in multi-dimensional space. |
+| Minimum Distance to Mean | Assigns each pixel to the class with the closest mean value in multi-dimensional space. |
+| Nearest Neighbor | Assigns each pixel to the class of its nearest neighbor in multi-dimensional space. |
+
+Table 3: Other Machine Learning Methods
+
+| Method | Description |
+| --- | --- |
+| Artificial Neural Networks (ANN) | A set of algorithms inspired by the structure and function of biological neural networks, used for pattern recognition and prediction tasks. |
+
+### Pros and cons - Supervised vs. Unsupervised
+
+Table 1: Supervised vs. Unsupervised Classification
+
+| Classification Type | Definition | Method |
+| --- | --- | --- |
+| Supervised | Classifier learns patterns in the data and uses that to place labels onto new data. Pattern vector is used to classify the image. Usually, pixels are treated in isolation but as we have seen - contextual (neighboring pixels), objects (polygons), texture. | Pattern recognition or machine learning |
+| Unsupervised | Identifies land cover classes that aren't known a priori (before) and tells the computer to cluster based on info it has (e.g. bands) and label the clusters. | Density slicing, parallelpiped, minimum distance to mean, nearest neighbor, neural networks, machine learning / expert systems* |
+
+### Overfitting
+
+- Bias refers to the difference between the predicted value and the true value. When a model has high bias, it is too simple and may underfit the data. On the other hand, when a model has low bias, it may overfit the data.
+- Variance, on the other hand, refers to the variability of a model for a given point. When a model has high variance, it is too complex and may overfit the data. This means that it will perform well on the training data but poorly on new data.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf6f589e-d103-4a08-802c-8f2b8eb0cf7e/Untitled.png)
+
+Credit: CASA0006
+
+In general, overfitting occurs when there is a trade-off between bias and variance. A model with high bias and low variance will underfit the data, while a model with low bias and high variance will overfit the data. The goal is to find a balance between bias and variance that results in good performance on both training and test data.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d9577b9-f0d0-4cd5-b5c2-bf40f3081d1e/Untitled.png)
+
+Credit: CASA0006
+
+### Outlook on the development of EO data Classification
+
+Earth Observation (EO) data classification is continually evolving, with new technologies and techniques leading to several anticipated future developments:
+
+1. Multi-source data fusion:
+    - Integrating data from multiple sources like satellite imagery, LiDAR, and ground-based sensors will become more prevalent. This fusion enhances classification accuracy and offers comprehensive Earth's surface information, improving decision-making and monitoring. For example, the European Union's **[Copernicus Programme](https://www.copernicus.eu/en)** could use this in providing free data from various satellite missions and sensors for environmental monitoring, disaster management, and urban planning.
+2. Multi-temporal analysis:
+    - Sophisticated multi-temporal analysis techniques will be increasingly used to monitor changes in land cover, vegetation, and other features over time. This enables accurate and efficient change detection and monitoring of phenomena like urbanization, deforestation, and climate change. This aligns with the **[REDD+](https://unfccc.int/topics/land-use/workstreams/reddplus)** initiative under the United Nations Framework Convention on Climate Change (UNFCCC), which uses multi-temporal analysis to monitor forest cover changes and evaluate policy effectiveness in reducing greenhouse gas emissions from deforestation and forest degradation.
+3. Cloud-based processing:
+    - The growth of cloud-based platforms, such as Google Earth Engine, allows for more efficient and scalable EO data processing workflows. This accessibility enables researchers and organizations to innovate in classification techniques and applications. The National Oceanic and Atmospheric Administration's (NOAA) **[Big Data Project](https://ncics.org/data/noaa-big-data-project/)** aims to make vast amounts of environmental data accessible and usable in the cloud, fostering innovation in developing new applications and services.
+
+These advancements will provide comprehensive and timely information about Earth's surface, informing policies and strategies in areas such as environmental management, disaster response, and urban planning.
