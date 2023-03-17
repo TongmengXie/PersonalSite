@@ -1,0 +1,66 @@
+# Week 9 - **Synthetic Aperture Radar (SAR) data**
+
+## Summary
+
+This week addresses problems in
+
+-   The object of using Synthetic Aperture Radar (SAR)
+
+Detecting changes in the Earth's surface over time
+
+-   The advantages of SAR for change detection
+    -   see through clouds
+    -   high temporal resolution
+-   Techniques for change detection with SAR?
+    -   ratio
+    -   log ratios between two images
+    -   t-tests
+-   fused with other data?
+
+Yes, with optical data using techniques such as
+
+1.  principal component analysis
+2.  object-based image analysis
+3.  intensity fusion
+
+-   Applications?
+    -   monitoring land use changes
+    -   detecting deforestation
+    -   identifying urban growth pattern
+
+### Possible future developments
+
+-   Resolution and accuracy:
+    -   Urban planning: Improved resolution and accuracy can influence local zoning regulations and urban growth management by providing detailed information on land use changes and the built environment. For example, high-resolution SAR data can be used to assess the effectiveness of urban containment policies or to identify areas where infrastructure investments are needed.
+-   Data processing capabilities
+    -   Disaster response: The ability to process larger datasets and monitor Earth's surface in near real-time can inform global policies and agreements related to disaster management, such as the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/implementing-sendai-framework/what-sendai-framework). Rapid response to natural disasters, like earthquakes or hurricanes, can be coordinated more effectively with updated SAR data, allowing for quicker deployment of resources and better management of affected areas.
+-   New SAR applications
+    -   Agricultural: Advancements in SAR technology will expand its use in change detection and monitoring. This will support policies like the [European Union's Common Agricultural Policy (CAP)](https://ec.europa.eu/info/food-farming-fisheries/key-policies/common-agricultural-policy/cap-glance_en), by providing data on crop health, irrigation needs, and land use changes.
+    -   Forestry (deforestation and reforestation tracking)
+    -   Disaster response (flood and landslide monitoring)
+    -   Environmental management: SAR data can inform policies related to wetland and coastal zone management, such as the [Ramsar Convention on Wetlands](https://www.ramsar.org/) and the [United Nations Convention on the Law of the Sea (UNCLOS)](https://www.un.org/Depts/los/convention_agreements/convention_overview_convention.htm). By monitoring changes in these sensitive areas, policymakers can evaluate the effectiveness of existing regulations and develop new strategies to protect vital ecosystems.
+-   Machine learning and artificial intelligence:
+    -   Advanced algorithms will be able to identify and classify features and changes in SAR data analysis in the Earth's surface, improving the overall accuracy of change detection, thus supporting climate change adaptation efforts at both local and global levels, including the [United Nations Framework Convention on Climate Change (UNFCCC)](https://unfccc.int/) and the [Paris Agreement](https://unfccc.int/). Predictive models based on SAR data can help policymakers identify areas at risk of flooding, coastal erosion, or other climate-related impacts, enabling the development of targeted adaptation strategies.
+
+In conclusion, advancements in SAR technology, combined with the integration of machine learning and artificial intelligence, will significantly enhance the capabilities for change detection and Earth surface monitoring. These developments will have far-reaching implications for various sectors, including agriculture, forestry, disaster management, and environmental protection, ultimately influencing policymaking and promoting more informed decision-making processes.
+
+### SAR fundamentals
+
+| Topic                 | Key Points                                                                                                                                                                                                              |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Definition            | Synthetic Aperture Radar (SAR) is a type of radar that uses microwave signals to create high-resolution images of the Earth's surface.                                                                                  |
+| Advantages            | Operates in all weather conditions; penetrates through clouds and vegetation cover.                                                                                                                                     |
+| Limitations           | Sensitive to surface roughness; limited spatial resolution.                                                                                                                                                             |
+| Processing Techniques | Interferometry: combines multiple SAR images to create 3D maps of the Earth's surface. Polarimetry: analyzes the polarization properties of reflected signals to extract additional information about surface features. |
+| Applications          | Environmental monitoring, disaster response, urban planning, military surveillance, and more.                                                                                                                           |
+
+### Practical change detection with SAR
+
+| Topic                                     | Key Points                                                                                         |
+|-------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Advantages of SAR for Change Detection    | Can see through clouds unlike optical sensors; high temporal resolution.                           |
+| Change Detection Techniques               | Ratio or log ratios between two images; t-tests; standard deviation.                               |
+| Fusion of SAR and Optical Data            | Principal component analysis; object-based image analysis; intensity fusion.                       |
+| Applications of Change Detection with SAR | Monitoring land use changes, detecting deforestation, identifying urban growth patterns, and more. |
+
+## Application
