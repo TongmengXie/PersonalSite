@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Learning Diary - CASA0023 – week6</title>
+<title>Learning Diary - CASA0023 - 6&nbsp; Wk6 Classification</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wk6 Classification</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Week6.html</span></a>
+  <a href="./Week6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wk6 Classification</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -189,15 +189,225 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">6.1</span>  Summary</a>
+  <ul class="collapse">
+  <li><a href="#ml-methods-in-eo-data-classification" id="toc-ml-methods-in-eo-data-classification" class="nav-link" data-scroll-target="#ml-methods-in-eo-data-classification"><span class="toc-section-number">6.1.1</span>  ML methods in EO data classification</a></li>
+  <li><a href="#pros-and-cons---supervised-vs.-unsupervised" id="toc-pros-and-cons---supervised-vs.-unsupervised" class="nav-link" data-scroll-target="#pros-and-cons---supervised-vs.-unsupervised"><span class="toc-section-number">6.1.2</span>  Pros and cons - Supervised vs.&nbsp;Unsupervised</a></li>
+  <li><a href="#overfitting" id="toc-overfitting" class="nav-link" data-scroll-target="#overfitting"><span class="toc-section-number">6.1.3</span>  Overfitting</a></li>
+  <li><a href="#outlook-on-the-development-of-eo-data-classification" id="toc-outlook-on-the-development-of-eo-data-classification" class="nav-link" data-scroll-target="#outlook-on-the-development-of-eo-data-classification"><span class="toc-section-number">6.1.4</span>  Outlook on the development of EO data Classification</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/Week6.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wk6 Classification</span></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Information</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Purpose of classification</td>
+<td>To subset data into classes or values, such as landcover or estimating values like GCSE scores or pollution.</td>
+</tr>
+<tr class="even">
+<td>Different classification methods</td>
+<td>Essentially slice the data in different ways.</td>
+</tr>
+<tr class="odd">
+<td>Complexity of classification methods</td>
+<td>They can often be made to appear more complicated than they are.</td>
+</tr>
+<tr class="even">
+<td>Controlling classifiers</td>
+<td>Can be done using hyperparameters.</td>
+</tr>
+<tr class="odd">
+<td>Desired outcome of classifiers</td>
+<td>Can range from a single tree to a decision hyperplane boundary in multiple dimensions.</td>
+</tr>
+</tbody>
+</table>
+<section id="ml-methods-in-eo-data-classification" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="ml-methods-in-eo-data-classification"><span class="header-section-number">6.1.1</span> ML methods in EO data classification</h3>
+<p>Table 1: Supervised Classification Methods</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Maximum Likelihood</td>
+<td>A statistical method used to estimate the parameters of a probability distribution based on observed data.</td>
+</tr>
+<tr class="even">
+<td>Support Vector Machines (SVM)</td>
+<td>A supervised learning algorithm that finds the best hyperplane to separate data into different classes.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 2: Unsupervised Classification Methods</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Density Slicing</td>
+<td>Divides the range of pixel values into equal intervals and assigns each interval a unique class value.</td>
+</tr>
+<tr class="even">
+<td>Parallelpiped</td>
+<td>Uses a set of user-defined ranges for each band to define class boundaries in multi-dimensional space.</td>
+</tr>
+<tr class="odd">
+<td>Minimum Distance to Mean</td>
+<td>Assigns each pixel to the class with the closest mean value in multi-dimensional space.</td>
+</tr>
+<tr class="even">
+<td>Nearest Neighbor</td>
+<td>Assigns each pixel to the class of its nearest neighbor in multi-dimensional space.</td>
+</tr>
+</tbody>
+</table>
+<p>Table 3: Other Machine Learning Methods</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Artificial Neural Networks (ANN)</td>
+<td>A set of algorithms inspired by the structure and function of biological neural networks, used for pattern recognition and prediction tasks.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pros-and-cons---supervised-vs.-unsupervised" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="pros-and-cons---supervised-vs.-unsupervised"><span class="header-section-number">6.1.2</span> Pros and cons - Supervised vs.&nbsp;Unsupervised</h3>
+<p>Table 1: Supervised vs.&nbsp;Unsupervised Classification</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Classification Type</th>
+<th>Definition</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Supervised</td>
+<td>Classifier learns patterns in the data and uses that to place labels onto new data. Pattern vector is used to classify the image. Usually, pixels are treated in isolation but as we have seen - contextual (neighboring pixels), objects (polygons), texture.</td>
+<td>Pattern recognition or machine learning</td>
+</tr>
+<tr class="even">
+<td>Unsupervised</td>
+<td>Identifies land cover classes that aren’t known a priori (before) and tells the computer to cluster based on info it has (e.g.&nbsp;bands) and label the clusters.</td>
+<td>Density slicing, parallelpiped, minimum distance to mean, nearest neighbor, neural networks, machine learning / expert systems*</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="overfitting" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="overfitting"><span class="header-section-number">6.1.3</span> Overfitting</h3>
+<ul>
+<li>Bias refers to the difference between the predicted value and the true value. When a model has high bias, it is too simple and may underfit the data. On the other hand, when a model has low bias, it may overfit the data.</li>
+<li>Variance, on the other hand, refers to the variability of a model for a given point. When a model has high variance, it is too complex and may overfit the data. This means that it will perform well on the training data but poorly on new data.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bf6f589e-d103-4a08-802c-8f2b8eb0cf7e/Untitled.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Untitled</figcaption><p></p>
+</figure>
+</div>
+<p>Credit: CASA0006</p>
+<p>In general, overfitting occurs when there is a trade-off between bias and variance. A model with high bias and low variance will underfit the data, while a model with low bias and high variance will overfit the data. The goal is to find a balance between bias and variance that results in good performance on both training and test data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d9577b9-f0d0-4cd5-b5c2-bf40f3081d1e/Untitled.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Untitled</figcaption><p></p>
+</figure>
+</div>
+<p>Credit: CASA0006</p>
+</section>
+<section id="outlook-on-the-development-of-eo-data-classification" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="outlook-on-the-development-of-eo-data-classification"><span class="header-section-number">6.1.4</span> Outlook on the development of EO data Classification</h3>
+<p>Earth Observation (EO) data classification is continually evolving, with new technologies and techniques leading to several anticipated future developments:</p>
+<ol type="1">
+<li>Multi-source data fusion:
+<ul>
+<li>Integrating data from multiple sources like satellite imagery, LiDAR, and ground-based sensors will become more prevalent. This fusion enhances classification accuracy and offers comprehensive Earth’s surface information, improving decision-making and monitoring. For example, the European Union’s <strong><a href="https://www.copernicus.eu/en">Copernicus Programme</a></strong> could use this in providing free data from various satellite missions and sensors for environmental monitoring, disaster management, and urban planning.</li>
+</ul></li>
+<li>Multi-temporal analysis:
+<ul>
+<li>Sophisticated multi-temporal analysis techniques will be increasingly used to monitor changes in land cover, vegetation, and other features over time. This enables accurate and efficient change detection and monitoring of phenomena like urbanization, deforestation, and climate change. This aligns with the <strong><a href="https://unfccc.int/topics/land-use/workstreams/reddplus">REDD+</a></strong> initiative under the United Nations Framework Convention on Climate Change (UNFCCC), which uses multi-temporal analysis to monitor forest cover changes and evaluate policy effectiveness in reducing greenhouse gas emissions from deforestation and forest degradation.</li>
+</ul></li>
+<li>Cloud-based processing:
+<ul>
+<li>The growth of cloud-based platforms, such as Google Earth Engine, allows for more efficient and scalable EO data processing workflows. This accessibility enables researchers and organizations to innovate in classification techniques and applications. The National Oceanic and Atmospheric Administration’s (NOAA) <strong><a href="https://ncics.org/data/noaa-big-data-project/">Big Data Project</a></strong> aims to make vast amounts of environmental data accessible and usable in the cloud, fostering innovation in developing new applications and services.</li>
+</ul></li>
+</ol>
+<p>These advancements will provide comprehensive and timely information about Earth’s surface, informing policies and strategies in areas such as environmental management, disaster response, and urban planning.</p>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

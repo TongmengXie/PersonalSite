@@ -47,7 +47,7 @@ In conclusion, advancements in SAR technology, combined with the integration of 
 ### SAR fundamentals
 
 | Topic                 | Key Points                                                                                                                                                                                                              |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|------------------------------------|------------------------------------|
 | Definition            | Synthetic Aperture Radar (SAR) is a type of radar that uses microwave signals to create high-resolution images of the Earth's surface.                                                                                  |
 | Advantages            | Operates in all weather conditions; penetrates through clouds and vegetation cover.                                                                                                                                     |
 | Limitations           | Sensitive to surface roughness; limited spatial resolution.                                                                                                                                                             |
@@ -57,7 +57,7 @@ In conclusion, advancements in SAR technology, combined with the integration of 
 ### Practical change detection with SAR
 
 | Topic                                     | Key Points                                                                                         |
-|-------------------------------------------|----------------------------------------------------------------------------------------------------|
+|------------------------------------|------------------------------------|
 | Advantages of SAR for Change Detection    | Can see through clouds unlike optical sensors; high temporal resolution.                           |
 | Change Detection Techniques               | Ratio or log ratios between two images; t-tests; standard deviation.                               |
 | Fusion of SAR and Optical Data            | Principal component analysis; object-based image analysis; intensity fusion.                       |
