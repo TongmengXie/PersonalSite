@@ -60,6 +60,17 @@ book:
       - icon: kaggle
         href: https://quarto.org/docs/blog/index.xml
         aria-label: Quarto Blog RSS     
+output:
+  html_document:
+    html_dependencies:
+      - name: tsParticles
+        src: "https://cdn.jsdelivr.net/particles.js/2.0.0/"
+        script: particles.min.js
+    includes:
+      in_header:
+        - particles.css
+        - particles.js
+      before-content: particles.html
 
 bibliography: references.bib
 
@@ -83,6 +94,8 @@ format:
     
 
 editor: visual
+
+
 
    
 #body-header: | 

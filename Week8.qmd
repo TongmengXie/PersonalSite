@@ -1,4 +1,4 @@
-# Week8 - T**emperature and Policy**
+# Week8 - Temperature and Policy
 
 The "policy" section occupies two weeks, mainly trying to introduce how to fit EO data workflow into current policies. To do this, you have to identify the gaps, e.g., that between the overarching global policies, metropolitan plans and local plans. Or, the gap within policies like missing locations in the Singapore one.
 

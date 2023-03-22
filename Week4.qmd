@@ -1,5 +1,29 @@
-# Week4 - Policy applications
+# Week4 - Policy Case Study in
+
+[OneNYC-2050-Summary.pdf (cityofnewyork.us)](https://onenyc.cityofnewyork.us/wp-content/uploads/2019/05/OneNYC-2050-Summary.pdf)
 
 ## Summary
 
-### Sensor Data
+Comprehensive Plan for New York City \| \|-- Expanding Voting Rights \| \|-- Increasing Digital Literacy \| \|-- Providing Economic Security \| \| \| \|-- Good-Paying Jobs \| \|-- Support for Students in Temporary Housing \| \|-- Access to Open Spaces & Cultural Resources \| \| \| \|-- Neighborhood Open Spaces \| \|-- Cultural Resources \| \|-- Promoting Healthy Lifestyles \| \|-- Achieving Carbon Neutrality \| \| \| \|-- Climate Accountability \| \|-- Climate Justice \| \|-- Enhancing Walkability & Accessibility \| \|-- Improving Infrastructure \| \| \| \|-- Reducing Congestion & Emissions \| \|-- Strengthening Regional & Global Connections \| \|-- Core Physical Infrastructure & Hazard Mitigation \| \|-- Digital Infrastructure \| \|-- Asset Maintenance & Capital Project Delivery \| \|-- Milestones \| \| \| \|-- December 31, 2020 \| \|-- December 31, 2021 \| \|-- Goals \| \| \| \|-- Empower New Yorkers in Democracy \| \|-- Grow the Economy \| \|-- Access to Open Spaces & Cultural Resources \| \|-- Improve Education \| \|-- Achieve Carbon Neutrality \| \|-- Strengthen Communities \| \|-- Improve Mobility \| \|-- Diversity & Inclusionx
+
+## Application
+
+The initiatives provided cover a wide range of areas, including education, small business support, community resilience, infrastructure, transportation, and sustainability. One of the key applications of these initiatives is to improve the quality of life for New Yorkers, particularly those in underrepresented communities. For example, the initiatives aimed at increasing the number of New Yorkers earning a high school equivalency diploma and connecting underrepresented groups to construction jobs created by City investments are designed to provide greater economic opportunities and upward mobility.
+
+Similarly, the initiatives aimed at enhancing walkability and accessibility and improving the sustainability and efficiency of air travel are designed to improve the physical infrastructure of the city and make it more accessible and sustainable for all residents. Another application of these initiatives is to promote equity and inclusivity in the city.
+
+Many of the initiatives are specifically targeted at underrepresented communities, such as the initiatives aimed at providing paid internships and professional development opportunities to cultural workers and supporting the growth and retention of small businesses.
+
+By providing resources and support to these communities, the city aims to promote greater equity and inclusivity and reduce disparities in access to resources and opportunities.
+
+The initiatives also reflect a commitment to sustainability and resilience. Many of the initiatives are aimed at improving the city's infrastructure and transportation systems to make them more sustainable and resilient in the face of climate change and other challenges. For example, the initiatives aimed at investing in innovative and resilient transportation networks and enhancing walkability and accessibility are designed to reduce emissions and congestion and promote sustainable modes of transportation.
+
+Overall, the initiatives outlined in the text reflect a comprehensive and multi-faceted approach to improving life in New York City. While there is still much work to be done, these initiatives represent an important step forward in promoting equity, sustainability, and resilience in the city. As future literature advancements are made, it will be important to continue to evaluate and refine these approaches to ensure that they are effective and responsive to the needs of all New Yorkers.
+
+## Reflection
+
+The initiatives outlined in the text cover critical components of urban planning and development, including infrastructure, transportation, education, and sustainability. The initiatives outlined in the text emphasize the importance of investing in the city's data infrastructure and establishing a citywide data catalog, among other things. This requires a deep understanding of data management and analysis techniques, as well as the ability to work with large and complex datasets. Spatial data scientists and deep learning solution engineers can use these skills to develop innovative solutions for urban planning and development, such as predictive models for traffic flow or energy consumption.
+
+Many of the initiatives outlined in the text involve the use of GIS products and services, as well as the expansion of walkability and accessibility in the city. This requires a deep understanding of geospatial data analysis techniques, as well as the ability to work with mapping and visualization tools. Spatial data scientists and deep learning solution engineers can use these skills to develop innovative solutions for urban planning and development, such as interactive maps that show the most walkable routes in the city.
+
+In addition to these skills, the content, data, and tools presented in the text are highly relevant to the broader discipline of urban planning and development. Spatial data scientists and deep learning solution engineers can use these resources to develop innovative solutions for a wide range of urban challenges, from improving transportation networks to promoting sustainability and resilience. By leveraging these resources, these professionals can help to create more livable and equitable cities that meet the needs of all residents. Looking to the future, it will be important for spatial data scientists and deep learning solution engineers to continue to stay up-to-date with the latest advancements in data management, analysis, and visualization techniques.
