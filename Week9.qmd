@@ -6,83 +6,146 @@
 
 This week addresses problems in
 
-- The object of using Synthetic Aperture Radar (SAR)
+-   The object of using Synthetic Aperture Radar (SAR)
 
 Detecting changes in the Earth's surface over time
 
-- The advantages of SAR for change detection
-    - see through clouds
-    - high temporal resolution
-- Techniques for change detection with SAR?
-    - ratio
-    - log ratios between two images
-    - t-tests
-- fused with other data?
-    
-    Yes, with optical data using techniques such as 
-    
-    1. principal component analysis
-    2. object-based image analysis
-    3. intensity fusion
-- Applications?
-    - monitoring land use changes
-    - detecting deforestation
-    - identifying urban growth pattern
+-   The advantages of SAR for change detection
+
+    -   see through clouds
+    -   high temporal resolution
+
+-   Techniques for change detection with SAR?
+
+    -   ratio
+    -   log ratios between two images
+    -   t-tests
+
+-   fused with other data?
+
+    Yes, with optical data using techniques such as
+
+    1.  principal component analysis
+    2.  object-based image analysis
+    3.  intensity fusion
+
+-   Applications?
+
+    -   monitoring land use changes
+    -   detecting deforestation
+    -   identifying urban growth pattern
 
 ### SAR fundamentals
 
-- Definition: Synthetic Aperture Radar (SAR) is a type of radar that uses microwave signals to create high-resolution images of the Earth's surface.
-- Advantages:
-    - Operates in all weather conditions
-    - Penetrates through clouds and vegetation cover.
-- Limitations
-    - Sensitive to surface roughness; limited spatial resolution.
-- Processing Techniques
-    - Interferometry: combines multiple SAR images to create 3D maps of the Earth's surface.
-    - Polarimetry: analyzes the polarization properties of reflected signals to extract additional information about surface features.
-    
+-   Definition: Synthetic Aperture Radar (SAR) is a type of radar that uses microwave signals to create high-resolution images of the Earth's surface.
+
+-   Advantages:
+
+    -   Operates in all weather conditions
+    -   Penetrates through clouds and vegetation cover.
+
+-   Limitations
+
+    -   Sensitive to surface roughness; limited spatial resolution.
+
+-   Processing Techniques
+
+    -   Interferometry: combines multiple SAR images to create 3D maps of the Earth's surface.
+    -   Polarimetry: analyzes the polarization properties of reflected signals to extract additional information about surface features.
+
     The relationship between different surfaces and their sensitivity to polarizations in SAR data
-    
-    | Surface Type | Scattering Mechanism | Most Sensitive Polarization |
-    | --- | --- | --- |
-    | Rough (bare earth) | Rough Scattering | Vertical-Vertical (VV) |
-    | Leaves | Volume Scattering | Vertical-Horizontal (VH) or Horizontal-Vertical (HV) |
-    | Trees / Buildings | Double Bounce | Horizontal-Horizontal (HH) |
-- Applications:
-    - Environmental monitoring, disaster response, urban planning, military surveillance, and more.
+
+    | Surface Type       | Scattering Mechanism | Most Sensitive Polarization                          |
+    |------------------------|------------------------|------------------------|
+    | Rough (bare earth) | Rough Scattering     | Vertical-Vertical (VV)                               |
+    | Leaves             | Volume Scattering    | Vertical-Horizontal (VH) or Horizontal-Vertical (HV) |
+    | Trees / Buildings  | Double Bounce        | Horizontal-Horizontal (HH)                           |
+
+-   Applications:
+
+    -   Environmental monitoring, disaster response, urban planning, military surveillance, and more.
 
 ### Practical change detection with SAR
 
-| Topic | Key Points |
-| --- | --- |
-| Advantages of SAR for Change Detection | Can see through clouds unlike optical sensors; high temporal resolution. |
-| Change Detection Techniques | Ratio or log ratios between two images; t-tests; standard deviation. |
-| Fusion of SAR and Optical Data | Principal component analysis; object-based image analysis; intensity fusion. |
+| Topic                                     | Key Points                                                                                         |
+|------------------------------------|------------------------------------|
+| Advantages of SAR for Change Detection    | Can see through clouds unlike optical sensors; high temporal resolution.                           |
+| Change Detection Techniques               | Ratio or log ratios between two images; t-tests; standard deviation.                               |
+| Fusion of SAR and Optical Data            | Principal component analysis; object-based image analysis; intensity fusion.                       |
 | Applications of Change Detection with SAR | Monitoring land use changes, detecting deforestation, identifying urban growth patterns, and more. |
 
 ### Possible future developments
 
 Resolution, accuracy, real-time-ness and data scale in SAR might see advancements.
 
-- Improved resolution and accuracy:
-    - Urban planning: Improved resolution and accuracy can influence local zoning regulations and urban growth management by providing detailed information on land use changes and the built environment. For example, high-resolution SAR data can be used to assess the effectiveness of urban containment policies or to identify areas where infrastructure investments are needed.
-- Data processing capabilities
-    - Disaster response: The ability to process larger datasets and monitor Earth's surface in near real-time can inform global policies regarding disaster management, such as the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/implementing-sendai-framework/what-sendai-framework). Boosted rapidness and data capability of SAR can better response to natural disasters, like earthquakes or hurricanes. This allows for quicker design of resources deployment strategy, and more comprehensive information in managing affected areas.
-- New SAR applications
-    - Agricultural: Enhanced SAR facilitates its use in change detection and monitoring. This will support policies like the [European Union's Common Agricultural Policy (CAP)](https://ec.europa.eu/info/food-farming-fisheries/key-policies/common-agricultural-policy/cap-glance_en), by providing data on crop health, irrigation needs, and land use changes.
-    - Forestry (deforestation and reforestation tracking)
-    - Disaster response (flood and landslide monitoring)
-    - Environmental management: SAR data can inform policies related to wetland and coastal zone management, such as the [Ramsar Convention on Wetlands](https://www.ramsar.org/) and the [United Nations Convention on the Law of the Sea (UNCLOS)](https://www.un.org/Depts/los/convention_agreements/convention_overview_convention.htm). By monitoring changes in these sensitive areas, policymakers can evaluate the effectiveness of existing regulations and develop new strategies to protect vital ecosystems.
-- More matured machine learning and artificial intelligence:
-    - Advanced algorithms that are yet to be developed or need further maturity for SAR data analysis could include:
-    
-    | Algorithm | Pros | Cons |
-    | --- | --- | --- |
-    | Improved Unsupervised Change Detection Algorithms | - No need for labeled training data. - Can discover unknown or unexpected changes. | - May struggle with complex or subtle changes. - Can be sensitive to noise and variations in the data. |
-    | Multi-Modal Fusion Algorithms | - Combines SAR data with other sources (e.g., optical, hyperspectral) for better feature identification. - Can exploit the complementary strengths of different data types. | - Requires data synchronization and registration, which can be challenging. - May involve increased complexity and computational cost. |
-    | Graph-based Change Detection Algorithms | - Can model complex spatial relationships between features. - Robust against noise and speckle effects in SAR data. | - Computationally expensive, especially for large-scale datasets. - May require tuning of hyperparameters. |
-    - Improved overall accuracy of change detection can support climate change adaptation efforts at both local and global levels, including the [United Nations Framework Convention on Climate Change (UNFCCC)](https://unfccc.int/) and the [Paris Agreement](https://unfccc.int/). Predictive models based on SAR data can help policymakers identify areas at risk of flooding, coastal erosion, or other climate-related impacts, enabling the targeted adaptation strategies.
+-   Improved resolution and accuracy:
+
+    -   Urban planning: Improved resolution and accuracy can influence local zoning regulations and urban growth management by providing detailed information on land use changes and the built environment. For example, high-resolution SAR data can be used to assess the effectiveness of urban containment policies or to identify areas where infrastructure investments are needed.
+
+-   Data processing capabilities
+
+    -   Disaster response: The ability to process larger datasets and monitor Earth's surface in near real-time can inform global policies regarding disaster management, such as the [Sendai Framework for Disaster Risk Reduction](https://www.undrr.org/implementing-sendai-framework/what-sendai-framework). Boosted rapidness and data capability of SAR can better response to natural disasters, like earthquakes or hurricanes. This allows for quicker design of resources deployment strategy, and more comprehensive information in managing affected areas.
+
+-   New SAR applications
+
+    -   Agricultural: Enhanced SAR facilitates its use in change detection and monitoring. This will support policies like the [European Union's Common Agricultural Policy (CAP)](https://ec.europa.eu/info/food-farming-fisheries/key-policies/common-agricultural-policy/cap-glance_en), by providing data on crop health, irrigation needs, and land use changes.
+    -   Forestry (deforestation and reforestation tracking)
+    -   Disaster response (flood and landslide monitoring)
+    -   Environmental management: SAR data can inform policies related to wetland and coastal zone management, such as the [Ramsar Convention on Wetlands](https://www.ramsar.org/) and the [United Nations Convention on the Law of the Sea (UNCLOS)](https://www.un.org/Depts/los/convention_agreements/convention_overview_convention.htm). By monitoring changes in these sensitive areas, policymakers can evaluate the effectiveness of existing regulations and develop new strategies to protect vital ecosystems.
+
+-   More matured machine learning and artificial intelligence:
+
+    -   Advanced algorithms that are yet to be developed or need further maturity for SAR data analysis could include:
+
+    | Algorithm                                         | Pros                                                                                                                                                                         | Cons                                                                                                                                    |
+    |------------------------|------------------------|------------------------|
+    | Improved Unsupervised Change Detection Algorithms | \- No need for labeled training data. - Can discover unknown or unexpected changes.                                                                                          | \- May struggle with complex or subtle changes. - Can be sensitive to noise and variations in the data.                                 |
+    | Multi-Modal Fusion Algorithms                     | \- Combines SAR data with other sources (e.g., optical, hyperspectral) for better feature identification. - Can exploit the complementary strengths of different data types. | \- Requires data synchronization and registration, which can be challenging. - May involve increased complexity and computational cost. |
+    | Graph-based Change Detection Algorithms           | \- Can model complex spatial relationships between features. - Robust against noise and speckle effects in SAR data.                                                         | \- Computationally expensive, especially for large-scale datasets. - May require tuning of hyperparameters.                             |
+
+    -   Improved overall accuracy of change detection can support climate change adaptation efforts at both local and global levels, including the [United Nations Framework Convention on Climate Change (UNFCCC)](https://unfccc.int/) and the [Paris Agreement](https://unfccc.int/). Predictive models based on SAR data can help policymakers identify areas at risk of flooding, coastal erosion, or other climate-related impacts, enabling the targeted adaptation strategies.
 
 Advancements in SAR technology, combined with the integration of machine learning and AI, will enhance change detection capabilities, enabling new analysis avenues in sectors including agriculture, forestry, disaster management, and environmental protection, ultimately influencing policymaking and promoting more informed decision-making processes.
 
 ## Application
+
+This week I chose to explore the application of SAR in wetland classification and real-time monitoring, as well as its future advancement, in the context of a literature recommended by the module webpage [@gokce_wetland_2019].
+
+Wetland acts as a kidney to Earth reminding one of the old positivist tradition in French philosophy, taking abstract structures as organisms. The chance to explore this wholist view with an analytic approach is thrilling, as these two paradigms that seem to be falling in a prevailing antithesis can actually sparkle inspiration and exhibit harmony of inclusion of each other.
+
+### Wetland classification
+
+Wetland classification has been a daunting task utilising traditional air photo and filed visits. Ever since the launch of ERTS in 1972, this task has been expecting the evolution of methods through applying Earth Observation data.
+
+The SOTA of this tasks, as implied in the literature, has been an Object-based classification:
+
+-   Combining multi-source data: optical and SAR
+-   Analysing using a machine-learning classification model
+-   Incorporating a Digital Elevation Model (DEM)
+-   Aims at identifying terrain suitability for wetlands and surface water
+
+See \@ for a workflow
+
+This method achieves over 90% of accuracy and is useful in that its core method utilises SAR data's feature of "seeing under the water" to better identify flooded vegetation class.
+
+How did this amazing feature come about? Is that an emerging effect due to unprecedented combination of data? Or is it determined by the characteristics innate to SAR data?
+
+The answer is the latter: The flooded vegetation tends to produce a double bounce scattering mechanism, which increases the intensity of the backscatter, making HH polarization to be the best for this due to the enhanced penetration in vegetation [@Jahncke2018MappingWI].
+
+![Credit: @gokce_wetland_2019](images/WetLand_classification.png)
+
+This workflow utilising different scattering effect between water and vegetation is one of the main contributors to the SOTA performance, laying the ground for further development and iteration on this method: various angle-choosing strategies, machine-learning algorithm combinations, etc.
+
+### Future Advancement
+
+-   Resolution in time and space can see chance of enhancement. Spaceborne SAR remote sensing technology being the essential tool for effective wetland observation, its improvement can be expected to reflect on enhancement of wetland observation in temporal and spatial resolution, e.g., the RCM is expected to provide SAR imagery in a spatial resolution ranging from 1 m to 100 m, in a revisit time of only 4 days [@gokce_wetland_2019].
+
+This can better our understanding of climate change in wetlands and water quality, allowing ecosystem managers and decision makers to have sufficient information regarding wetland preservation
+
+-   More sensors with more data forms, as well as improved data quality can be anticipated in the future. The integration of SAR imagery with optical and topographic data from multiple sensors was shown in @dubeau_mapping_2017 to be necessary for improved wetland mapping and classification during the growing season.
+
+However, the integration of SAR imagery and LiDAR data did not improve significantly the classification accuracy of wetland in @millard_wetland_2013.
+
+-   The effectiveness of machine learning algorithms for automated wetland classification can expect further development. E.g., Graph-based Change Detection Algorithms can model complex spatial relationships between features and is robust against noise and speckle effects in SAR data.
+
+This shift toward the automated machine learning algorithms comes to fulfill the requirement for operational wetland monitoring systems.
