@@ -56,7 +56,7 @@ Detecting changes in the Earth's surface over time
     The relationship between different surfaces and their sensitivity to polarizations in SAR data
 
     | Surface Type       | Scattering Mechanism | Most Sensitive Polarization                          |
-    |------------------------|------------------------|------------------------|
+    |--------------------|----------------------|------------------------------------------------------|
     | Rough (bare earth) | Rough Scattering     | Vertical-Vertical (VV)                               |
     | Leaves             | Volume Scattering    | Vertical-Horizontal (VH) or Horizontal-Vertical (HV) |
     | Trees / Buildings  | Double Bounce        | Horizontal-Horizontal (HH)                           |
@@ -68,7 +68,7 @@ Detecting changes in the Earth's surface over time
 ### Practical change detection with SAR
 
 | Topic                                     | Key Points                                                                                         |
-|------------------------------------|------------------------------------|
+|-------------------------------------------|----------------------------------------------------------------------------------------------------|
 | Advantages of SAR for Change Detection    | Can see through clouds unlike optical sensors; high temporal resolution.                           |
 | Change Detection Techniques               | Ratio or log ratios between two images; t-tests; standard deviation.                               |
 | Fusion of SAR and Optical Data            | Principal component analysis; object-based image analysis; intensity fusion.                       |
@@ -98,7 +98,7 @@ Resolution, accuracy, real-time-ness and data scale in SAR might see advancement
     -   Advanced algorithms that are yet to be developed or need further maturity for SAR data analysis could include:
 
     | Algorithm                                         | Pros                                                                                                                                                                         | Cons                                                                                                                                    |
-    |------------------------|------------------------|------------------------|
+    |---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
     | Improved Unsupervised Change Detection Algorithms | \- No need for labeled training data. - Can discover unknown or unexpected changes.                                                                                          | \- May struggle with complex or subtle changes. - Can be sensitive to noise and variations in the data.                                 |
     | Multi-Modal Fusion Algorithms                     | \- Combines SAR data with other sources (e.g., optical, hyperspectral) for better feature identification. - Can exploit the complementary strengths of different data types. | \- Requires data synchronization and registration, which can be challenging. - May involve increased complexity and computational cost. |
     | Graph-based Change Detection Algorithms           | \- Can model complex spatial relationships between features. - Robust against noise and speckle effects in SAR data.                                                         | \- Computationally expensive, especially for large-scale datasets. - May require tuning of hyperparameters.                             |
