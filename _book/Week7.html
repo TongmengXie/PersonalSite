@@ -166,7 +166,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy Case Study in</span></a>
+  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy Case Study in New York City</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -250,7 +250,7 @@ div.csl-indent {
 <p>This week’s learning diary continues that from Week 6 in addressing the big problem in Remote Sensingm, i.e.&nbsp;classification within Earth Observation data. Also, accuracy metrics are discussed.</p>
 <section id="summary" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.1</span> Summary</h2>
-<p>The summary of lecture content as well as practical outcomes. See <a href="#fig-mindmap">Figure&nbsp;<span class="quarto-unresolved-ref">fig-mindmap</span></a> for an overview. If certain words are intelligible due to resolution issues, hopefully you can right click and “open in new page” to get a better view since this is a .SVG file. <img src="images/MindMap.png" id="fig-mindmap" class="img-fluid" alt="Classification in Remote Sensing"></p>
+<p>The summary of lecture content as well as practical outcomes. See <span class="quarto-unresolved-ref">?fig-mindmap</span> for an overview. If certain words are intelligible due to resolution issues, hopefully you can right click and “open in new page” to get a better view since this is a .SVG file. <img src="images/MindMap.png" id="fig-mindmap" class="img-fluid" alt="Classification in Remote Sensing"></p>
 <section id="data" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="data"><span class="header-section-number">7.1.1</span> Data</h3>
 <ul>
@@ -302,7 +302,7 @@ div.csl-indent {
 </ul>
 <p>Pseudo-invariant features to be trained on to make your model robust to time-space changes</p>
 <p>Pseudo-invariant features are often used as reference targets or calibration sites in remote sensing to account for changes in sensor or atmospheric conditions and to reduce the effects of noise and calibration drift on image data. These features have relatively constant spectral properties over time and space, and can therefore serve as a stable reference for monitoring changes in other features or materials within an image or scene.</p>
-<p>A flow chart can be seen in <a href="#fig-flowchart">Figure&nbsp;<span class="quarto-unresolved-ref">fig-flowchart</span></a> :</p>
+<p>A flow chart can be seen in <a href="#fig-flowchart">Figure&nbsp;<span>7.1</span></a> :</p>
 <div id="fig-flowchart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/FlowChart.png" class="img-fluid figure-img"></p>
@@ -333,11 +333,11 @@ div.csl-indent {
 <section id="reflection" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">7.3</span> Reflection</h2>
 <p>The workflow of Classification of Surface Reflectance and Top of Atmosphere data intrigues me, as it differs from, yet shares certain features with traditional computer vision tasks like image classification and object detection (in regards of treating pixels as objects/units). Alternatively, Surface Reflectance Classification can be treated as a downstream task for both aforementioned ML tasks, due to its uniqueness in dealing with high-precision satellite data and unseparability (worth debating) from EO processing workflow (calibration etc.). Also, uncertainty of classification genres derived from unsupervised labelling can also be an issue.</p>
-<p>Optionally, in supplementation to manual labelling, automated labelling workflow (e.g.&nbsp;roboflow) can be introduced to curtail repeatitive works in image labelling<span class="citation" data-cites="nair2018automated">(<a href="#ref-nair2018automated" role="doc-biblioref">Nair, Paul, and Jacob 2018</a>)</span>. However, manual labelling is not replaceable at current time <span class="citation" data-cites="robison2018future">(<a href="#ref-robison2018future" role="doc-biblioref">Robison 2018</a>)</span> and the pinning down of ground truth seems to always need human intervention in addition to machine automation.</p>
+<p>Optionally, in supplementation to manual labelling, automated labelling workflow (e.g.&nbsp;roboflow) can be introduced to curtail repeatitive works in image labelling<span class="citation" data-cites="nair2018automated">(<a href="references.html#ref-nair2018automated" role="doc-biblioref">Nair, Paul, and Jacob 2018</a>)</span>. However, manual labelling is not replaceable at current time <span class="citation" data-cites="robison2018future">(<a href="references.html#ref-robison2018future" role="doc-biblioref">Robison 2018</a>)</span> and the pinning down of ground truth seems to always need human intervention in addition to machine automation.</p>
 <p>The introduction of production accuracy and user accuracy is also interesting, as these terminologies are designed presupposing a customer/producer split, dwarfing precision-recall in readability. The treadeoff to be made between the two is crucial, and this is problematically handled by introducing F1 score with two competitive components, and improved by introducing Receiver Operating Characteristic Curve (ROCC) with two “good” indicators, true positive rate and false positive rate.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-nair2018automated" class="csl-entry" role="doc-biblioentry">
 Nair, Rahul, P. J. Paul, and K. Poulose Jacob. 2018. <span>“Automated Image Annotation: A Survey.”</span> <em>Journal of Imaging</em> 4 (3): 37.
 </div>

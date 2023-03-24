@@ -149,6 +149,5 @@ Table 2: Total population and population density per 0.1 km2 between 2011 and 20
 
 ## Reflection
 
--   Case study: Superblocks, Barcelona
-
-Basically about pedestrian economy. Though there have been many retail modes like KFC and other American fast food, the experience from Europe tells that economy vitality can have a boost with pedestrian-dominated areas. See Barcelona
+Basically about pedestrian economy. Though there have been many retail modes like KFC and other American fast food that favour more cars, the experience from Europe tells that economy vitality can have a boost with pedestrian-dominated areas (Case study: Superblocks, Barcelona).
+Besides the interesting economic insights, this week I learned how to bring my focus upon specific areas in urban policies like UHI. Also, it seems to be good practice to narrow down one's scope from global to local, and finally to a specific city policy, identifying gaps in each layer, and finally introducing Earth Observation data flow.

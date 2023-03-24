@@ -6,17 +6,14 @@
     -   Passive data: Energy in electromagnetic form (e.g., human eyes)
     -   Active data: Energy in addition to illumination (e.g., radar)
 -   Interaction of EM waves with Earth's surface and atmosphere:
-    -   Single: This category refers to the interaction of EM waves with only one component of the Earth's system, either the surface or the atmosphere. For example, when sunlight (an EM wave) directly reaches the Earth's surface without interacting with the atmosphere, it is considered a single interaction. Similarly, if the EM wave only interacts with the atmosphere and does not reach the surface, it is also a single interaction. In remote sensing, single interactions are usually the most straightforward to analyze. The most straightforward to analyze.
-    -   Dual: Dual interactions involve the EM waves interacting with both the Earth's surface and atmosphere. In this case, the EM waves pass through the atmosphere, interact with the Earth's surface, and then pass back through the atmosphere before reaching the sensor. This process results in changes to the EM waves, such as absorption or scattering, which can affect the quality and interpretation of the remote sensing data. apply atmospheric correction techniques to retrieve accurate information about the Earth's surface.
-    -   Quad: Quad interactions refer to EM waves interacting with multiple components of the Earth's system, such as the surface, atmosphere, and other features (e.g., vegetation, water bodies). Involve various processes such as absorption, scattering, reflection, and transmission. Account for the unique characteristics and properties of each component involved, making the process more challenging.
 
 | Interaction Type | Components of Earth           | Processes Considered                             | Difficulty                                           |
-|------------------|------------------|------------------|------------------|
+|-----------------|-----------------|-------------------|---------------------|
 | Single           | Surface OR Atmosphere         | Direct interaction with one component            | Most straightforward to analyze                      |
 | Dual             | Surface AND Atmosphere        | Absorption, scattering                           | Requires atmospheric correction for accurate results |
 | Quad             | Surface, Atmosphere, Features | Absorption, scattering, reflection, transmission | More challenging due to multiple components involved |
 
-### **Remote Sensing Data Formats**
+### Remote Sensing Data Formats
 
 -   Raster formats:
     -   BIL
@@ -24,7 +21,7 @@
     -   BIP
     -   GeoTIFF
 
-### **Four Resolutions in Remote Sensing**
+### Four Resolutions in Remote Sensing
 
 1.  Spatial resolution:
     -   Ranges from 10 cm to several kilometers
@@ -41,7 +38,7 @@
 
 -   Example satellite sensor: MODIS
 
-### **Bands Explained**
+### Bands Explained
 
 -   In remote sensing, bands refer to the specific ranges of wavelengths captured by a sensor.
 
@@ -49,12 +46,22 @@
 
 -   Understanding the properties of each band helps in the interpretation and analysis of remote sensing data.
 
+### Future Development
+
+| Area of Future Development         | Description                                                                                                             |
+|-------------------------------------------------|-----------------------|
+| Wireless communication             | Faster and more secure data transmission using electromagnetic waves.                                                   |
+| Medical imaging                    | New techniques using different types of waves for better diagnoses.                                                     |
+| New uses for electromagnetic waves | Discovering new applications in energy, environment, and space exploration.                                             |
+| Remote sensing technology          | More detailed data gathering using a wider range of wavelengths.                                                        |
+| Quantum computing                  | Developing new technologies that use the properties of particles at the quantum level, including electromagnetic waves. |
+
 ## Application
 
 I explored @butcher_tour_2016 for a better understanding of electromagnectic waves and the application in Remote Sensing.
 
 | Type of Wave      | Wavelength Range | Frequency Range   | Example Applications                   |
-|------------------|------------------|------------------|------------------|
+|----------------|----------------|----------------|------------------------|
 | Radio Waves       | \>1mm            | \<300 GHz         | Broadcasting, communication, radar     |
 | Microwaves        | 1mm - 1m         | 300 MHz - 300 GHz | Cooking, communication, radar          |
 | Infrared Waves    | 700 nm - 1 mm    | 300 GHz - 430 THz | Thermal imaging, remote controls       |

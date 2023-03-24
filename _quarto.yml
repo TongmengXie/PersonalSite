@@ -1,6 +1,6 @@
 project:
   type: book
-prefer-html: true
+
 book:
   title: "Learning Diary - CASA0023"
   favicon: general_img/satellite-clipart-icon.png

@@ -1,10 +1,6 @@
 # Week 2 - Portfolio
 Slide about flood prediction and monitoring is here: https://tongmengxie.github.io/Xaringan_slides
-```{r, echo = FALSE, out.width='40%'}
- xaringanExtra::embed_xaringan(
- url = "https://tongmengxie.github.io/Xaringan_slides/#1",
- ratio = "16:9") 
-```
+
 
 ## Available instructions
 - [Introducing Xaringan](https://andrewmaclachlan.github.io/CASA0023/2_portfolio.html)
