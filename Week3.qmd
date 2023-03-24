@@ -58,6 +58,13 @@ Image stretch, Band ratioing, Normalised Burn Ratio, Edge enhancement, Filtering
 
 ### Future development
 
+| **Type of Correction**        | **Potential Future Developments**                                                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| Geometric Correction          | Automatic GCP identification, more precise resampling methods, handle larger and more complex datasets.                                             |
+| Atmospheric Correction        | Incorporate more accurate atmospheric models, improve parameter estimation methods, integrate machine learning algorithms.                          |
+| Orthorectification Correction | More accurate and efficient algorithms, higher quality elevation models, more advanced image correction techniques.                                 |
+| Radiometric Correction        | Develop more advanced methods for parameter estimation, incorporate machine learning algorithms, integrate more detailed and accurate data sources. |
+
 ## Application - Discussing image fusion in one literature
 
 ![](images/image-620878088.png){#fig-mindmap01}

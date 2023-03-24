@@ -4,7 +4,7 @@
 
 ## Summary
 
-![workflow of the Electromagnetic Spectrum](images/Wk4_NYC%20plan.svg){#fig-wk4NYC}
+![workflow of the Electromagnetic Spectrum](images/Wk4_NYC%20plan.png){#fig-wk4NYC}
 
 ## Application
 
