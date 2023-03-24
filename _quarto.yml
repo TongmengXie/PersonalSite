@@ -1,8 +1,11 @@
 project:
   type: book
-
+prefer-html: true
 book:
   title: "Learning Diary - CASA0023"
+  favicon: general_img/satellite-clipart-icon.png
+  mermaid: true   # enable Mermaid for HTML document output
+  
   navbar:
     logo: general_img/satellite-clipart-icon.png
     collapse: true
@@ -62,6 +65,7 @@ book:
         aria-label: Quarto Blog RSS     
 output:
   html_document:
+    mermaid: true   # enable Mermaid for HTML document output
     html_dependencies:
       - name: tsParticles
         src: "https://cdn.jsdelivr.net/particles.js/2.0.0/"

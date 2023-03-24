@@ -104,4 +104,3 @@ Optionally, in supplementation to manual labelling, automated labelling workflow
 
 The introduction of production accuracy and user accuracy is also interesting, as these terminologies are designed presupposing a customer/producer split, dwarfing precision-recall in readability. The treadeoff to be made between the two is crucial, and this is problematically handled by introducing F1 score with two competitive components, and improved by introducing Receiver Operating Characteristic Curve (ROCC) with two "good" indicators, true positive rate and false positive rate.
 
-# 

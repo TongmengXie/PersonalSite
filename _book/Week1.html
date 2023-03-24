@@ -51,6 +51,7 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./Week2.html" rel="next">
 <link href="./index.html" rel="prev">
+<link href="./general_img/satellite-clipart-icon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,9 +82,6 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="custom.css">
@@ -109,7 +107,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
 </i> 
  </a>
   </li>  
@@ -349,7 +347,7 @@ div.csl-indent {
 </section>
 <section id="application" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
-<p>I explored <span class="citation" data-cites="butcher_tour_2016">Butcher (<a href="references.html#ref-butcher_tour_2016" role="doc-biblioref">2016</a>)</span> for a better understanding of electromagnectic waves and the application in Remote Sensing.</p>
+<p>I explored <span class="citation" data-cites="butcher_tour_2016">Butcher (<a href="#ref-butcher_tour_2016" role="doc-biblioref">2016</a>)</span> for a better understanding of electromagnectic waves and the application in Remote Sensing.</p>
 <table class="table">
 <colgroup>
 <col style="width: 25%">
@@ -417,34 +415,12 @@ div.csl-indent {
 </figure>
 </div>
 <p>“Spectral Feature Space, Vegetation On Bands B04 and B08”</p>
-<p>One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see <a href="#fig-vege">Figure&nbsp;<span>1.1</span></a>, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.</p>
-<p>workflow of the Electromagnetic Spectrum</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'theme':'base', 'themeVariables': {'edge': 'green'}}}%%
-graph TD
-  A[Start]
-  B[Generate electromagnetic waves]
-  C[Determine frequency, wavelength, or energy]
-  D[Classify waves into types]
-  E[Identify applications for each type of wave]
-  F[End]
-
-  A--&gt;B
-  B--&gt;C
-  C--&gt;D
-  D--&gt;E
-  E--&gt;F
-
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
+<p>One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see <a href="#fig-vege">Figure&nbsp;<span class="quarto-unresolved-ref">fig-vege</span></a>, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.</p>
+<div id="fig-wkfl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="images/workflow%20of%20the%20Electromagnetic%20Spectrum.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1.2: workflow of the Electromagnetic Spectrum</figcaption><p></p>
+</figure>
 </div>
 <p>Spatial signatures can also be used to monitor the health of vegetation by identifying patterns of quavariation in spectral reflectance that are indicative of stress or disease. For example, vegetation that is stressed or diseased may have a different spectral reflectance signature than healthy vegetation, which can be identified using spatial signatures.</p>
 <p>In addition, spatial signatures can be used to monitor the growth and distribution of vegetation over time by comparing satellite imagery from different dates. This can be useful for understanding the impacts of land use changes, climate change, and other factors on vegetation.</p>
@@ -456,7 +432,7 @@ graph TD
 <p>One of the challenges I encountered is to navigate the complexities of the interface of SNAP and QGIS. It becomes clear to me that yes implementing several functions in code can be challenging, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, finding which function falling under which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation. Anyway, it’s nice to have attempts of designing GUIs for EO data manipulation. Hopefully, with Large Language Model simplifying GIS software designing, we can more easily translate code workflows into user-friendly interfaces and apply our design ideas.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-butcher_tour_2016" class="csl-entry" role="doc-biblioentry">
 Butcher, Ginger. 2016. <em>Tour of the Electromagnetic Spectrum</em>. Third edition. Washington, DC: National Aeronautics; Space Administration.
 </div>

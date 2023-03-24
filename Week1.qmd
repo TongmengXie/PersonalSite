@@ -49,8 +49,6 @@
 
 -   Understanding the properties of each band helps in the interpretation and analysis of remote sensing data.
 
-
-
 ## Application
 
 I explored @butcher_tour_2016 for a better understanding of electromagnectic waves and the application in Remote Sensing.
@@ -71,24 +69,7 @@ I explored @butcher_tour_2016 for a better understanding of electromagnectic wav
 
 One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see @fig-vege, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.
 
-workflow of the Electromagnetic Spectrum
-```{mermaid}
-%%{init: {'theme':'base', 'themeVariables': {'edge': 'green'}}}%%
-graph TD
-  A[Start]
-  B[Generate electromagnetic waves]
-  C[Determine frequency, wavelength, or energy]
-  D[Classify waves into types]
-  E[Identify applications for each type of wave]
-  F[End]
-
-  A-->B
-  B-->C
-  C-->D
-  D-->E
-  E-->F
-
-```
+![ workflow of the Electromagnetic Spectrum](images/workflow%20of%20the%20Electromagnetic%20Spectrum.png){#fig-wkfl}
 
 Spatial signatures can also be used to monitor the health of vegetation by identifying patterns of quavariation in spectral reflectance that are indicative of stress or disease. For example, vegetation that is stressed or diseased may have a different spectral reflectance signature than healthy vegetation, which can be identified using spatial signatures.
 
