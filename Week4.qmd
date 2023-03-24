@@ -4,7 +4,75 @@
 
 ## Summary
 
-Comprehensive Plan for New York City \| \|-- Expanding Voting Rights \| \|-- Increasing Digital Literacy \| \|-- Providing Economic Security \| \| \| \|-- Good-Paying Jobs \| \|-- Support for Students in Temporary Housing \| \|-- Access to Open Spaces & Cultural Resources \| \| \| \|-- Neighborhood Open Spaces \| \|-- Cultural Resources \| \|-- Promoting Healthy Lifestyles \| \|-- Achieving Carbon Neutrality \| \| \| \|-- Climate Accountability \| \|-- Climate Justice \| \|-- Enhancing Walkability & Accessibility \| \|-- Improving Infrastructure \| \| \| \|-- Reducing Congestion & Emissions \| \|-- Strengthening Regional & Global Connections \| \|-- Core Physical Infrastructure & Hazard Mitigation \| \|-- Digital Infrastructure \| \|-- Asset Maintenance & Capital Project Delivery \| \|-- Milestones \| \| \| \|-- December 31, 2020 \| \|-- December 31, 2021 \| \|-- Goals \| \| \| \|-- Empower New Yorkers in Democracy \| \|-- Grow the Economy \| \|-- Access to Open Spaces & Cultural Resources \| \|-- Improve Education \| \|-- Achieve Carbon Neutrality \| \|-- Strengthen Communities \| \|-- Improve Mobility \| \|-- Diversity & Inclusionx
+```{mermaid}
+%%{init: {'theme':'base', 'themeVariables': {'edge': 'green'}}}%%
+flowchart LR;
+  A[Comprehensive Plan for New York City]
+  B[Expanding Voting Rights]
+  C[Increasing Digital Literacy]
+  D[Providing Economic Security]
+  E[Good-Paying Jobs]
+  F[Support for Students in Temporary Housing]
+  G[Access to Open Spaces & Cultural Resources]
+  H[Neighborhood Open Spaces]
+  I[Cultural Resources]
+  J[Promoting Healthy Lifestyles]
+  K[Achieving Carbon Neutrality]
+  L[Climate Accountability]
+  M[Climate Justice]
+  N[Enhancing Walkability & Accessibility]
+  O[Improving Infrastructure]
+  P[Reducing Congestion & Emissions]
+  Q[Strengthening Regional & Global Connections]
+  R[Core Physical Infrastructure & Hazard Mitigation]
+  S[Digital Infrastructure]
+  T[Asset Maintenance & Capital Project Delivery]
+  U[Milestones]
+  V[December 31, 2020]
+  W[December 31, 2021]
+  X[Goals]
+  Y[Empower New Yorkers in Democracy]
+  Z[Grow the Economy]
+  AA[Access to Open Spaces & Cultural Resources]
+  AB[Improve Education]
+  AC[Achieve Carbon Neutrality]
+  AD[Strengthen Communities]
+  AE[Improve Mobility]
+  AF[Diversity & Inclusion]
+
+  A-->B
+  A-->C
+  A-->D
+    D-->E
+    D-->F
+  A-->G
+    G-->H
+    G-->I
+  A-->J
+  A-->K
+    K-->L
+    K-->M
+  A-->N
+  A-->O
+    O-->P
+    O-->Q
+    O-->R
+    O-->S
+    O-->T
+  A-->U
+    U-->V
+    U-->W
+  A-->X
+    X-->Y
+    X-->Z
+    X-->AA
+    X-->AB
+    X-->AC
+    X-->AD
+    X-->AE
+  A-->AF
+
+```
 
 ## Application
 

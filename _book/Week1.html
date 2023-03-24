@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Learning Diary - CASA0023 - 1&nbsp; Week 1</title>
+<title>Learning Diary - CASA0023 - 1&nbsp; Week 1 - Getting started with remote sensing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,25 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -62,6 +81,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="custom.css">
@@ -106,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - Getting started with remote sensing</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -131,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Week1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></a>
+  <a href="./Week1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - Getting started with remote sensing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -195,11 +217,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">1.1</span>  Summary</a>
   <ul class="collapse">
-  <li><a href="#remotely-sensed-data-usually-comes-in" id="toc-remotely-sensed-data-usually-comes-in" class="nav-link" data-scroll-target="#remotely-sensed-data-usually-comes-in"><span class="toc-section-number">1.1.1</span>  remotely-sensed data usually comes in</a></li>
-  <li><a href="#four-resolutions" id="toc-four-resolutions" class="nav-link" data-scroll-target="#four-resolutions"><span class="toc-section-number">1.1.2</span>  Four resolutions:</a></li>
-  <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical"><span class="toc-section-number">1.1.3</span>  Practical</a></li>
+  <li><a href="#remote-sensing-data-formats" id="toc-remote-sensing-data-formats" class="nav-link" data-scroll-target="#remote-sensing-data-formats"><span class="toc-section-number">1.1.1</span>  <strong>Remote Sensing Data Formats</strong></a></li>
+  <li><a href="#four-resolutions-in-remote-sensing" id="toc-four-resolutions-in-remote-sensing" class="nav-link" data-scroll-target="#four-resolutions-in-remote-sensing"><span class="toc-section-number">1.1.2</span>  <strong>Four Resolutions in Remote Sensing</strong></a></li>
+  <li><a href="#bands-explained" id="toc-bands-explained" class="nav-link" data-scroll-target="#bands-explained"><span class="toc-section-number">1.1.3</span>  <strong>Bands Explained</strong></a></li>
   </ul></li>
-  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">1.2</span>  Application:</a></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">1.2</span>  Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">1.3</span>  Reflection</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/Week1.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -209,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - Getting started with remote sensing</span></h1>
 </div>
 
 
@@ -225,53 +247,220 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="summary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">1.1</span> Summary</h2>
-<p>This section summarises the lecture content and a graph of feature space derived from practical in SNAP operations.</p>
-<p>Passive data: Energy usually in eletcromagnetic form e.g., human eyes</p>
-<p>Active data: Energy in addition in illumination . e.g., radar.</p>
-<p>How EM waves interact with Earth’s surface and atmosphere: Reflection, scattering, absorption</p>
-<p>single</p>
-<p>dual</p>
-<p>quad</p>
-<section id="remotely-sensed-data-usually-comes-in" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="remotely-sensed-data-usually-comes-in"><span class="header-section-number">1.1.1</span> remotely-sensed data usually comes in</h3>
-<p>Raster: file</p>
-<p>types: BIL, BSQM BIP, GeoTIFF</p>
+<ul>
+<li>Data types in remote sensing:
+<ul>
+<li>Passive data: Energy in electromagnetic form (e.g., human eyes)</li>
+<li>Active data: Energy in addition to illumination (e.g., radar)</li>
+</ul></li>
+<li>Interaction of EM waves with Earth’s surface and atmosphere:
+<ul>
+<li>Single: This category refers to the interaction of EM waves with only one component of the Earth’s system, either the surface or the atmosphere. For example, when sunlight (an EM wave) directly reaches the Earth’s surface without interacting with the atmosphere, it is considered a single interaction. Similarly, if the EM wave only interacts with the atmosphere and does not reach the surface, it is also a single interaction. In remote sensing, single interactions are usually the most straightforward to analyze. The most straightforward to analyze.</li>
+<li>Dual: Dual interactions involve the EM waves interacting with both the Earth’s surface and atmosphere. In this case, the EM waves pass through the atmosphere, interact with the Earth’s surface, and then pass back through the atmosphere before reaching the sensor. This process results in changes to the EM waves, such as absorption or scattering, which can affect the quality and interpretation of the remote sensing data. apply atmospheric correction techniques to retrieve accurate information about the Earth’s surface.</li>
+<li>Quad: Quad interactions refer to EM waves interacting with multiple components of the Earth’s system, such as the surface, atmosphere, and other features (e.g., vegetation, water bodies). Involve various processes such as absorption, scattering, reflection, and transmission. Account for the unique characteristics and properties of each component involved, making the process more challenging.</li>
+</ul></li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Interaction Type</th>
+<th>Components of Earth</th>
+<th>Processes Considered</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Single</td>
+<td>Surface OR Atmosphere</td>
+<td>Direct interaction with one component</td>
+<td>Most straightforward to analyze</td>
+</tr>
+<tr class="even">
+<td>Dual</td>
+<td>Surface AND Atmosphere</td>
+<td>Absorption, scattering</td>
+<td>Requires atmospheric correction for accurate results</td>
+</tr>
+<tr class="odd">
+<td>Quad</td>
+<td>Surface, Atmosphere, Features</td>
+<td>Absorption, scattering, reflection, transmission</td>
+<td>More challenging due to multiple components involved</td>
+</tr>
+</tbody>
+</table>
+<section id="remote-sensing-data-formats" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="remote-sensing-data-formats"><span class="header-section-number">1.1.1</span> <strong>Remote Sensing Data Formats</strong></h3>
+<ul>
+<li>Raster formats:
+<ul>
+<li>BIL</li>
+<li>BSQ</li>
+<li>BIP</li>
+<li>GeoTIFF</li>
+</ul></li>
+</ul>
 </section>
-<section id="four-resolutions" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="four-resolutions"><span class="header-section-number">1.1.2</span> Four resolutions:</h3>
-<p>Spatial: ranging from 10 cm to several kilos</p>
-<p>Spectral: How many different spectral bands are there? (Every feature on earth has a unique spectral signature)</p>
-<p>(Atmospheric windows: )</p>
-<p>(Vegetation: red edge -- infra bands. APP: look at the infra band s of city to identify who has access to vegetation)</p>
-<p>Radiometric resolution: resolution of cell’s value</p>
-<p>Temporal resolution: ussualy inversly relate3 to pixel size (spatial)</p>
-<p>MODIS</p>
+<section id="four-resolutions-in-remote-sensing" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="four-resolutions-in-remote-sensing"><span class="header-section-number">1.1.2</span> <strong>Four Resolutions in Remote Sensing</strong></h3>
+<ol type="1">
+<li>Spatial resolution:
+<ul>
+<li>Ranges from 10 cm to several kilometers</li>
+</ul></li>
+<li>Spectral resolution:
+<ul>
+<li>Number of different spectral bands captured</li>
+<li>Unique spectral signatures for each feature on Earth</li>
+<li>Atmospheric windows</li>
+<li>Vegetation: Red edge - infrared bands
+<ul>
+<li>Application: Analyze infrared bands in cities to identify access to vegetation</li>
+</ul></li>
+</ul></li>
+<li>Radiometric resolution:
+<ul>
+<li>Resolution of a cell’s value</li>
+</ul></li>
+<li>Temporal resolution:
+<ul>
+<li>Usually inversely related to pixel size (spatial resolution)</li>
+</ul></li>
+</ol>
+<ul>
+<li>Example satellite sensor: MODIS</li>
+</ul>
 </section>
-<section id="practical" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="practical"><span class="header-section-number">1.1.3</span> Practical</h3>
+<section id="bands-explained" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="bands-explained"><span class="header-section-number">1.1.3</span> <strong>Bands Explained</strong></h3>
+<ul>
+<li><p>In remote sensing, bands refer to the specific ranges of wavelengths captured by a sensor.</p></li>
+<li><p>Each band captures information about different features on Earth’s surface.</p></li>
+<li><p>Understanding the properties of each band helps in the interpretation and analysis of remote sensing data.</p></li>
+</ul>
+</section>
+</section>
+<section id="application" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application</h2>
+<p>I explored <span class="citation" data-cites="butcher_tour_2016">Butcher (<a href="references.html#ref-butcher_tour_2016" role="doc-biblioref">2016</a>)</span> for a better understanding of electromagnectic waves and the application in Remote Sensing.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type of Wave</th>
+<th>Wavelength Range</th>
+<th>Frequency Range</th>
+<th>Example Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Radio Waves</td>
+<td>&gt;1mm</td>
+<td>&lt;300 GHz</td>
+<td>Broadcasting, communication, radar</td>
+</tr>
+<tr class="even">
+<td>Microwaves</td>
+<td>1mm - 1m</td>
+<td>300 MHz - 300 GHz</td>
+<td>Cooking, communication, radar</td>
+</tr>
+<tr class="odd">
+<td>Infrared Waves</td>
+<td>700 nm - 1 mm</td>
+<td>300 GHz - 430 THz</td>
+<td>Thermal imaging, remote controls</td>
+</tr>
+<tr class="even">
+<td>Visible Light</td>
+<td>400 nm - 700 nm</td>
+<td>430 THz - 750 THz</td>
+<td>Human vision, photography</td>
+</tr>
+<tr class="odd">
+<td>Ultraviolet Waves</td>
+<td>10 nm - 400 nm</td>
+<td>750 THz -30 PHz</td>
+<td>Sterilization, fluorescence microscopy</td>
+</tr>
+<tr class="even">
+<td>X-Rays</td>
+<td>&lt;10 nm</td>
+<td>&gt;30 PHz</td>
+<td>Medical imaging, airport security</td>
+</tr>
+<tr class="odd">
+<td>Gamma Rays</td>
+<td>&lt;0.01 nm</td>
+<td>&gt;30 EHz</td>
+<td>Cancer treatment, nuclear medicine</td>
+</tr>
+</tbody>
+</table>
 <div id="fig-vege" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/spectral_feature_space_vege_B04_B08.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1.1: Spectral Feature Space, Vegetation On Bands B04 and B08</figcaption><p></p>
 </figure>
 </div>
-</section>
-</section>
-<section id="application" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="application"><span class="header-section-number">1.2</span> Application:</h2>
 <p>“Spectral Feature Space, Vegetation On Bands B04 and B08”</p>
 <p>One of the applications really attracted me was the spatial signature of vegetation on the terra, as we could assign features to each end of the spatial signature area see <a href="#fig-vege">Figure&nbsp;<span>1.1</span></a>, such as bare land on the right end of the triangle-like area where red light captured are dense while near-infrared level is low. Heavy vegetation are witnessed at the upper end of the triangle-like area where red light low and near-infrared is high, indicating heavy biomass. As for the left-down corner where both red and near-infrared are low, we can identify wet lands. This is integrated in the NDVI (Normalized Difference Vegetation Index) to estimate vegetation cover.</p>
+<p>workflow of the Electromagnetic Spectrum</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'theme':'base', 'themeVariables': {'edge': 'green'}}}%%
+graph TD
+  A[Start]
+  B[Generate electromagnetic waves]
+  C[Determine frequency, wavelength, or energy]
+  D[Classify waves into types]
+  E[Identify applications for each type of wave]
+  F[End]
+
+  A--&gt;B
+  B--&gt;C
+  C--&gt;D
+  D--&gt;E
+  E--&gt;F
+
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
 <p>Spatial signatures can also be used to monitor the health of vegetation by identifying patterns of quavariation in spectral reflectance that are indicative of stress or disease. For example, vegetation that is stressed or diseased may have a different spectral reflectance signature than healthy vegetation, which can be identified using spatial signatures.</p>
 <p>In addition, spatial signatures can be used to monitor the growth and distribution of vegetation over time by comparing satellite imagery from different dates. This can be useful for understanding the impacts of land use changes, climate change, and other factors on vegetation.</p>
 <p>Overall, spatial signatures are a powerful tool for vegetation monitoring, as they can be used to identify and classify different types of vegetation, monitor vegetation health, and track vegetation changes over time.</p>
 </section>
 <section id="reflection" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">1.3</span> Reflection</h2>
-<p>just state what interest you and why, as well as the application. Application: Context matters. Why useful? What had it assisted achieving. Mind map of concepts, to show understanding of data and workflow</p>
-<p>One of the challenges I encountered is to navigate the complexities of the interface of SNAP and QGIS. It becomes clear to me that yes implementing several functions in code can be challenging, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, finding which function falling under which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation.</p>
-<p>When doing the operation in R on a script level, it becomes confusing where I put the data</p>
+<p>Having active sensing methods is inspiring as it reminds us that instead of struggling with improving image quality sensed passively using sunlight, we can try altering to artificial signals. Also that sunlight is but another form of electromagnetic wave. This implies a potential to cancel the boundary between natural phenomenon and artificial forms. I feel more encouraged to more actively explore relationships in nature with the devices at hand. I am considering implement active sensors to include SAR data for IoT-based data pipelines. With active sensing data like SAR monitoring forestry real-time, the machine learning model can acquire enough ground truth data from nature for constant adaptation. This could be incorporated into forestry monitoring systems and disaster monitoring systems to cover for both accuracy and rapidness.</p>
+<p>One of the challenges I encountered is to navigate the complexities of the interface of SNAP and QGIS. It becomes clear to me that yes implementing several functions in code can be challenging, but a software with collective functions as a whole can be mindblowing even when with decent GUIs. Specifically, finding which function falling under which menu consumes a lot of time, and figuring out filling parameters to carry the analysis also took some efforts of iterative validation. Anyway, it’s nice to have attempts of designing GUIs for EO data manipulation. Hopefully, with Large Language Model simplifying GIS software designing, we can more easily translate code workflows into user-friendly interfaces and apply our design ideas.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-butcher_tour_2016" class="csl-entry" role="doc-biblioentry">
+Butcher, Ginger. 2016. <em>Tour of the Electromagnetic Spectrum</em>. Third edition. Washington, DC: National Aeronautics; Space Administration.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

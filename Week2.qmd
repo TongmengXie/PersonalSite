@@ -1,1 +1,8 @@
 # Week 2 - Portfolio
+```{r, echo = FALSE, out.width='40%'}
+xaringanExtra::embed_xaringan(
+  url = "https://TongmengXie.github.io/SLIDE_NAME",
+  ratio = "16:9") 
+```
+
+- [Xaringan operation instruction](https://andrewmaclachlan.github.io/CASA0023/2_portfolio.html)
