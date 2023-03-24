@@ -59,7 +59,7 @@ Image stretch, Band ratioing, Normalised Burn Ratio, Edge enhancement, Filtering
 ### Future development
 
 | **Type of Correction**        | **Potential Future Developments**                                                                                                                   |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | Geometric Correction          | Automatic GCP identification, more precise resampling methods, handle larger and more complex datasets.                                             |
 | Atmospheric Correction        | Incorporate more accurate atmospheric models, improve parameter estimation methods, integrate machine learning algorithms.                          |
 | Orthorectification Correction | More accurate and efficient algorithms, higher quality elevation models, more advanced image correction techniques.                                 |
@@ -107,7 +107,7 @@ Schematic overview of multispectral-radar SRS data fusion techniques. The parame
 
 1. **image segmentation:** Demands that multispectral and radar SRS images are with the same spatial resolution
 
-2. \*extracting objects separately and combining in a feature map\*
+2. extracting objects separately and combining in a feature map
 
 Object-based fusion reduces all multispectral and radar information into a single layer of discrete objects, which are often relatively easy to relate to ecological features.
 

@@ -27,7 +27,7 @@ book:
     #anonymize-ip: true
     
   author: "Tongmeng Xie"
-  date: "2023/3/16"
+  date: "2023/3/24"
   chapters:
     - index.qmd
     - Week1.qmd
