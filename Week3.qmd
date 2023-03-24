@@ -4,7 +4,6 @@ In this week's learning diary, we try to handle
 
 ## Summary:
 
-
 ### Different Sensors
 
 Across track scanners: Mirror reflects light onto 1 detector. For example, [Landsat]{.underline} dataset are captured by this sort

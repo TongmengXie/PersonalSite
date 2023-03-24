@@ -56,7 +56,7 @@ Detecting changes in the Earth's surface over time
     The relationship between different surfaces and their sensitivity to polarizations in SAR data
 
     | Surface Type       | Scattering Mechanism | Most Sensitive Polarization                          |
-    |--------------------|----------------------|------------------------------------------------------|
+    |-----------------|-----------------|--------------------------------------|
     | Rough (bare earth) | Rough Scattering     | Vertical-Vertical (VV)                               |
     | Leaves             | Volume Scattering    | Vertical-Horizontal (VH) or Horizontal-Vertical (HV) |
     | Trees / Buildings  | Double Bounce        | Horizontal-Horizontal (HH)                           |
@@ -68,7 +68,7 @@ Detecting changes in the Earth's surface over time
 ### Practical change detection with SAR
 
 | Topic                                     | Key Points                                                                                         |
-|-------------------------------------------|----------------------------------------------------------------------------------------------------|
+|----------------------|--------------------------------------------------|
 | Advantages of SAR for Change Detection    | Can see through clouds unlike optical sensors; high temporal resolution.                           |
 | Change Detection Techniques               | Ratio or log ratios between two images; t-tests; standard deviation.                               |
 | Fusion of SAR and Optical Data            | Principal component analysis; object-based image analysis; intensity fusion.                       |
@@ -98,7 +98,7 @@ Resolution, accuracy, real-time-ness and data scale in SAR might see advancement
     -   Advanced algorithms that are yet to be developed or need further maturity for SAR data analysis could include:
 
     | Algorithm                                         | Pros                                                                                                                                                                         | Cons                                                                                                                                    |
-    |---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+    |----------------|--------------------------------|-------------------------|
     | Improved Unsupervised Change Detection Algorithms | \- No need for labeled training data. - Can discover unknown or unexpected changes.                                                                                          | \- May struggle with complex or subtle changes. - Can be sensitive to noise and variations in the data.                                 |
     | Multi-Modal Fusion Algorithms                     | \- Combines SAR data with other sources (e.g., optical, hyperspectral) for better feature identification. - Can exploit the complementary strengths of different data types. | \- Requires data synchronization and registration, which can be challenging. - May involve increased complexity and computational cost. |
     | Graph-based Change Detection Algorithms           | \- Can model complex spatial relationships between features. - Robust against noise and speckle effects in SAR data.                                                         | \- Computationally expensive, especially for large-scale datasets. - May require tuning of hyperparameters.                             |
@@ -149,3 +149,19 @@ However, the integration of SAR imagery and LiDAR data did not improve significa
 -   The effectiveness of machine learning algorithms for automated wetland classification can expect further development. E.g., Graph-based Change Detection Algorithms can model complex spatial relationships between features and is robust against noise and speckle effects in SAR data.
 
 This shift toward the automated machine learning algorithms comes to fulfill the requirement for operational wetland monitoring systems.
+
+## Reflection
+
+SAR data with its amazing all-weather capability and real-time monitoring feature heralds the possibilities of real-time monitoring, which aligns with the disaster monitoring tasks. But there remain concerns in this approach: 
+
+- How real-time is real time?
+    - Does a 5-seconds delay in data transmission fail an essential decision-making?
+- How to quantify tolerance thresholds in regards of delay, error and bias?
+    - A sharp cutoff or a fuzzy one?
+- What degree of accuracy? Managing response time of
+    - Data acquirement, transmission and calculation
+    - Human-based decision-making
+    
+    Incurs extra cost. The estimation is almost always NOT deterministic.
+    
+Thinking about these questions can prepare one for awareness of risks when applying seemingly fancy technologies to real-world problems where people lives are concerned and efficiency of the solution needs elaborate calculation.

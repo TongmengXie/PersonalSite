@@ -2,7 +2,7 @@
 Slide about flood prediction and monitoring is here: https://tongmengxie.github.io/Xaringan_slides
 ```{r, echo = FALSE, out.width='40%'}
  xaringanExtra::embed_xaringan(
- url = "https://tongmengxie.github.io/Xaringan_slides",
+ url = "https://tongmengxie.github.io/Xaringan_slides/#1",
  ratio = "16:9") 
 ```
 

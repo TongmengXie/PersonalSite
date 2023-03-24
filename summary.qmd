@@ -1,11 +1,10 @@
----
-jupyter: python3
----
 
 # Summary
 
-In summary, this book has no content whatsoever.
+This module significantly boosted my knowledge and practice experience in fitting Remote Sensing into data pipeline and framing the workflow as a process of informing policies. I had my undergraduate degree including GIS training and GIS software development, while I see this module as a chance for systematically delving into Earth Observation data, as well as simplifying the process on platforms like GEE. As a result, my understanding of EO data incorporation process and technical fundamentals are deepened by tense practice in case studies and wide literature exposure.
 
-```{python}
-1 + 1
-```
+Especially, the workflow of Google Earth Engine gives me a template of handling big-data and designing online EO data workflow, including the fast deployment of machine learning models in EO image classification tasks introduced in Week 6 and Week 7.
+
+Also, the exemplar ways of approaching policy gaps between plans and execution by introducing EO data and remote sensing will guide me to utilise technical expertise to participate in policy framing and improvement. The group presentation also gave me a chance to do so in designing a flood risk management solution in Kuala Lumpur. The outcome can be viewed [here](https://hansenwgn.github.io/EarthSight/), thanks to all team members' collaborated efforts.
+
+Thanks to [Andy](https://github.com/andrewmaclachlan), who delivered this amazing module!

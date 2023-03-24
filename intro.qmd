@@ -4,8 +4,6 @@ Welcome to my learning diary page of Remote Sensing Cities and Environment (CASA
 
 I'm a current Master of Science student at Bartlett Centre for Advanced Spatial Analysis
 
-This is a learning diary of a Master of Science student at CASA Module CASA0023 (Remote Sensing City Environment).
-
 This learning diary is presented as a Quarto book containing 9 weeks as chapters.
 
 Each week, the content summarises that week's teaching content in section summary, sometimes it emphasises comprehensiveness and therefore appear in overwhelming length. This way, it is easy for a general reader to get lost in finding what's important. Therefore, I also added guides and highlighted what stood out in importance. Future development part can also assist in grasping the big picture of that week's topic.
