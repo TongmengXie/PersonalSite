@@ -106,7 +106,7 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img">
 </i> 
  </a>
   </li>  
@@ -217,7 +217,8 @@ div.csl-indent {
   <li><a href="#gee-basics" id="toc-gee-basics" class="nav-link" data-scroll-target="#gee-basics"><span class="toc-section-number">5.1.1</span>  GEE Basics</a></li>
   <li><a href="#gee-objects" id="toc-gee-objects" class="nav-link" data-scroll-target="#gee-objects"><span class="toc-section-number">5.1.2</span>  GEE Objects</a></li>
   <li><a href="#gee-processes-and-applicationsoutputs" id="toc-gee-processes-and-applicationsoutputs" class="nav-link" data-scroll-target="#gee-processes-and-applicationsoutputs"><span class="toc-section-number">5.1.3</span>  GEE Processes and Applications/Outputs</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="toc-section-number">5.1.4</span>  Limitations</a></li>
+  <li><a href="#advantages-and-limitations" id="toc-advantages-and-limitations" class="nav-link" data-scroll-target="#advantages-and-limitations"><span class="toc-section-number">5.1.4</span>  Advantages and Limitations</a></li>
+  <li><a href="#trend" id="toc-trend" class="nav-link" data-scroll-target="#trend"><span class="toc-section-number">5.1.5</span>  Trend</a></li>
   </ul></li>
   <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">5.2</span>  Application</a></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">5.3</span>  Reflection</a></li>
@@ -259,6 +260,159 @@ div.csl-indent {
 <p>Also, the types of analyses that can be performed in GEE are briefly covered.</p>
 <section id="summary" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.1</span> Summary</h2>
+<p>Introduced GEE Basics, Objects, Geometries and applications.</p>
+<p>Table 1: Terms, Jargon, and Processes Related to Google Earth Engine</p>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 11%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Term/Aspect</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Basics</td>
+<td>Google Earth Engine</td>
+<td>A geospatial processing service that allows geospatial analysis at scale.</td>
+</tr>
+<tr class="even">
+<td>Basics</td>
+<td>Image</td>
+<td>Refers to raster data in GEE and has bands.</td>
+</tr>
+<tr class="odd">
+<td>Basics</td>
+<td>Feature</td>
+<td>Refers to vector data in GEE and has geometry and attributes.</td>
+</tr>
+<tr class="even">
+<td>Basics</td>
+<td>ImageCollection</td>
+<td>A stack of images in GEE.</td>
+</tr>
+<tr class="odd">
+<td>Basics</td>
+<td>FeatureCollection</td>
+<td>A stack of features (lots of polygons) in GEE.</td>
+</tr>
+<tr class="even">
+<td>Basics</td>
+<td>Proxy objects</td>
+<td>GEE objects that are stored on the server and have no data in the script.</td>
+</tr>
+<tr class="odd">
+<td>Objects</td>
+<td>Earth Engine Objects</td>
+<td>Objects in GEE starting with “ee”.</td>
+</tr>
+<tr class="even">
+<td>Objects</td>
+<td>Images (Rasters)</td>
+<td>GEE object representing raster data with bands.</td>
+</tr>
+<tr class="odd">
+<td>Objects</td>
+<td>Feature</td>
+<td>GEE object representing vector data with geometry and attributes.</td>
+</tr>
+<tr class="even">
+<td>Objects</td>
+<td>ImageCollection</td>
+<td>A stack of images in GEE.</td>
+</tr>
+<tr class="odd">
+<td>Objects</td>
+<td>FeatureCollection</td>
+<td>A stack of features (lots of polygons) in GEE.</td>
+</tr>
+<tr class="even">
+<td>Objects</td>
+<td>Joins</td>
+<td>Combining two FeatureCollections with a common property.</td>
+</tr>
+<tr class="odd">
+<td>Objects</td>
+<td>Arrays</td>
+<td>Used to store and manipulate lists of values.</td>
+</tr>
+<tr class="even">
+<td>Objects</td>
+<td>Chart</td>
+<td>Used to visualize data in GEE.</td>
+</tr>
+<tr class="odd">
+<td>Geometry</td>
+<td>Point</td>
+<td>A single location represented by its longitude and latitude.</td>
+</tr>
+<tr class="even">
+<td>Geometry</td>
+<td>Line</td>
+<td>A series of connected points representing a linear feature.</td>
+</tr>
+<tr class="odd">
+<td>Geometry</td>
+<td>Polygon</td>
+<td>A closed shape with three or more sides, represented by a series of connected lines forming a closed loop.</td>
+</tr>
+<tr class="even">
+<td>Geometry</td>
+<td>MultiPolygon</td>
+<td>A collection of polygons, where each polygon is represented as a list of coordinate tuples defining its vertices.</td>
+</tr>
+<tr class="odd">
+<td>Geometry</td>
+<td>MultiGeometry</td>
+<td>A collection of different types of geometries.</td>
+</tr>
+<tr class="even">
+<td>Processes</td>
+<td>Reducing</td>
+<td>Summarizing data over a specified dimension or property.</td>
+</tr>
+<tr class="odd">
+<td>Processes</td>
+<td>Filtering</td>
+<td>Reducing data to a specific subset based on a specified condition.</td>
+</tr>
+<tr class="even">
+<td>Processes</td>
+<td>Mapping</td>
+<td>Applying a function to every element of a collection in GEE.</td>
+</tr>
+<tr class="odd">
+<td>Processes</td>
+<td>Scaling</td>
+<td>Refers to the pixel resolution in GEE. The scale is set by the output, not the input, and Earth Engine selects the pyramid with the closest scale to analysis.</td>
+</tr>
+<tr class="even">
+<td>Client/Server</td>
+<td>Client Side</td>
+<td>Refers to the browser side of GEE.</td>
+</tr>
+<tr class="odd">
+<td>Client/Server</td>
+<td>Server Side</td>
+<td>Refers to the side of GEE where data is stored.</td>
+</tr>
+<tr class="even">
+<td>Client/Server</td>
+<td>Looping</td>
+<td>Looping is not recommended for objects on the server side.</td>
+</tr>
+<tr class="odd">
+<td>Client/Server</td>
+<td>Mapping</td>
+<td>Instead of loops, mapping is used in GEE to apply a function to everything on the server.</td>
+</tr>
+</tbody>
+</table>
 <section id="gee-basics" class="level3" data-number="5.1.1">
 <h3 data-number="5.1.1" class="anchored" data-anchor-id="gee-basics"><span class="header-section-number">5.1.1</span> GEE Basics</h3>
 <p>JavaScript, where objects are dictionaries:</p>
@@ -276,84 +430,6 @@ div.csl-indent {
 <li>Pixel resolution, set by the output.</li>
 <li>GEE does resampling, aggregating your input to a 256*256, mainly down-sampling.</li>
 </ul>
-<p>Table 1: Terms and Jargon Related to Google Earth Engine</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Term</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Google Earth Engine</td>
-<td>A geospatial processing service that allows geospatial analysis at scale.</td>
-</tr>
-<tr class="even">
-<td>Image</td>
-<td>Refers to raster data in GEE and has bands.</td>
-</tr>
-<tr class="odd">
-<td>Feature</td>
-<td>Refers to vector data in GEE and has geometry and attributes.</td>
-</tr>
-<tr class="even">
-<td>ImageCollection</td>
-<td>A stack of images in GEE.</td>
-</tr>
-<tr class="odd">
-<td>FeatureCollection</td>
-<td>A stack of features (lots of polygons) in GEE.</td>
-</tr>
-<tr class="even">
-<td>Proxy objects</td>
-<td>GEE objects that are stored on the server and have no data in the script.</td>
-</tr>
-</tbody>
-</table>
-<p>Table 2: Differences between Client and Server Side in Google Earth Engine</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aspect</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Client Side</td>
-<td>Refers to the browser side of GEE.</td>
-</tr>
-<tr class="even">
-<td>Server Side</td>
-<td>Refers to the side of GEE where data is stored.</td>
-</tr>
-<tr class="odd">
-<td>Earth Engine Objects</td>
-<td>Objects in GEE starting with “ee”.</td>
-</tr>
-<tr class="even">
-<td>Looping</td>
-<td>Looping is not recommended for objects on the server side.</td>
-</tr>
-<tr class="odd">
-<td>Mapping</td>
-<td>Instead of loops, mapping is used in GEE to apply a function to everything on the server.</td>
-</tr>
-<tr class="even">
-<td>Scale</td>
-<td>Scale refers to pixel resolution in GEE. The scale is set by the output, not the input, and Earth Engine selects the pyramid with the closest scale to analysis.</td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="gee-objects" class="level3" data-number="5.1.2">
 <h3 data-number="5.1.2" class="anchored" data-anchor-id="gee-objects"><span class="header-section-number">5.1.2</span> GEE Objects</h3>
@@ -361,41 +437,6 @@ div.csl-indent {
 <ul>
 <li>Images (Rasters), geometry, ImageCol, features, featureCol, joins, arrays, chart.</li>
 </ul>
-<p>Table 3: Geometry Types and Features</p>
-<table class="table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Type of Geometry</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Point</td>
-<td>A single location represented by its longitude and latitude</td>
-</tr>
-<tr class="even">
-<td>Line</td>
-<td>A series of connected points representing a linear feature</td>
-</tr>
-<tr class="odd">
-<td>Polygon</td>
-<td>A closed shape with three or more sides, represented by a series of connected lines forming a closed loop</td>
-</tr>
-<tr class="even">
-<td>MultiPolygon</td>
-<td>A collection of polygons, where each polygon is represented as a list of coordinate tuples defining its vertices</td>
-</tr>
-<tr class="odd">
-<td>MultiGeometry</td>
-<td>A collection of different types of geometries</td>
-</tr>
-</tbody>
-</table>
 </section>
 <section id="gee-processes-and-applicationsoutputs" class="level3" data-number="5.1.3">
 <h3 data-number="5.1.3" class="anchored" data-anchor-id="gee-processes-and-applicationsoutputs"><span class="header-section-number">5.1.3</span> GEE Processes and Applications/Outputs</h3>
@@ -420,11 +461,11 @@ div.csl-indent {
 <li>Per-pixel</li>
 <li>sub-pixel</li>
 </ul>
-<p>Table 4: GEE Processes and Applications/Outputs</p>
+<p>Table 2: GEE Processes and Applications/Outputs</p>
 <table class="table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 12%">
+<col style="width: 87%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -460,19 +501,77 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="limitations" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="limitations"><span class="header-section-number">5.1.4</span> Limitations</h3>
-<p>No support for phase data, needs SNAP.</p>
+<section id="advantages-and-limitations" class="level3" data-number="5.1.4">
+<h3 data-number="5.1.4" class="anchored" data-anchor-id="advantages-and-limitations"><span class="header-section-number">5.1.4</span> Advantages and Limitations</h3>
+<table class="table">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Large-scale data processing</td>
+<td>1. Limited to Google’s data catalog</td>
+</tr>
+<tr class="even">
+<td>2. Access to vast satellite imagery library</td>
+<td>2. Steeper learning curve for beginners</td>
+</tr>
+<tr class="odd">
+<td>3. Real-time data analysis capabilities</td>
+<td>3. Requires coding skills (JavaScript, Python)</td>
+</tr>
+<tr class="even">
+<td>4. Cloud-based platform</td>
+<td>4. Limited customization options</td>
+</tr>
+<tr class="odd">
+<td>5. Free for non-commercial use</td>
+<td>5. Data export restrictions</td>
+</tr>
+<tr class="even">
+<td>6. Easy data sharing and collaboration</td>
+<td>6. Dependent on internet connectivity</td>
+</tr>
+</tbody>
+</table>
+<p>*No support for phase data, needs SNAP.</p>
+</section>
+<section id="trend" class="level3" data-number="5.1.5">
+<h3 data-number="5.1.5" class="anchored" data-anchor-id="trend"><span class="header-section-number">5.1.5</span> Trend</h3>
+<p>See also Section Application for details and references.</p>
+<ol type="1">
+<li>Enhancement user interface: GEE might introduce a more user-friendly interface to lower the entry barrier for beginners and non-programmers, making it more accessible to a wider audience.</li>
+<li>Integration with machine learning and AI: GEE could expand its integration with advanced machine learning and AI algorithms, enabling users to derive more sophisticated insights from geospatial data.</li>
+<li>Customisable solutions: GEE may introduce more customization options for users, allowing them to develop tailored geospatial analysis tools and applications.</li>
+<li>Better support for commercial use: GEE could offer more comprehensive support and licensing options for commercial users, helping businesses harness the full potential of geospatial data analysis.</li>
+</ol>
 </section>
 </section>
 <section id="application" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="application"><span class="header-section-number">5.2</span> Application</h2>
+<p>Literature choice: <span class="citation" data-cites="gorelick_google_2017">Gorelick et al. (<a href="references.html#ref-gorelick_google_2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>This week’s recommended literature mainly are documentation support for GEE and literature, even papers. Therefore the contribution of the literature will be in more general senses. An overview of Google Earth Engine’s capabilities and applications, as well as its potential to address societal issues.</p>
+<p>They also discuss potential future developments, including expanding Earth Engine’s data catalog, improving its user interface, and increasing collaboration with other organizations.</p>
+<ul>
+<li>Expanding Earth Engine’s data catalog: currently includes a wide range of geospatial datasets but could be expanded to include additional sources of data <span class="citation" data-cites="gorelick_google_2017">(<a href="references.html#ref-gorelick_google_2017" role="doc-biblioref">Gorelick et al. 2017</a>)</span>.</li>
+<li>Improving the user interface: make it more intuitive and user-friendly, particularly for non-expert users.</li>
+<li>Increasing collaboration with other organizations: Collaboration with other organizations, both in terms of data sharing and joint research projects, is also an important area for future development.</li>
+<li>Ongoing research into new analysis techniques and algorithms: Ongoing research into new analysis techniques and algorithms will continue to expand Earth Engine’s capabilities and applications <span class="citation" data-cites="moore_google_2011">(<a href="references.html#ref-moore_google_2011" role="doc-biblioref">Moore and Hansen 2011</a>)</span>.</li>
+</ul>
 </section>
 <section id="reflection" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">5.3</span> Reflection</h2>
-<p>GEE-using skills can be a valuable asset for a spatial data scientist, as it allows for complex spatial analysis at scale. Traditional GIS software is eclipsed when it comes to both efficiency and scale.</p>
+<p>GEE-using skills can be a valuable asset for a spatial data scientist, as it allows for complex spatial analysis at scale. Traditional GIS software are eclipsed when it comes to both efficiency and scale.</p>
 <p>GEE’s unique and efficient way of conducting analysis flows is interesting, such as the introduction of concepts like client vs server-side operations and data reduction techniques. These was required by GEE’s feature of carrying out analyses on massive datasets <span class="citation" data-cites="gorelick_google_2017">(<a href="references.html#ref-gorelick_google_2017" role="doc-biblioref">Gorelick et al. 2017</a>)</span>. For those interested in BigData technology, the strategies (server/client split, no looping on server, etc.) applied by Google here is a very resourceful one and worth learning. The user end also has to learn to adopt good practices for reducing data range, which has been simplified to a series of reduction and filtering functions, e.g.&nbsp;<code>ImageCollection.filterDate(), image.reduceNeighborhood()</code><span class="citation" data-cites="google_reducer_2023">(<a href="references.html#ref-google_reducer_2023" role="doc-biblioref">Google 2023b</a>)</span>.</p>
 <p>GEE’s combination with machine learning is also promising in regard of automating complex analysis tasks, as Machine Learning APIs offered by GEE support Supervised and Unsupervised Classification, and Regression <span class="citation" data-cites="google_machine_2023">(<a href="references.html#ref-google_machine_2023" role="doc-biblioref">Google 2023a</a>)</span>. According to <span class="citation" data-cites="saad_el_imanni_multispectral_2023">Saad El Imanni et al. (<a href="references.html#ref-saad_el_imanni_multispectral_2023" role="doc-biblioref">2023</a>)</span>, as a subtask of intelligent agriculture, weeds detection task sees an impressive performance (overall accuracy reached 96.87%) when GEE and Machine learning are combined.</p>
+<p>In conclusion, I believe familiarity with GEE will add to one’s machine learning workflow in dealing with EO data, and, more generally, incredibly large datasets. The design of GEE also opens an era of web-service based big-data handling. Its designs in alleviating computation on client side and getting rid of for-loop on server-side inspires service designers to make distinct standards for code practice based on the server-client split. Besides, the sheer amount and diverse categories of data available on GEE saves experts from burdensome data collection process, so they can focus more on EO data processing, analysis and storytelling.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
@@ -484,6 +583,9 @@ Google. 2023a. <span>“Machine <span>Learning</span> in <span>Earth</span> <spa
 </div>
 <div id="ref-gorelick_google_2017" class="csl-entry" role="doc-biblioentry">
 Gorelick, Noel, Matt Hancher, Mike Dixon, Simon Ilyushchenko, David Thau, and Rebecca Moore. 2017. <span>“Google <span>Earth</span> <span>Engine</span>: <span>Planetary</span>-Scale Geospatial Analysis for Everyone.”</span> <em>Remote Sensing of Environment</em>, Big <span>Remotely</span> <span>Sensed</span> <span>Data</span>: Tools, applications and experiences, 202 (December): 18–27. <a href="https://doi.org/10.1016/j.rse.2017.06.031">https://doi.org/10.1016/j.rse.2017.06.031</a>.
+</div>
+<div id="ref-moore_google_2011" class="csl-entry" role="doc-biblioentry">
+Moore, R., and M. Hansen. 2011. <span>“Google <span>Earth</span> <span>Engine</span>: A New Cloud-Computing Platform for Global-Scale Earth Observation Data and Analysis.”</span> <em>AGU Fall Meeting Abstracts</em>, December, 02.
 </div>
 <div id="ref-saad_el_imanni_multispectral_2023" class="csl-entry" role="doc-biblioentry">
 Saad El Imanni, Hajar, Abderrazak El Harti, El Mostafa Bachaoui, Hicham Mouncif, Fatine Eddassouqui, Mohamed Achraf Hasnai, and Moulay Ismail Zinelabidine. 2023. <span>“Multispectral <span>UAV</span> Data for Detection of Weeds in a Citrus Farm Using Machine Learning and <span>Google</span> <span>Earth</span> <span>Engine</span>: <span>Case</span> Study of <span>Morocco</span>.”</span> <em>Remote Sensing Applications: Society and Environment</em> 30 (April): 100941. <a href="https://doi.org/10.1016/j.rsase.2023.100941">https://doi.org/10.1016/j.rsase.2023.100941</a>.
