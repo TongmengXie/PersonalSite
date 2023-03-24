@@ -1,6 +1,6 @@
 # Week 3 - Remote sensing data
 
-In this week's learning diary, we try to handle
+In this week's learning diary, we try to deal with an essential task of remote sensing data workflow, correction
 
 ## Summary:
 
@@ -55,6 +55,8 @@ Also known as [Mosaicking]{.underline}: We feather two images, creating a [seaml
 ### Image Enhancements
 
 Image stretch, Band ratioing, Normalised Burn Ratio, Edge enhancement, Filtering, PCA, Image fusion (see application) etc.
+
+### Future development
 
 ## Application - Discussing image fusion in one literature
 
