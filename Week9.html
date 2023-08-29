@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Learning Diary - CASA0023 - 9&nbsp; Week 9 - Synthetic Aperture Radar (SAR) data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./Week8.html" rel="prev">
+<link href="./general_img/satellite-clipart-icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./general_img/satellite-clipart-icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Learning Diary - CASA0023</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR) data</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Week 1 - Getting started with remote sensing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 2 - Portfolio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 3 - Remote sensing data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Week4 - Policy Case Study in New York City</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Week 5 - An introduction to Google Earth Engine</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week6.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wk6 Classification</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Week7 - Classification and Accuracy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week8 - Temperature and Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Week9.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR) data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">9.1</span>  Summary</a>
+  <ul class="collapse">
+  <li><a href="#a-quick-overview" id="toc-a-quick-overview" class="nav-link" data-scroll-target="#a-quick-overview"><span class="toc-section-number">9.1.1</span>  A quick overview</a></li>
+  <li><a href="#sar-fundamentals" id="toc-sar-fundamentals" class="nav-link" data-scroll-target="#sar-fundamentals"><span class="toc-section-number">9.1.2</span>  SAR fundamentals</a></li>
+  <li><a href="#practical-change-detection-with-sar" id="toc-practical-change-detection-with-sar" class="nav-link" data-scroll-target="#practical-change-detection-with-sar"><span class="toc-section-number">9.1.3</span>  Practical change detection with SAR</a></li>
+  <li><a href="#possible-future-developments" id="toc-possible-future-developments" class="nav-link" data-scroll-target="#possible-future-developments"><span class="toc-section-number">9.1.4</span>  Possible future developments</a></li>
+  </ul></li>
+  <li><a href="#application" id="toc-application" class="nav-link" data-scroll-target="#application"><span class="toc-section-number">9.2</span>  Application</a>
+  <ul class="collapse">
+  <li><a href="#wetland-classification" id="toc-wetland-classification" class="nav-link" data-scroll-target="#wetland-classification"><span class="toc-section-number">9.2.1</span>  Wetland classification</a></li>
+  <li><a href="#future-advancement" id="toc-future-advancement" class="nav-link" data-scroll-target="#future-advancement"><span class="toc-section-number">9.2.2</span>  Future Advancement</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">9.3</span>  Reflection</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/Week9.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Week 9 - Synthetic Aperture Radar (SAR) data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">9.1</span> Summary</h2>
+<section id="a-quick-overview" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="a-quick-overview"><span class="header-section-number">9.1.1</span> A quick overview</h3>
+<p>This week addresses problems in</p>
+<ul>
+<li>The object of using Synthetic Aperture Radar (SAR)</li>
+</ul>
+<p>Detecting changes in the Earth’s surface over time</p>
+<ul>
+<li><p>The advantages of SAR for change detection</p>
+<ul>
+<li>see through clouds</li>
+<li>high temporal resolution</li>
+</ul></li>
+<li><p>Techniques for change detection with SAR?</p>
+<ul>
+<li>ratio</li>
+<li>log ratios between two images</li>
+<li>t-tests</li>
+</ul></li>
+<li><p>fused with other data?</p>
+<p>Yes, with optical data using techniques such as</p>
+<ol type="1">
+<li>principal component analysis</li>
+<li>object-based image analysis</li>
+<li>intensity fusion</li>
+</ol></li>
+<li><p>Applications?</p>
+<ul>
+<li>monitoring land use changes</li>
+<li>detecting deforestation</li>
+<li>identifying urban growth pattern</li>
+</ul></li>
+</ul>
+</section>
+<section id="sar-fundamentals" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="sar-fundamentals"><span class="header-section-number">9.1.2</span> SAR fundamentals</h3>
+<ul>
+<li><p>Definition: Synthetic Aperture Radar (SAR) is a type of radar that uses microwave signals to create high-resolution images of the Earth’s surface.</p></li>
+<li><p>Advantages:</p>
+<ul>
+<li>Operates in all weather conditions</li>
+<li>Penetrates through clouds and vegetation cover.</li>
+</ul></li>
+<li><p>Limitations</p>
+<ul>
+<li>Sensitive to surface roughness; limited spatial resolution.</li>
+</ul></li>
+<li><p>Processing Techniques</p>
+<ul>
+<li>Interferometry: combines multiple SAR images to create 3D maps of the Earth’s surface.</li>
+<li>Polarimetry: analyzes the polarization properties of reflected signals to extract additional information about surface features.</li>
+</ul>
+<p>The relationship between different surfaces and their sensitivity to polarizations in SAR data</p>
+<table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Surface Type</th>
+<th>Scattering Mechanism</th>
+<th>Most Sensitive Polarization</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rough (bare earth)</td>
+<td>Rough Scattering</td>
+<td>Vertical-Vertical (VV)</td>
+</tr>
+<tr class="even">
+<td>Leaves</td>
+<td>Volume Scattering</td>
+<td>Vertical-Horizontal (VH) or Horizontal-Vertical (HV)</td>
+</tr>
+<tr class="odd">
+<td>Trees / Buildings</td>
+<td>Double Bounce</td>
+<td>Horizontal-Horizontal (HH)</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Applications:</p>
+<ul>
+<li>Environmental monitoring, disaster response, urban planning, military surveillance, and more.</li>
+</ul></li>
+</ul>
+</section>
+<section id="practical-change-detection-with-sar" class="level3" data-number="9.1.3">
+<h3 data-number="9.1.3" class="anchored" data-anchor-id="practical-change-detection-with-sar"><span class="header-section-number">9.1.3</span> Practical change detection with SAR</h3>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Key Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Advantages of SAR for Change Detection</td>
+<td>Can see through clouds unlike optical sensors; high temporal resolution.</td>
+</tr>
+<tr class="even">
+<td>Change Detection Techniques</td>
+<td>Ratio or log ratios between two images; t-tests; standard deviation.</td>
+</tr>
+<tr class="odd">
+<td>Fusion of SAR and Optical Data</td>
+<td>Principal component analysis; object-based image analysis; intensity fusion.</td>
+</tr>
+<tr class="even">
+<td>Applications of Change Detection with SAR</td>
+<td>Monitoring land use changes, detecting deforestation, identifying urban growth patterns, and more.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="possible-future-developments" class="level3" data-number="9.1.4">
+<h3 data-number="9.1.4" class="anchored" data-anchor-id="possible-future-developments"><span class="header-section-number">9.1.4</span> Possible future developments</h3>
+<p>Resolution, accuracy, real-time-ness and data scale in SAR might see advancements.</p>
+<ul>
+<li><p>Improved resolution and accuracy:</p>
+<ul>
+<li>Urban planning: Improved resolution and accuracy can influence local zoning regulations and urban growth management by providing detailed information on land use changes and the built environment. For example, high-resolution SAR data can be used to assess the effectiveness of urban containment policies or to identify areas where infrastructure investments are needed.</li>
+</ul></li>
+<li><p>Data processing capabilities</p>
+<ul>
+<li>Disaster response: The ability to process larger datasets and monitor Earth’s surface in near real-time can inform global policies regarding disaster management, such as the <a href="https://www.undrr.org/implementing-sendai-framework/what-sendai-framework">Sendai Framework for Disaster Risk Reduction</a>. Boosted rapidness and data capability of SAR can better response to natural disasters, like earthquakes or hurricanes. This allows for quicker design of resources deployment strategy, and more comprehensive information in managing affected areas.</li>
+</ul></li>
+<li><p>New SAR applications</p>
+<ul>
+<li>Agricultural: Enhanced SAR facilitates its use in change detection and monitoring. This will support policies like the <a href="https://ec.europa.eu/info/food-farming-fisheries/key-policies/common-agricultural-policy/cap-glance_en">European Union’s Common Agricultural Policy (CAP)</a>, by providing data on crop health, irrigation needs, and land use changes.</li>
+<li>Forestry (deforestation and reforestation tracking)</li>
+<li>Disaster response (flood and landslide monitoring)</li>
+<li>Environmental management: SAR data can inform policies related to wetland and coastal zone management, such as the <a href="https://www.ramsar.org/">Ramsar Convention on Wetlands</a> and the <a href="https://www.un.org/Depts/los/convention_agreements/convention_overview_convention.htm">United Nations Convention on the Law of the Sea (UNCLOS)</a>. By monitoring changes in these sensitive areas, policymakers can evaluate the effectiveness of existing regulations and develop new strategies to protect vital ecosystems.</li>
+</ul></li>
+<li><p>More matured machine learning and artificial intelligence:</p>
+<ul>
+<li>Advanced algorithms that are yet to be developed or need further maturity for SAR data analysis could include:</li>
+</ul>
+<table class="table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 43%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algorithm</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Improved Unsupervised Change Detection Algorithms</td>
+<td>- No need for labeled training data. - Can discover unknown or unexpected changes.</td>
+<td>- May struggle with complex or subtle changes. - Can be sensitive to noise and variations in the data.</td>
+</tr>
+<tr class="even">
+<td>Multi-Modal Fusion Algorithms</td>
+<td>- Combines SAR data with other sources (e.g., optical, hyperspectral) for better feature identification. - Can exploit the complementary strengths of different data types.</td>
+<td>- Requires data synchronization and registration, which can be challenging. - May involve increased complexity and computational cost.</td>
+</tr>
+<tr class="odd">
+<td>Graph-based Change Detection Algorithms</td>
+<td>- Can model complex spatial relationships between features. - Robust against noise and speckle effects in SAR data.</td>
+<td>- Computationally expensive, especially for large-scale datasets. - May require tuning of hyperparameters.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Improved overall accuracy of change detection can support climate change adaptation efforts at both local and global levels, including the <a href="https://unfccc.int/">United Nations Framework Convention on Climate Change (UNFCCC)</a> and the <a href="https://unfccc.int/">Paris Agreement</a>. Predictive models based on SAR data can help policymakers identify areas at risk of flooding, coastal erosion, or other climate-related impacts, enabling the targeted adaptation strategies.</li>
+</ul></li>
+</ul>
+<p>Advancements in SAR technology, combined with the integration of machine learning and AI, will enhance change detection capabilities, enabling new analysis avenues in sectors including agriculture, forestry, disaster management, and environmental protection, ultimately influencing policymaking and promoting more informed decision-making processes.</p>
+</section>
+</section>
+<section id="application" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="application"><span class="header-section-number">9.2</span> Application</h2>
+<p>This week I chose to explore the application of SAR in wetland classification and real-time monitoring, as well as its future advancement, in the context of a literature recommended by the module webpage <span class="citation" data-cites="gokce_wetland_2019">(<a href="references.html#ref-gokce_wetland_2019" role="doc-biblioref">Dabboor and Brisco 2019</a>)</span>.</p>
+<p>Wetland acts as a kidney to Earth reminding one of the old positivist tradition in French philosophy, taking abstract structures as organisms. The chance to explore this wholist view with an analytic approach is thrilling, as these two paradigms that seem to be falling in a prevailing antithesis can actually sparkle inspiration and exhibit harmony of inclusion of each other.</p>
+<section id="wetland-classification" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="wetland-classification"><span class="header-section-number">9.2.1</span> Wetland classification</h3>
+<p>Wetland classification has been a daunting task utilising traditional air photo and filed visits. Ever since the launch of ERTS in 1972, this task has been expecting the evolution of methods through applying Earth Observation data.</p>
+<p>The SOTA of this tasks, as implied in the literature, has been an Object-based classification:</p>
+<ul>
+<li>Combining multi-source data: optical and SAR</li>
+<li>Analysing using a machine-learning classification model</li>
+<li>Incorporating a Digital Elevation Model (DEM)</li>
+<li>Aims at identifying terrain suitability for wetlands and surface water</li>
+</ul>
+<p>See @ for a workflow</p>
+<p>This method achieves over 90% of accuracy and is useful in that its core method utilises SAR data’s feature of “seeing under the water” to better identify flooded vegetation class.</p>
+<p>How did this amazing feature come about? Is that an emerging effect due to unprecedented combination of data? Or is it determined by the characteristics innate to SAR data?</p>
+<p>The answer is the latter: The flooded vegetation tends to produce a double bounce scattering mechanism, which increases the intensity of the backscatter, making HH polarization to be the best for this due to the enhanced penetration in vegetation <span class="citation" data-cites="Jahncke2018MappingWI">(<a href="references.html#ref-Jahncke2018MappingWI" role="doc-biblioref"><strong>Jahncke2018MappingWI?</strong></a>)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/WetLand_classification.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Credit: <span class="citation" data-cites="gokce_wetland_2019">Dabboor and Brisco (<a href="references.html#ref-gokce_wetland_2019" role="doc-biblioref">2019</a>)</span></figcaption><p></p>
+</figure>
+</div>
+<p>This workflow utilising different scattering effect between water and vegetation is one of the main contributors to the SOTA performance, laying the ground for further development and iteration on this method: various angle-choosing strategies, machine-learning algorithm combinations, etc.</p>
+</section>
+<section id="future-advancement" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="future-advancement"><span class="header-section-number">9.2.2</span> Future Advancement</h3>
+<ul>
+<li>Resolution in time and space can see chance of enhancement. Spaceborne SAR remote sensing technology being the essential tool for effective wetland observation, its improvement can be expected to reflect on enhancement of wetland observation in temporal and spatial resolution, e.g., the RCM is expected to provide SAR imagery in a spatial resolution ranging from 1 m to 100 m, in a revisit time of only 4 days <span class="citation" data-cites="gokce_wetland_2019">(<a href="references.html#ref-gokce_wetland_2019" role="doc-biblioref">Dabboor and Brisco 2019</a>)</span>.</li>
+</ul>
+<p>This can better our understanding of climate change in wetlands and water quality, allowing ecosystem managers and decision makers to have sufficient information regarding wetland preservation</p>
+<ul>
+<li>More sensors with more data forms, as well as improved data quality can be anticipated in the future. The integration of SAR imagery with optical and topographic data from multiple sensors was shown in <span class="citation" data-cites="dubeau_mapping_2017">Dubeau et al. (<a href="references.html#ref-dubeau_mapping_2017" role="doc-biblioref">2017</a>)</span> to be necessary for improved wetland mapping and classification during the growing season.</li>
+</ul>
+<p>However, the integration of SAR imagery and LiDAR data did not improve significantly the classification accuracy of wetland in <span class="citation" data-cites="millard_wetland_2013">Millard and Richardson (<a href="references.html#ref-millard_wetland_2013" role="doc-biblioref">2013</a>)</span>.</p>
+<ul>
+<li>The effectiveness of machine learning algorithms for automated wetland classification can expect further development. E.g., Graph-based Change Detection Algorithms can model complex spatial relationships between features and is robust against noise and speckle effects in SAR data.</li>
+</ul>
+<p>This shift toward the automated machine learning algorithms comes to fulfill the requirement for operational wetland monitoring systems.</p>
+</section>
+</section>
+<section id="reflection" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">9.3</span> Reflection</h2>
+<p>SAR data with its amazing all-weather capability and real-time monitoring feature heralds the possibilities of real-time monitoring, which aligns with the disaster monitoring tasks. But there remain concerns in this approach:</p>
+<ul>
+<li>How real-time is real time?
+<ul>
+<li>Does a 5-seconds delay in data transmission fail an essential decision-making?</li>
+</ul></li>
+<li>How to quantify tolerance thresholds in regards of delay, error and bias?
+<ul>
+<li>A sharp cutoff or a fuzzy one?</li>
+</ul></li>
+<li>What degree of accuracy? Managing response time of
+<ul>
+<li>Data acquirement, transmission and calculation</li>
+<li>Human-based decision-making</li>
+</ul>
+Incurs extra cost. The estimation is almost always NOT deterministic.</li>
+</ul>
+<p>Thinking about these questions can prepare one for awareness of risks when applying seemingly fancy technologies to real-world problems where people lives are concerned and efficiency of the solution needs elaborate calculation.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-gokce_wetland_2019" class="csl-entry" role="doc-biblioentry">
+Dabboor, Mohammed, and Brian Brisco. 2019. <span>“Wetland <span>Monitoring</span> and <span>Mapping</span> <span>Using</span> <span>Synthetic</span> <span>Aperture</span> <span>Radar</span>.”</span> In <em>Wetlands <span>Management</span> - <span>Assessing</span> <span>Risk</span> and <span>Sustainable</span> <span>Solutions</span></em>, edited by Didem Gökçe. IntechOpen. <a href="https://doi.org/10.5772/intechopen.80224">https://doi.org/10.5772/intechopen.80224</a>.
+</div>
+<div id="ref-dubeau_mapping_2017" class="csl-entry" role="doc-biblioentry">
+Dubeau, Pierre, Douglas J. King, Dikaso Gojamme Unbushe, and Lisa-Maria Rebelo. 2017. <span>“Mapping the <span>Dabus</span> <span>Wetlands</span>, <span>Ethiopia</span>, <span>Using</span> <span>Random</span> <span>Forest</span> <span>Classification</span> of <span>Landsat</span>, <span>PALSAR</span> and <span>Topographic</span> <span>Data</span>.”</span> <em>Remote Sensing</em> 9 (10). <a href="https://doi.org/10.3390/rs9101056">https://doi.org/10.3390/rs9101056</a>.
+</div>
+<div id="ref-millard_wetland_2013" class="csl-entry" role="doc-biblioentry">
+Millard, Koreen, and Murray Richardson. 2013. <span>“Wetland Mapping with <span>LiDAR</span> Derivatives, <span>SAR</span> Polarimetric Decompositions, and <span>LiDAR</span>–<span>SAR</span> Fusion Using a Random Forest Classifier.”</span> <em>Canadian Journal of Remote Sensing</em> 39 (4): 290–307. <a href="https://doi.org/10.5589/m13-038">https://doi.org/10.5589/m13-038</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Week8.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Week8 - Temperature and Policy</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Learning Outcome at <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis"><img src="./general_img/casa_logo.jpg" class="img-fluid" width="30"></a></div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://andrewmaclachlan.github.io/CASA0023/intro.html">Module</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/andrewmaclachlan">Lecturer</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE">
+      <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml">
+      <i class="bi bi-kaggle" role="img" aria-label="Quarto Blog RSS">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

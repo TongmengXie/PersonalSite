@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tongmeng Xie">
+<meta name="dcterms.date" content="2023-03-24">
+
+<title>Learning Diary - CASA0023</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./general_img/satellite-clipart-icon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./general_img/satellite-clipart-icon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Learning Diary - CASA0023</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE"><i class="bi bi-github" role="img" aria-label="Source Code">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Learning Diary - CASA0023</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Address Matching and Entity Extraction Across Data Sets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#address-matching-and-entity-extraction-across-data-sets" id="toc-address-matching-and-entity-extraction-across-data-sets" class="nav-link active" data-scroll-target="#address-matching-and-entity-extraction-across-data-sets"><span class="toc-section-number">1</span>  Address Matching and Entity Extraction Across Data Sets</a></li>
+  <li><a href="#has-the-expansion-of-ultra-low-emission-zone-in-2021-improved-air-quality-in-london-how-to-quantify-the-improvement" id="toc-has-the-expansion-of-ultra-low-emission-zone-in-2021-improved-air-quality-in-london-how-to-quantify-the-improvement" class="nav-link" data-scroll-target="#has-the-expansion-of-ultra-low-emission-zone-in-2021-improved-air-quality-in-london-how-to-quantify-the-improvement"><span class="toc-section-number">2</span>  <strong>Has the expansion of Ultra Low Emission Zone in 2021 improved air quality in London? How to quantify the improvement?</strong></a>
+  <ul class="collapse">
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions"><span class="toc-section-number">2.1</span>  <strong>Research Questions:</strong></a></li>
+  <li><a href="#key-findings" id="toc-key-findings" class="nav-link" data-scroll-target="#key-findings"><span class="toc-section-number">2.2</span>  <strong>Key Findings:</strong></a>
+  <ul class="collapse">
+  <li><a href="#air-quality-improvement" id="toc-air-quality-improvement" class="nav-link" data-scroll-target="#air-quality-improvement"><span class="toc-section-number">2.2.1</span>  <strong>Air Quality Improvement:</strong></a></li>
+  <li><a href="#sub-questions" id="toc-sub-questions" class="nav-link" data-scroll-target="#sub-questions"><span class="toc-section-number">2.2.2</span>  <strong>Sub-Questions:</strong></a></li>
+  <li><a href="#areas-for-further-research" id="toc-areas-for-further-research" class="nav-link" data-scroll-target="#areas-for-further-research"><span class="toc-section-number">2.2.3</span>  <strong>Areas for Further Research:</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#why-are-ks4-performance-in-liverpool-and-manchester-lower-than-the-national-average-exploration-and-quantification-of-socio-economic-factors-influencing-ks4-performance-in-england" id="toc-why-are-ks4-performance-in-liverpool-and-manchester-lower-than-the-national-average-exploration-and-quantification-of-socio-economic-factors-influencing-ks4-performance-in-england" class="nav-link" data-scroll-target="#why-are-ks4-performance-in-liverpool-and-manchester-lower-than-the-national-average-exploration-and-quantification-of-socio-economic-factors-influencing-ks4-performance-in-england"><span class="toc-section-number">3</span>  Why are KS4 performance in Liverpool and Manchester lower than the national average? Exploration and Quantification of Socio-economic Factors Influencing KS4 Performance in England</a>
+  <ul class="collapse">
+  <li><a href="#main-research-questions" id="toc-main-research-questions" class="nav-link" data-scroll-target="#main-research-questions"><span class="toc-section-number">3.1</span>  <strong>Main Research Questions:</strong></a></li>
+  <li><a href="#key-findings-1" id="toc-key-findings-1" class="nav-link" data-scroll-target="#key-findings-1"><span class="toc-section-number">3.2</span>  <strong>Key Findings:</strong></a>
+  <ul class="collapse">
+  <li><a href="#relationship-between-attainment-8-and-deprivation" id="toc-relationship-between-attainment-8-and-deprivation" class="nav-link" data-scroll-target="#relationship-between-attainment-8-and-deprivation"><span class="toc-section-number">3.2.1</span>  <strong>Relationship between Attainment 8 and Deprivation</strong></a></li>
+  <li><a href="#hypothesis-tests" id="toc-hypothesis-tests" class="nav-link" data-scroll-target="#hypothesis-tests"><span class="toc-section-number">3.2.2</span>  <strong>Hypothesis Tests</strong></a></li>
+  <li><a href="#model-limitations" id="toc-model-limitations" class="nav-link" data-scroll-target="#model-limitations"><span class="toc-section-number">3.2.3</span>  <strong>Model Limitations</strong></a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">3.3</span>  <strong>Discussion</strong></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/TongmengXie/CASA0023-RSCE/edit/main/index.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Learning Diary - CASA0023</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tongmeng Xie </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 24, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="address-matching-and-entity-extraction-across-data-sets" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Address Matching and Entity Extraction Across Data Sets</h1>
+<p><img src="images/Comp_Ensemble.png" class="img-fluid"></p>
+<p><img src="images/Prep_NER_train.png" class="img-fluid"></p>
+<p><img src="images/Conc_ensemble_lev.png" class="img-fluid"></p>
+</section>
+<section id="has-the-expansion-of-ultra-low-emission-zone-in-2021-improved-air-quality-in-london-how-to-quantify-the-improvement" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Has the expansion of Ultra Low Emission Zone in 2021 improved air quality in London? How to quantify the improvement?</strong></h1>
+<p><em>The study found that the expansion of London’s Ultra Low Emission Zone (ULEZ) in October 2021 led to a modest 3-9% reduction in PM10-associated pollutants, confirmed causality via Regression Discontinuity Design (RDD), and noted spatial spillover effects, but suggests further analysis on other pollutants and time scope adjustments.</em></p>
+<section id="research-questions" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="research-questions"><span class="header-section-number">2.1</span> <strong>Research Questions:</strong></h2>
+<ol type="1">
+<li><p>Did the expansion of the Ultra Low Emission Zone (ULEZ) in October 2021 improve air quality in London?</p></li>
+<li><p>How can this improvement be quantified?</p></li>
+</ol>
+</section>
+<section id="key-findings" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="key-findings"><span class="header-section-number">2.2</span> <strong>Key Findings:</strong></h2>
+<section id="air-quality-improvement" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="air-quality-improvement"><span class="header-section-number">2.2.1</span> <strong>Air Quality Improvement:</strong></h3>
+<p>The expansion of ULEZ on October 25, 2021, led to a noticeable but not significant improvement in air quality. Specifically, there was a 3-9% reduction in PM10-associated pollutants in Greater London.</p>
+</section>
+<section id="sub-questions" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="sub-questions"><span class="header-section-number">2.2.2</span> <strong>Sub-Questions:</strong></h3>
+<ol type="1">
+<li><p><strong>Categorization of Pollutants</strong>: Pollutants were organized into groups based on their collinearity. The categories include:</p>
+<ul>
+<li><p>NOx (NO, NO2, NOXasNO2)</p></li>
+<li><p>PM10 &amp; Associated (PM10, NV10, V10)</p></li>
+<li><p>PM2.5_Associated (NV2.5, V2.5, AT2.5, AP2.5)</p></li>
+<li><p>SO2 (SO2, AP10, CO)</p></li>
+<li><p>Uncategorised: PM2.5, O3</p></li>
+</ul></li>
+<li><p><strong>Causality</strong>: The study confirmed a causal relationship between ULEZ expansion and air quality improvement through Regression Discontinuity Design (RDD).</p></li>
+<li><p><strong>Spatial Patterns</strong>: Air quality improved not just within the expanded ULEZ area but also in areas outside it, potentially due to spatial spillover effects.</p></li>
+</ol>
+</section>
+<section id="areas-for-further-research" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="areas-for-further-research"><span class="header-section-number">2.2.3</span> <strong>Areas for Further Research:</strong></h3>
+<ol type="1">
+<li><p><strong>Other Pollutants</strong>: Further investigation is needed to understand the impact on other pollutants.</p></li>
+<li><p><strong>Average Performance Metrics</strong>: A more comprehensive measure of air quality improvement is yet to be developed.</p></li>
+<li><p><strong>Time Scope</strong>: The timeframe for assessing the effects of ULEZ expansion may need adjustment and could necessitate iterative analysis.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="why-are-ks4-performance-in-liverpool-and-manchester-lower-than-the-national-average-exploration-and-quantification-of-socio-economic-factors-influencing-ks4-performance-in-england" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Why are KS4 performance in Liverpool and Manchester lower than the national average? Exploration and Quantification of Socio-economic Factors Influencing KS4 Performance in England</h1>
+<p><em>The study reveals that while there is no significant difference in overall deprivation between Liverpool &amp; Manchester and the rest of England, students in Liverpool &amp; Manchester are more socio-demographically disadvantaged, and these disadvantages have a greater negative impact on their educational outcomes.</em></p>
+<section id="main-research-questions" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="main-research-questions"><span class="header-section-number">3.1</span> <strong>Main Research Questions:</strong></h2>
+<ol type="1">
+<li><p>How does the attainment 8 score relate to deprivation indicators?</p></li>
+<li><p>Are socio-economic disadvantages more severe in Liverpool &amp; Manchester?</p></li>
+<li><p>Do socio-economic disadvantages have a greater impact on educational outcomes in Liverpool &amp; Manchester?</p></li>
+</ol>
+</section>
+<section id="key-findings-1" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="key-findings-1"><span class="header-section-number">3.2</span> <strong>Key Findings:</strong></h2>
+<section id="relationship-between-attainment-8-and-deprivation" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="relationship-between-attainment-8-and-deprivation"><span class="header-section-number">3.2.1</span> <strong>Relationship between Attainment 8 and Deprivation</strong></h3>
+<ul>
+<li><p>After accounting for deprivation-related variables, the model’s explanatory power (Adj. <em>R</em>2) increased from 57.5% to 77.3%.</p></li>
+<li><p>An additional 1% of students with Special Education Needs (SEN) is associated with a 48.3-point decrease in a borough’s attainment 8 score.</p></li>
+</ul>
+</section>
+<section id="hypothesis-tests" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="hypothesis-tests"><span class="header-section-number">3.2.2</span> <strong>Hypothesis Tests</strong></h3>
+<ol type="1">
+<li><p><strong>Severity of Socio-Economic Disadvantages in Liverpool &amp; Manchester</strong>: There is no significant difference in the level of deprivation in and outside of Liverpool &amp; Manchester.</p></li>
+<li><p><strong>Impact of Socio-Economic Disadvantages in Liverpool &amp; Manchester</strong>: Socio-demographic disadvantages are more heavily weighted in Liverpool &amp; Manchester, affecting educational outcomes more than they do in the rest of England.</p></li>
+</ol>
+</section>
+<section id="model-limitations" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="model-limitations"><span class="header-section-number">3.2.3</span> <strong>Model Limitations</strong></h3>
+<ul>
+<li><p>One variable related to socio-demographics in Liverpool &amp; Manchester had a p-value greater than 0.05, indicating the model may not be a perfect fit.</p></li>
+<li><p>The study may benefit from the inclusion of other socio-economic factors like disability, or the use of machine learning techniques for better fit.</p></li>
+</ul>
+</section>
+</section>
+<section id="discussion" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="discussion"><span class="header-section-number">3.3</span> <strong>Discussion</strong></h2>
+<p>Students in Liverpool &amp; Manchester are more socio-demographically disadvantaged, and this has a heavier impact on their educational outcomes than for students outside these areas. Interventions such as cultural competency training for educators and safe spaces for marginalized students could improve educational equity and inclusion in Liverpool &amp; Manchester.</p>
+<p>By understanding these factors, policymakers can better tailor interventions to support students from disadvantaged backgrounds.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Learning Outcome at <a href="https://www.ucl.ac.uk/bartlett/casa/bartlett-centre-advanced-spatial-analysis"><img src="./general_img/casa_logo.jpg" class="img-fluid" width="30"></a></div>   
+      <div class="nav-footer-center">
+        <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://andrewmaclachlan.github.io/CASA0023/intro.html">Module</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/andrewmaclachlan">Lecturer</a>
+  </li>  
+</ul>
+      </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/TongmengXie/CASA0023-RSCE">
+      <i class="bi bi-github" role="img" aria-label="Quarto GitHub">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://quarto.org/docs/blog/index.xml">
+      <i class="bi bi-kaggle" role="img" aria-label="Quarto Blog RSS">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
