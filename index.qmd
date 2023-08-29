@@ -1,21 +1,3 @@
 # Preface {.unnumbered}
 
-# Introduction
-
-Welcome to my learning diary page of Remote Sensing Cities and Environment (CASA0023)! This diary is made for the content taught at 2022-2023.
-
-I'm a current Master of Science student at Bartlett Centre for Advanced Spatial Analysis.
-
-This is a learning diary of a Master of Science student at CASA Module CASA0023 (Remote Sensing City Environment).
-
-This learning diary is presented as a Quarto book containing 9 weeks as chapters.
-
-Each week, the content summarises that week's teaching content in section summary, sometimes it emphasises comprehensiveness and therefore appear in overwhelming length. This way, it is easy for a general reader to get lost in finding what's important. Therefore, I also added guides and highlighted what stood out in importance. Future development part can also assist in grasping the big picture of that week's topic.
-
-Application addresses one (or multiple) literature recommended in the module micro-site. It elaborates on parts that interest me and mentions why they are interesting. Also, the contribution and future literature advancement are highlighted.
-
-As for reflection, I try to relate the content in Summary and Application to wider discipline in regard of how those can be of use in future both from my personal perspective, and in how a spatial data scientist might strengthen their arsenal using the content in dealing with Earth Observation data. The selection of content is largely based on how interesting they are, and hopefully the reason why they appear interesting has been illustrated in the their usefulness.
-
-Take a look at the module's micro-site, to better understand what I'm talking about! [CASA0023 Remotely Sensing Cities and Environments (andrewmaclachlan.github.io)](https://andrewmaclachlan.github.io/CASA0023/)
-
-There are two weeks that differ in the general structure of this quarto book: Week 2 Portfolio includes only a Xaringan-made and online-hosted slide, Week 4 Policy deals with a policy instead of papers.
+# 
